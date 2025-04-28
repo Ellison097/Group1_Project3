@@ -1,0 +1,318 @@
+\documentclass[12pt]{article}
+\usepackage[utf8]{inputenc}
+\usepackage{graphicx}
+\usepackage{hyperref}
+\usepackage{listings}
+\usepackage{xcolor}
+\usepackage{geometry}
+\usepackage{enumitem}
+\usepackage{amsmath}
+\usepackage{booktabs}
+\usepackage{longtable}
+\usepackage{setspace}
+
+\geometry{a4paper, margin=1in}
+
+% 设置行间距
+\renewcommand{\baselinestretch}{0.001}
+\setlength{\parskip}{0.001em}
+\setlength{\itemsep}{0.001em}
+\setlength{\parsep}{0.001em}
+\setlength{\topsep}{0.001em}
+\setlength{\partopsep}{0.001em}
+
+% 设置代码样式
+\lstset{
+    basicstyle=\ttfamily\small,
+    breaklines=true,
+    frame=single,
+    numbers=left,
+    numberstyle=\tiny,
+    showstringspaces=false,
+    language=Python,
+    basicstyle=\ttfamily\footnotesize,
+    numbersep=1pt,
+    frame=single,
+    breaklines=true,
+    postbreak=\mbox{\textcolor{red}{$\hookrightarrow$}\space}
+}
+
+\title{Group1Project3}
+\author{Licheng Guo}
+\date{\today}
+
+\begin{document}
+
+\maketitle
+
+\tableofcontents
+
+\section{Code Execution Instructions and RoadMap}
+This section provides a roadmap for executing the data processing pipeline, detailing the scripts involved, their execution order, inputs, outputs, and the purpose of each step, culminating in the final Exploratory Data Analysis (EDA).
+
+\subsection{Overall Data Flow}
+\begin{enumerate}[label=\textbf{Step \arabic*:}]
+    \item Raw Group Data $\rightarrow$ Cleaned Group Data
+    \item Cleaned Group Data $\rightarrow$ Combined Raw Data
+    \item Combined Raw Data $\rightarrow$ Enriched Output Data
+    \item Enriched Output Data $\rightarrow$ Filtered \& Refined Output Data
+    \item Filtered \& Refined Output Data $\rightarrow$ Final Enriched Dataset
+    \item Final Enriched Dataset $\rightarrow$ Filtered Enriched Data
+    \item Filtered Enriched Data $\rightarrow$ Citation Enriched Data
+    \item Citation Enriched Data $\rightarrow$ Insights \& Visualizations
+\end{enumerate}
+
+\subsection{Execution Steps (Main Pipeline)}
+
+\subsubsection{1. Data Cleaning and Deduplication}
+\begin{itemize}
+    \item \textbf{Purpose}: Cleans individual group CSV files by removing duplicates against a reference dataset and then deduplicates across all group files.
+    \item \textbf{Input}: Raw CSV files, Reference Excel
+    \item \textbf{Output}: Cleaned and deduplicated group files
+    \item \textbf{Command}:
+    \begin{lstlisting}[language=bash]
+    python Code/clean_data.py
+    \end{lstlisting}
+\end{itemize}
+
+\subsubsection{2. Data Mapping and Consolidation}
+\begin{itemize}
+    \item \textbf{Purpose}: Combines the cleaned group files into a single dataset, mapping heterogeneous columns to a standardized schema.
+    \item \textbf{Input}: Cleaned group files
+    \item \textbf{Output}: Combined raw dataset
+    \item \textbf{Command}:
+    \begin{lstlisting}[language=bash]
+    python Code/join_and_map_data.py
+    \end{lstlisting}
+\end{itemize}
+
+\subsubsection{3. Output-Level Enrichment}
+\begin{itemize}
+    \item \textbf{Purpose}: Enriches the combined dataset with detailed bibliographic information using OpenAlex and Crossref APIs.
+    \item \textbf{Input}: Combined raw dataset
+    \item \textbf{Output}: Enriched dataset
+    \item \textbf{Command}:
+    \begin{lstlisting}[language=bash]
+    python Code/enrich_all_combined_data.py --output "Project_Data_Enriched_Combined/combined_mapped_data_raw_enriched_final.csv"
+    \end{lstlisting}
+\end{itemize}
+
+\subsubsection{3.5. Post-Enrichment Filtering and Venue Refinement}
+\begin{itemize}
+    \item \textbf{Purpose}: Filters the enriched dataset to keep only FSRDC-related records with DOIs.
+    \item \textbf{Input}: Output from Step 3
+    \item \textbf{Output}: Filtered and venue-refined dataset
+    \item \textbf{Command}:
+    \begin{lstlisting}[language=bash]
+    python Code/update_venue_column.py \
+        --input "Project_Data_Enriched_Combined/combined_mapped_data_raw_enriched_final.csv" \
+        --output "Project_Data_Enriched_Combined/combined_mapped_data_raw_enriched_final_final.csv"
+    \end{lstlisting}
+\end{itemize}
+
+\subsubsection{4. Project Metadata Enrichment (Multi-Stage)}
+\begin{itemize}
+    \item \textbf{Purpose}: Enriches the filtered dataset with project-level information using multiple metadata sources.
+    \item \textbf{Input}: Filtered/refined dataset, Metadata Excel, Research Outputs Excel
+    \item \textbf{Outputs}: Intermediate and final enriched files
+    \item \textbf{Commands}:
+    \begin{enumerate}
+        \item Stage 1:
+        \begin{lstlisting}[language=bash]
+        python Code/enrich_all_combined_data_metadata.py
+        \end{lstlisting}
+        \item Stage 2:
+        \begin{lstlisting}[language=bash]
+        python Code/enrich_all_combined_data_metadata2.py
+        \end{lstlisting}
+        \item Stage 3:
+        \begin{lstlisting}[language=bash]
+        python Code/enrich_all_combined_data_metadata3.py
+        \end{lstlisting}
+    \end{enumerate}
+\end{itemize}
+
+\section{Data Cleaning and Deduplication Process}
+
+\subsection{Overview}
+The data cleaning process was designed to address two critical challenges in the Project3\_Data collection: removing duplicates against a reference dataset and ensuring uniqueness across multiple group datasets.
+
+\subsection{Data Sources}
+
+\subsubsection{Reference Dataset}
+\begin{itemize}
+    \item \texttt{ResearchOutputs.xlsx}: Contains existing research outputs with an \texttt{OutputTitle} column used as the reference for deduplication
+\end{itemize}
+
+\subsubsection{Target Datasets}
+Eight CSV files from the Project3\_Data directory with varying column structures:
+\begin{itemize}
+    \item group1.csv: Uses "title" column
+    \item group2.csv: Uses "title" column
+    \item group3.csv: Uses "Title" column
+    \item group4.csv: Uses "title" column
+    \item group5.csv: Uses "title" column
+    \item group6.csv: Uses "Title" column
+    \item group7.csv: Uses "title" column
+    \item group8.csv: Uses "OutputTitle" column
+\end{itemize}
+
+\subsection{Methodology}
+
+\subsubsection{Two-Phase Deduplication Strategy}
+
+\paragraph{Phase 1: Deduplication Against Reference Dataset}
+Each group dataset was compared against the reference dataset to remove any duplicate entries.
+
+\paragraph{Phase 2: Cross-Group Deduplication}
+The cleaned datasets from Phase 1 were then processed sequentially to ensure no duplicates existed across groups.
+
+\subsubsection{Two-Step Matching Approach}
+
+\paragraph{Exact Matching}
+First, we performed case-insensitive exact matching to quickly identify and remove obvious duplicates:
+
+\begin{lstlisting}[language=Python]
+def clean_against_research_outputs(csv_file, title_column, research_outputs, threshold=85):
+    # Convert titles to lowercase for case-insensitive comparison
+    df["title_lower"] = df[title_column].astype(str).str.lower()
+    research_outputs["title_lower"] = research_outputs["OutputTitle"].astype(str).str.lower()
+    
+    # Identify exact matches
+    exact_matches = df[df["title_lower"].isin(research_outputs["title_lower"])].index
+    df_after_exact = df.drop(exact_matches)
+    
+    # Continue with fuzzy matching for remaining records...
+\end{lstlisting}
+
+\paragraph{Fuzzy Matching}
+For remaining records, we applied fuzzy matching to identify near-duplicates:
+
+\begin{lstlisting}[language=Python]
+def fuzzy_match(title1, title2, threshold=85):
+    """
+    Compare two titles using fuzzy string matching
+    
+    Args:
+        title1, title2: Titles to compare
+        threshold: Similarity threshold (0-100)
+        
+    Returns:
+        bool: True if similarity exceeds threshold
+    """
+    if pd.isna(title1) or pd.isna(title2):
+        return False
+        
+    # Calculate similarity ratio between lowercase strings
+    similarity = fuzz.ratio(str(title1).lower(), str(title2).lower())
+    return similarity >= threshold
+\end{lstlisting}
+
+\subsection{Implementation Details}
+
+\subsubsection{Processing Order}
+To ensure consistent results, we processed the datasets in a fixed order from group1 to group8:
+
+\begin{lstlisting}[language=Python]
+group_info = [
+    ("group1", "title"),
+    ("group2", "title"),
+    ("group3", "Title"),
+    # ...and so on
+]
+\end{lstlisting}
+
+\subsubsection{Performance Optimization}
+\begin{itemize}
+    \item Used set data structures for efficient exact matching
+    \item Applied two-step matching (exact then fuzzy) to reduce computational load
+    \item Implemented early termination in fuzzy matching loops
+\end{itemize}
+
+\section{Data Enrichment Process}
+
+\subsection{Output-Level Enrichment}
+
+\subsubsection{Overview}
+The output-level enrichment process enhances the combined dataset with detailed bibliographic information using OpenAlex and Crossref APIs.
+
+\subsubsection{Key Components}
+\begin{itemize}
+    \item DOI Lookup and Validation
+    \item Venue Information Extraction
+    \item Author and Affiliation Processing
+    \item Abstract and Keyword Extraction
+    \item FSRDC Relevance Identification
+\end{itemize}
+
+\subsection{Project Metadata Enrichment}
+
+\subsubsection{Stage 1: PI Matching}
+\begin{itemize}
+    \item Matches authors to PIs in ProjectsAllMetadata.xlsx
+    \item Uses fuzzy matching for author names
+    \item Threshold: 85\% similarity
+\end{itemize}
+
+\subsubsection{Stage 2: Title Matching}
+\begin{itemize}
+    \item Matches output titles to ResearchOutputs.xlsx
+    \item Uses exact matching first, then fuzzy matching
+    \item Threshold: 90\% similarity
+\end{itemize}
+
+\subsubsection{Stage 3: Researcher Matching}
+\begin{itemize}
+    \item Matches authors to Researchers/PIs in ProjectsAllMetadata.xlsx
+    \item Uses fuzzy matching for researcher names
+    \item Threshold: 70\% similarity
+\end{itemize}
+
+\section{Exploratory Data Analysis}
+
+\subsection{Data Preparation}
+\begin{itemize}
+    \item Filtering for enriched records (IsEnriched == True)
+    \item Citation data enrichment
+    \item Data type conversion and cleaning
+\end{itemize}
+
+\subsection{Key Findings}
+\begin{itemize}
+    \item RDC Performance Analysis
+    \item Publication Trends
+    \item Author Productivity
+    \item Citation Patterns
+    \item Collaboration Networks
+\end{itemize}
+
+\section{Technical Implementation Details}
+
+\subsection{Error Handling}
+\begin{itemize}
+    \item Custom exception classes for different error types
+    \item Comprehensive logging system
+    \item Graceful error recovery
+\end{itemize}
+
+\subsection{Performance Optimization}
+\begin{itemize}
+    \item Batch processing for API calls
+    \item Caching mechanisms
+    \item Parallel processing where applicable
+\end{itemize}
+
+\section{Conclusion and Future Work}
+
+\subsection{Summary}
+The data processing pipeline successfully transformed raw group data into a comprehensive, enriched dataset suitable for detailed analysis.
+
+\subsection{Future Improvements}
+\begin{itemize}
+    \item Enhanced error handling
+    \item Improved matching algorithms
+    \item Additional data sources
+    \item Performance optimization
+\end{itemize}
+
+\end{document} 
