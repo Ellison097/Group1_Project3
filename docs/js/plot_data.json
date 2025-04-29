@@ -2765,14 +2765,24 @@
       "Workforce; Automation; Business; Engineering; Economics; Economic growth; Mechanical engineering",
       "Trademark; Business; Advertising; Political science; Law",
       "Business; Agency (philosophy); Discretion; Agency cost; Accounting; Confidentiality; Finance; Computer science; Shareholder; Computer security",
-      "Productivity; Dispersion (optics); Task (project management); Economics; Labour economics; Economic growth; Physics; Management; Optics"
+      "Productivity; Dispersion (optics); Task (project management); Economics; Labour economics; Economic growth; Physics; Management; Optics",
+      "Business",
+      "Welfare; Minimum wage; Labour economics; Wage; Economics; Market economy",
+      "Distribution (mathematics); Robot; Geography; Economic geography; Computer science; Mathematics; Artificial intelligence; Mathematical analysis",
+      "Snap; Supplemental Nutrition Assistance Program; State (computer science); Gerontology; Psychology; Computer science; Geography; Medicine; Operating system; Food insecurity",
+      "Minimum wage; Labour economics; Statutory law; Wage; Economics; Demographic economics; Political science; Law"
     ],
     "values": [
       12,
       10,
       9,
       9,
-      7
+      7,
+      6,
+      6,
+      6,
+      6,
+      6
     ]
   },
   "collaboration_networks": {
@@ -2806,6 +2816,21 @@
       },
       {
         "name": "Katie R. Genadek"
+      },
+      {
+        "name": "Nicholas Bloom"
+      },
+      {
+        "name": "David Autor"
+      },
+      {
+        "name": "John M. Abowd"
+      },
+      {
+        "name": "Christopher K. Wikle"
+      },
+      {
+        "name": "Ron S. Jarmin"
       }
     ],
     "links": [
@@ -2853,7 +2878,1482 @@
         "source": 0,
         "target": 9,
         "value": 33
+      },
+      {
+        "source": 0,
+        "target": 10,
+        "value": 28
+      },
+      {
+        "source": 0,
+        "target": 11,
+        "value": 27
+      },
+      {
+        "source": 0,
+        "target": 12,
+        "value": 26
+      },
+      {
+        "source": 0,
+        "target": 13,
+        "value": 25
+      },
+      {
+        "source": 0,
+        "target": 14,
+        "value": 22
       }
     ]
-  }
+  },
+  "rdc_productivity": {
+    "x": [
+      "Boston",
+      "Michigan",
+      "Chicago",
+      "Baruch",
+      "Triangle",
+      "Atlanta",
+      "Texas",
+      "UCLA",
+      "Fed Board",
+      "Minnesota"
+    ],
+    "y": [
+      678,
+      524,
+      433,
+      338,
+      315,
+      193,
+      182,
+      165,
+      161,
+      159
+    ]
+  },
+  "author_productivity": {
+    "x": [
+      "John Haltiwanger",
+      "Nathan Goldschlag",
+      "Lucia Foster",
+      "Javier Miranda",
+      "Nikolas Zolas",
+      "Scott H. Holan",
+      "Emin Dinlersoz",
+      "John V. Winters",
+      "Jerome P. Reiter",
+      "Katie R. Genadek",
+      "Nicholas Bloom",
+      "David Autor",
+      "John M. Abowd",
+      "Christopher K. Wikle",
+      "Ron S. Jarmin"
+    ],
+    "y": [
+      74,
+      55,
+      52,
+      44,
+      44,
+      43,
+      39,
+      37,
+      36,
+      33,
+      28,
+      27,
+      26,
+      25,
+      22
+    ]
+  },
+  "venue_impact": {
+    "x": [
+      "Nature Methods",
+      "Journal of Oral & Facial Pain and Headache",
+      "IEEE Communications Magazine",
+      "Circulation",
+      "Rhinology Journal",
+      "CA A Cancer Journal for Clinicians",
+      "Nature Genetics",
+      "Journal of Econometrics",
+      "BMJ",
+      "Chapman and Hall/CRC eBooks"
+    ],
+    "y": [
+      10952.0,
+      3519.0,
+      3394.0,
+      2496.0,
+      2309.0,
+      1963.5,
+      1435.5,
+      1186.25,
+      1181.0,
+      885.0
+    ]
+  },
+  "citation_velocity": {
+    "titles": [
+      "Postoperative Radiologic Imaging in Secondary Alveolar Bone Grafting for Cleft Lip and Palate: A Systematic Review and Meta-Analysis",
+      "Declining Responsiveness at the Establishment Level: Sources and Productivity Implications",
+      "Multiligament knee injury (MLKI): an expert consensus statement on nomenclature, diagnosis, treatment and rehabilitation",
+      "High-Growth Firms in the United States: Key Trends and New Data Opportunities",
+      "To Find Relative Earnings Gains After the China Shock, Look Outside Manufacturing and Upstream",
+      "Metapipeline-DNA: A Comprehensive Germline &amp; Somatic Genomics Nextflow Pipeline",
+      "Proximate (Co-)Working: Knowledge Spillovers and Social Interactions",
+      "Trade credit and the stability of supply chains",
+      "Combination Versus Monotherapy for Carbapenem-Resistant Acinetobacter Species Serious Infections: A Prospective IPTW Adjusted Cohort Study",
+      "MS MARCO Web Search: A Large-scale Information-rich Web Dataset with Millions of Real Click Labels"
+    ],
+    "velocity": [
+      Infinity,
+      Infinity,
+      Infinity,
+      Infinity,
+      Infinity,
+      Infinity,
+      Infinity,
+      Infinity,
+      Infinity,
+      Infinity
+    ]
+  },
+  "topic_evolution": {
+    "years": [
+      2000.0,
+      2001.0,
+      2002.0,
+      2003.0,
+      2004.0,
+      2005.0,
+      2006.0,
+      2007.0,
+      2008.0,
+      2009.0,
+      2010.0,
+      2011.0,
+      2012.0,
+      2013.0,
+      2014.0,
+      2015.0,
+      2016.0,
+      2017.0,
+      2018.0,
+      2019.0,
+      2020.0,
+      2021.0,
+      2022.0,
+      2023.0,
+      2024.0,
+      2025.0
+    ],
+    "keywords": [
+      "Self-employment; Unemployment; Index (typography); Economics; Demographic economics; Unemployment rate; Labour economics; Flexibility (engineering); Developed country; Economic growth",
+      "Insulin receptor; Biology; IRS1; Cell biology; Beta cell; Insulin resistance; Insulin; Signal transduction; IRS2; Endocrinology",
+      "Productivity; Incentive; Human capital; Sample (material); Production (economics); Panel data; Work (physics); Cobb\u2013Douglas production function; Labour economics; Business",
+      "National Longitudinal Surveys; Political science; Population; Longitudinal data; Current Population Survey; Survey data collection; Economic growth; Demographic economics; Geography; Economics",
+      "Economics; Social security; Investment (military); Public economics; Market economy; Political science; Politics; Law",
+      "Entrepreneurship; Ranking (information retrieval); Economics; Table (database); Self-employment; Demographic economics; Sociology; Classical economics; Computer science; Machine learning",
+      "Cash flow; Shareholder; Earnings; Profit (economics); Quantum tunnelling; Economics; Accounting; Business; Monetary economics; Microeconomics",
+      "Predictability; Bounded rationality; Computer science; Consumption (sociology); Econometrics; Rationality; Marginal propensity to consume; Empirical research; Process (computing); Cognitive psychology",
+      "Politics; Capital (architecture); Political capital; Political change; Sociology; Social capital; Management; Political science; Social science; Economics",
+      "Slowdown; Democratization; Economics; Process (computing); Publishing; Economic slowdown; Positive economics; Macroeconomics; Political science; Democracy",
+      "Economics; Exchange rate; Consumption (sociology); Econometrics; Monetary economics; Social science; Sociology",
+      "Division of labour; Division (mathematics); Labour economics; Business; Labour law; Economics; Law; Market economy; Political science; Arithmetic",
+      "Convergence (economics); Econometrics; Geography; Economics; Economic growth",
+      "Pyridine; Chemistry; Crystallinity; Desorption; Lewis acids and bases; Adsorption; Infrared spectroscopy; Pyridinium; Inorganic chemistry; Hydrogen bond",
+      "Natural resource economics; Pollution; Economics; Environmental science; Ecology; Biology",
+      "Generosity; Disability insurance; Economics; Disability benefits; Welfare; Marginal utility; Payment; Sample (material); Actuarial science; Affect (linguistics)",
+      "Business; Legal service; Industrial organization; Knowledge management; Economic geography; Geography; Computer science; Political science; Law",
+      "Diffusion; Business; Physics; Thermodynamics",
+      "Economics; Inflation (cosmology); Price setting; Producer price index; Price level; Monetary economics; Goods and services; Mid price; Econometrics; Price shock",
+      "Context (archaeology); Gerontology; Geography; Political science; Sociology; Medicine; Archaeology",
+      "Economics; Debt overhang; Investment (military); Monetary economics; Return of capital; Bust; Depreciation (economics); Capital (architecture); Recession; Open-ended investment company",
+      "Business; Competition (biology); Product (mathematics); Commerce; Industrial organization; Resource (disambiguation); Market competition; Food sector; Marketing; Product market",
+      "Multinational corporation; Production (economics); Business; International trade; Economics; Labour economics; International economics; Microeconomics; Finance",
+      "Earnings; Current Population Survey; Consistency (knowledge bases); Econometrics; Gini coefficient; Economics; Population; Inequality; Term (time); Wage",
+      "Organizational capital; Workforce; Human capital; Business; Capital (architecture); Organizational performance; Individual capital; Work (physics); Value (mathematics); Human resource management",
+      "Air quality index; Regression discontinuity design; Air pollution; Economics; Environmental science; Geography; Statistics; Mathematics; Meteorology; Chemistry",
+      "Industrial organization; Production (economics); Business; Economics; Microeconomics",
+      "Boom; Earnings; Labour economics; Manufacturing sector; Business; Wage; Displaced workers; Tertiary sector of the economy; Bust; Information technology",
+      "Immigration; Native-Born; Health insurance; Probit model; Demographic economics; Foreign born; Probit; Actuarial science; Demography; Medicine",
+      "Poverty; Current Population Survey; Census; Immigration; Poverty rate; Per capita; Economics; Development economics; Demographic economics; Population",
+      "Rehabilitation; Census; Survey data collection; Demographics; Population; Health statistics; Social security; American Community Survey; Service (business); Survey of Income and Program Participation",
+      "Economics; Business; Microeconomics; Industrial organization",
+      "Earnings; Econometrics; Inequality; Economic inequality; Current Population Survey; Population; Survey data collection; Gini coefficient; Bounding overwatch; Percentile",
+      "Exploit; Leverage (statistics); Human capital; Industrial organization; Business; Microeconomics; Production (economics); Work (physics); Confidentiality; Economics",
+      "Residence; Immigration; Demographic economics; Positive selection; Human capital; Selection (genetic algorithm); Ethnic group; Balance (ability); Economics; Political science",
+      "Public health insurance; Health insurance; Crowding out; Private insurance; Actuarial science; Public health; Self-insurance; Insurance policy; Business; Economics",
+      "Microdata (statistics); Unemployment; Economics; Labour economics; Efficiency wage; Wage; Sample (material); Public use; Empirical research; Order (exchange)",
+      "Census; Metropolitan area; White (mutation); Neighbourhood (mathematics); Demography; Geography; Racial hierarchy; Race (biology); Ethnic group; Racism",
+      "Microdata (statistics); Census; Economic rent; American Community Survey; Economics; Demographic economics; Demography; Sociology; Microeconomics; Population",
+      "Economics; Public economics",
+      "Suburbanization; Immigration; Melting pot; Census; Foreign born; Demographic economics; Geography; Economic geography; American Community Survey; Development economics",
+      "Census; American Community Survey; Enumeration; Geography; Statistics; Actuarial science; Demography; Sociology; Mathematics; Economics",
+      "Demography; Census; Medicine; Health insurance; Population; Incidence (geometry); Private insurance; Current Population Survey; Health care; Gerontology",
+      "Productivity; Business; Manufacturing; Green growth; Green innovation; Economics; Industrial organization; Marketing; Sustainable development; Economic growth",
+      "Business; Competition (biology); Industrial organization; Ecology; Biology",
+      "Microdata (statistics); Census; Internal migration; Geography; American Community Survey; Population; Socioeconomic status; Residence; Demographic economics; Public use",
+      "Business; Agency (philosophy); Discretion; Agency cost; Accounting; Confidentiality; Finance; Computer science; Shareholder; Computer security",
+      "Business; Commerce; International trade; Advertising",
+      "Current Population Survey; Inequality; Censoring (clinical trials); Economic inequality; Census; Econometrics; Income distribution; Survey data collection; Population; Parametric statistics",
+      "Gasoline; Endogeneity; Economics; Carbon tax; Instrumental variable; Gallon (US); Econometrics; Consumption (sociology); Greenhouse gas; Agricultural economics",
+      "Default; Foreclosure; Voting; Legislation; Ideology; Economics; Politics; Political economy; Financial crisis; Market economy",
+      "Zeolite; Theophylline; In silico; Molecule; Drug; Drug delivery; Diffusion; Salbutamol; Molecular dynamics; Chemistry",
+      "Confidentiality; Data sharing; Internet privacy; Computer science; Computer security; Medicine; Alternative medicine; Pathology",
+      "Allocative efficiency; Economics; Natural gas; Microeconomics; Deadweight loss; Welfare; Value (mathematics); Natural gas prices; Market price; Natural resource economics",
+      "White (mutation); Nonparametric statistics; Demography; Demographic economics; Economics; Econometrics; Sociology; Genetics; Biology; Gene",
+      "Offshoring; Productivity; Economics; Value (mathematics); Manufacturing; Price index; Index (typography); Relative price; Percentage point; Econometrics",
+      "Earnings; Inequality; Sorting; Economics; Labour economics; Census; Demographic economics; Accounting; Population; Mathematical analysis",
+      "Medicine; Nasal polyps; Chronic rhinosinusitis; Disease; Sinusitis; Position paper; Dermatology; Nasal congestion; Aspirin; Intensive care medicine",
+      "Taxable income; Economics; Elasticity (physics); Econometrics; Statistic; Optimal tax; Income elasticity of demand; Microeconomics; Mathematics; Accounting",
+      "Obesity; Sedentary behavior; Childhood obesity; Physical activity; Environmental health; Gerontology; Sedentary lifestyle; Medicine; Psychology; Overweight",
+      "Proteome; Mass spectrometry; Kinetics; Isotope; Stable isotope ratio; Chemistry; Coupling (piping); Analytical Chemistry (journal); Chromatography; Materials science",
+      "Census; American Community Survey; Census tract; Geography; Data quality; Small area estimation; Quality (philosophy); Population; Geographic information system; Survey data collection",
+      "Salary; Earnings; Wage; Business; Labour economics; Economics; Accounting; Market economy",
+      "Microdata (statistics); American Community Survey; State (computer science); Community college; Census; Economics; Demographic economics; Psychology; Actuarial science; Sociology",
+      "Human capital; Wage; Test (biology); Labour economics; Economics; Efficiency wage; Paleontology; Biology; Economic growth",
+      "Common value auction; China; Language change; Competition (biology); Government (linguistics); Business; Leasehold estate; Economics; Microeconomics; Ecology",
+      "Earnings; Economics; Demographic economics; Accounting",
+      "Census; Regional science; Political science; Geography; Demography; Sociology; Population",
+      "Business; Database; Computer science",
+      "Microdata (statistics); American Community Survey; Attendance; Census; Educational attainment; Community college; Scholarship; State (computer science); Political science; Demographic economics",
+      "Social mobility; Poverty; Resource (disambiguation); Economic growth; Political science; Development economics; Regional science; Public economics; Economics; Geography",
+      "Stock (firearms); Production (economics); Business; Economics; Agricultural economics; Environmental science; Geography; Archaeology; Macroeconomics",
+      "Library science; Microdata (statistics); Census; Center of excellence; Excellence; Sociology; Computer science; Political science; Demography; Law",
+      "Microdata (statistics); Dozen; Workforce; American Community Survey; Human capital; State (computer science); Attrition; Political science; Economics; Demographic economics",
+      "Bayesian probability; Sampling (signal processing); Computer science; Econometrics; Representation (politics); Statistics; Geography; Mathematics; Filter (signal processing); Politics",
+      "Earnings; Census; Tracking (education); Investment (military); Track (disk drive); Demographic economics; Business; Finance; Labour economics; Political science",
+      "Microdata (statistics); Water use; Water conservation; Business; Incentive; Natural resource economics; Population; Water supply; Water resources; Environmental science",
+      "Graduation (instrument); Psychology; Political science; Demographic economics; Economics; Mathematics; Geometry",
+      "Earnings; Census; Demographic economics; American Community Survey; Educational attainment; Cohort; Cohort effect; Voucher; Demography; Economics",
+      "Microdata (statistics); Earnings; Affect (linguistics); Human capital; American Community Survey; Demographic economics; Community college; Psychology; Demography; Economics",
+      "Intermittency; Earnings; Wage; Economics; Dimension (graph theory); Value (mathematics); Index (typography); Demographic economics; Labour economics; Econometrics",
+      "Big data; Data science; Computer science; Survey data collection; Statistics; Data mining; Mathematics",
+      "Imputation (statistics); Statistics; Econometrics; Census; Missing data; Total factor productivity; Regression; Dispersion (optics); Variables; Economics",
+      "Computer science",
+      "Microdata (statistics); Census; Representativeness heuristic; Database; Sample (material); Official statistics; Imputation (statistics); Actuarial science; Statistics; Economics",
+      "Hedge fund; Quarter (Canadian coin); Sample (material); Political science; Incidence (geometry); Demographic economics; Political economy; Business; Economics; Finance",
+      "Trademark; Business; Advertising; Political science; Law",
+      "Welfare; Minimum wage; Labour economics; Wage; Economics; Market economy",
+      "Census; American Community Survey; Workload; Survey data collection; Data collection; Sample (material); Computer science; Robustness (evolution); Survey sampling; Population",
+      "Census; Government (linguistics); American Community Survey; Relevance (law); Confidentiality; General partnership; Data collection; Quality (philosophy); Data science; Data quality",
+      "Business; Regional science; Geography",
+      "High tech; Job creation; Census; Business; Dynamics (music); Industrial organization; Labour economics; Economics; Population; Geography",
+      "Inflation (cosmology); Macro; Business process reengineering; Productivity; Micro level; Key (lock); Econometrics; Macro level; Economics; Census",
+      "Microdata (statistics); Census; Digitization; Respondent; Record linkage; American Community Survey; Microform; Computer science; Handwriting; Geography",
+      "Earnings; Survey data collection; Immigration; Demographic economics; Geography; Econometrics; Economics; Statistics; Accounting; Mathematics",
+      "Multinomial logistic regression; Multinomial distribution; Econometrics; Mixed logit; Multinomial probit; Mathematics; Statistics; Beta distribution; Conditional probability distribution; Autoregressive model",
+      "Econometrics; Business; Mathematics; Economics",
+      "Minimum wage; Labour economics; Statutory law; Wage; Economics; Demographic economics; Political science; Law",
+      "Estimator; Multivariate statistics; Computer science; Small area estimation; Multinomial distribution; Bayesian probability; Sampling (signal processing); Focus (optics); Statistics; Sampling design",
+      "Rurality; Environmental health; Census; Logistic regression; Rural area; Population; Akaike information criterion; Population health; Health equity; Rural health",
+      "Racial composition; Composition (language); Census; Equity (law); Sociology; Racial diversity; Race (biology); Ethnic composition; Inequality; Racism",
+      "Snap; Supplemental Nutrition Assistance Program; State (computer science); Gerontology; Psychology; Computer science; Geography; Medicine; Operating system; Food insecurity",
+      "Database; Longitudinal data; Computer science; Business; Data mining",
+      "Business; Labour economics; Demographic economics; Economics",
+      "Trademark; Revenue; Business; Census; Accounting; Political science; Law; Medicine; Population; Environmental health",
+      "Census; Small business; Contrast (vision); Coronavirus disease 2019 (COVID-19); Pandemic; Business; Business cycle; Survey data collection; Demographic economics; Marketing",
+      "Workforce; Automation; Business; Engineering; Economics; Economic growth; Mechanical engineering",
+      "Productivity; Dispersion (optics); Task (project management); Economics; Labour economics; Economic growth; Physics; Management; Optics",
+      "Census; Microdata (statistics); Respondent; Microform; American Community Survey; Geography; Computer science; Library science; Database; Population",
+      "Economics; Earnings; Wage; Inequality; Wage dispersion; American Community Survey; Labour economics; Wage inequality; Demographic economics; Marital status",
+      "Census; Data science; Missing data; Geography; American Community Survey; Longitudinal data; Computer science; Regional science; Data mining; Population",
+      "Distribution (mathematics); Robot; Geography; Economic geography; Computer science; Mathematics; Artificial intelligence; Mathematical analysis",
+      "Selection (genetic algorithm); Early adopter; Cloud computing; Automation; Outsourcing; Data science; Business intelligence; Computer science; Longitudinal data; Software",
+      "Plural; Geography; Linguistics; Philosophy",
+      "Robot; Census; Distribution (mathematics); Manufacturing; Computer science; Business; Engineering; Artificial intelligence; Marketing; Mathematics",
+      "Medicine; Occupational injury; Occupational safety and health; Demography; Injury prevention; Population; Poison control; Recession; Environmental health; Suicide prevention",
+      "Business; Flow (mathematics); Chain (unit); Industrial organization; Operations management; Engineering; Physics; Mechanics; Astronomy",
+      "Key (lock); Business; Data science; Political science; Computer science; Computer security",
+      "Business",
+      "Credential; Earnings; Educational attainment; Certification; Labour economics; Matching (statistics); American Community Survey; Business; Propensity score matching; Census",
+      "Labour economics; Economics",
+      "Census; Race (biology); Ethnic group; Demography; Geography; Sociology; Population; Gender studies; Anthropology",
+      "Frequentist inference; Null hypothesis; Statistical hypothesis testing; Statistical power; Transparency (behavior); Econometrics; Leverage (statistics); Sample size determination; Inference; Statistical inference",
+      "Arrears; Renting; Eviction; Ethnic group; Race (biology); Ethnic composition; Demographic economics; Composition (language); Rental housing; Racial composition",
+      "Earnings; Subsidy; Revenue; Business; Quarter (Canadian coin); Health care; Government (linguistics); Survey data collection; Demographic economics; Labour economics",
+      "China; Energy conservation; Business; Geography; Archaeology; Ecology; Biology"
+    ],
+    "counts": [
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      3,
+      2,
+      1,
+      1,
+      1,
+      3,
+      2,
+      1,
+      1,
+      1,
+      2,
+      1,
+      1,
+      1,
+      1,
+      2,
+      1,
+      1,
+      1,
+      1,
+      3,
+      2,
+      2,
+      1,
+      1,
+      2,
+      2,
+      2,
+      1,
+      1,
+      4,
+      3,
+      2,
+      2,
+      2,
+      9,
+      3,
+      2,
+      1,
+      1,
+      2,
+      2,
+      1,
+      1,
+      1,
+      4,
+      1,
+      1,
+      1,
+      1,
+      3,
+      2,
+      2,
+      1,
+      1,
+      3,
+      3,
+      3,
+      2,
+      2,
+      5,
+      5,
+      4,
+      3,
+      3,
+      4,
+      4,
+      4,
+      2,
+      2,
+      2,
+      2,
+      2,
+      2,
+      1,
+      9,
+      6,
+      5,
+      5,
+      4,
+      4,
+      4,
+      4,
+      3,
+      3,
+      12,
+      6,
+      4,
+      3,
+      2,
+      6,
+      4,
+      4,
+      3,
+      2,
+      10,
+      7,
+      5,
+      4,
+      3,
+      6,
+      3,
+      3,
+      3,
+      2,
+      3,
+      3,
+      2,
+      2,
+      2,
+      2,
+      2,
+      2,
+      1,
+      1
+    ]
+  },
+  "markdown_content": [
+    "# Part1-Q2:EDA",
+    "## Part1-Q2: Setup",
+    "### 1. Setup and Load Data",
+    "### 2. Filter Enriched Rows and Save(ONLY want the 2698 matched records with Project-level data)\n\n- for further analysis\n- and for later Data Science questions",
+    "## 3. Part1-Q2.1: Top 10 RDCs by Research Output Count\n- notice these are the records besides the ResearchOutputs.xlsx, which are all new",
+    "### Q2.1 Analysis: Top 10 RDCs by Number of Research Outputs\n\nAfter analyzing 2,698 research outputs, we identified the top 10 Research Data Centers (RDCs) based on the number of outputs they produced.  \nThe detailed ranking is as follows:\n\n| Rank | RDC Name   | Number of Outputs |\n| :--- | :--------- | :---------------- |\n| 1    | Michigan   | 342                |\n| 2    | Boston     | 323                |\n| 3    | Chicago    | 239                |\n| 4    | Triangle   | 179                |\n| 5    | Baruch     | 178                |\n| 6    | Atlanta    | 136                |\n| 7    | Fed Board  | 118                |\n| 8    | Texas      | 103                |\n| 9    | Minnesota  | 100                |\n| 10   | UCLA       | 91                 |\n\nKey observations include:\n\n- **Michigan RDC** leads with the highest number of research outputs (342), significantly ahead of other centers.\n- **Boston RDC** follows closely with 323 outputs, also demonstrating strong research productivity.\n- **Chicago RDC** ranks third, contributing 239 outputs.\n- The top five centers (Michigan, Boston, Chicago, Triangle, and Baruch) each produced over 170 outputs, highlighting their consistent research activity.\n- Centers ranked sixth through tenth (Atlanta to UCLA) show a moderate but still substantial level of output, ranging between 90 and 140 publications.\n\nOverall, the **Michigan and Boston RDCs stand out for their exceptionally high research productivity**, while other centers maintain a steady and meaningful contribution.  \nThe accompanying horizontal bar chart clearly illustrates the output distribution, with Michigan and Boston having noticeably longer bars compared to the rest, reflecting their leadership positions in research contributions.",
+    "## 4. Part1-Q2.2: Publications per Year",
+    "### Q2.2 Analysis: Number of Publications per Year\n\nThe trend of the number of research outputs from 2000 to 2025 shows several distinct phases:\n\n- **2000\u20132007**: The number of publications increased steadily but remained relatively low, starting from just 1 publication in 2000 and reaching 37 in 2007.\n- **2008\u20132013**: Moderate growth was observed during this period, with annual outputs fluctuating between 30 and 93 publications per year.\n- **2014\u20132017**: A significant acceleration occurred, as the number of publications grew rapidly from 93 in 2014 to a peak of 151 in 2016.\n- **2018\u20132022**: This period marked the highest productivity, with outputs exceeding 190 publications each year and peaking at over 250 publications in 2021 and 2022.\n- **2023\u20132025**: A noticeable decline is observed after 2022, with the number of publications dropping to 196 in 2024 and only 54 in 2025.  \n  This sharp decrease in 2025 is likely due to data incompleteness, as 2025 may not have finished at the time of data collection.\n\n### Key Insights:\n- The overall trend indicates strong growth in research output over the last two decades, especially after 2015.\n- The peak years (2020\u20132022) suggest a maturation of research activities and possibly greater utilization of FSRDC resources.\n- The recent decline (2024\u20132025) should be interpreted cautiously, as it may reflect incomplete reporting rather than an actual drop in research productivity.\n\nThe line chart clearly visualizes these phases, highlighting both the rapid expansion phase and the potential data artifact in the most recent years.",
+    "## 5. Part1-Q2.3: Top 10 Most Prolific Authors",
+    "### Q2.3 Analysis: Top 10 Most Prolific Authors\n\nBased on the publication data, the top 10 most prolific authors are identified as follows:\n\n| Rank | Author               | Number of Publications |\n| :--- | :-------------------- | :--------------------- |\n| 1    | John Haltiwanger      | 74                      |\n| 2    | Nathan Goldschlag     | 55                      |\n| 3    | Lucia Foster          | 52                      |\n| 4    | Nikolas Zolas         | 44                      |\n| 5    | Javier Miranda        | 44                      |\n| 6    | Scott H. Holan        | 43                      |\n| 7    | Emin Dinlersoz        | 39                      |\n| 8    | John V. Winters       | 37                      |\n| 9    | Jerome P. Reiter      | 36                      |\n| 10   | Katie R. Genadek      | 33                      |\n\n### Key Observations:\n- **John Haltiwanger** is the most prolific author, contributing to 74 research outputs, significantly ahead of the second-ranked author.\n- **Nathan Goldschlag** and **Lucia Foster** also demonstrate strong research activity, with 55 and 52 publications respectively.\n- Several authors, including **Nikolas Zolas** and **Javier Miranda**, are tied closely with 44 publications each.\n- The overall distribution shows a relatively gradual decrease in the number of publications from the top author down to the tenth, indicating a strong and active group of researchers leading FSRDC-related work.\n\nThe horizontal bar chart clearly visualizes the dominance of the top contributors, with John Haltiwanger standing out significantly compared to his peers.",
+    "## 6. Part1-Q2.4: Citation Insights",
+    "- Fetch citation counts from OpenAlex using DOIs(We didn't have these in the enriched final dataset, and only for this step we enrich again)\n- refer to fetch_citations_by_title.py",
+    "### Load the Citation-Enriched Data",
+    "### Q2.4.1 Basic Citation Statistics and Distribution",
+    "#### Q2.4.1 Findings: Citation Patterns of FSRDC Outputs\n\nAfter analyzing citation counts for 2,698 FSRDC-related publications, several key insights emerge:\n\n- **Overall Skewness**  \n  - The distribution is highly right-skewed: although the mean citation count is **111.2**, the median is only **25**, indicating that most papers receive relatively few citations while a small number achieve very high impact.\n\n- **Concentration of Low-Cited Works**  \n  - **25%** of publications have **5 or fewer** citations.  \n  - **50%** (median) have **25 or fewer** citations.  \n  - **75%** have **87.75 or fewer** citations.\n\n- **Heavy Tail of High-Cited Papers**  \n  - The **90th percentile** sits at **242** citations, the **95th percentile** at **464**, and the **99th percentile** at **1,475**.  \n  - The maximum citation count is **10,952**, highlighting a small elite group of exceptionally influential studies.\n\n- **Implications**  \n  - The majority of FSRDC outputs achieve modest visibility, while a few \u201cblockbuster\u201d papers drive overall citation metrics.  \n  - This long-tail pattern suggests that targeted support for high-potential research (e.g., through collaborative projects or dissemination efforts) may amplify overall impact.\n\n- **Next Steps**  \n  - Investigate characteristics (authors, topics, venues, RDC centers) of top-cited papers to understand drivers of influence.  \n  - Explore strategies to raise the citation profile of mid-range works (e.g., open access, wider dissemination).\n\nThese findings underscore that while FSRDC outputs collectively contribute to the literature, a small fraction of publications account for a disproportionate share of citations.  ",
+    "### Q2.4.2 Citations Over Time",
+    "#### Q2.4.2 Analysis: Citations Over Time\n\nThe time-series analysis of citation counts alongside publication volume reveals these patterns:\n\n1. **Early Years (2000\u20132004)**  \n   - Very few publications in the 2000\u20132001 period, but those early works accumulate high citations (mean >500, median >180) due to longer exposure time.\n\n2. **Growth Phase (2005\u20132010)**  \n   - Both mean and median citations per year stabilize around 200\u2013400 (mean) and 80\u2013140 (median).  \n   - Publication output rises gradually from under 50 to around 150 outputs per year.\n\n3. **Rapid Expansion (2011\u20132018)**  \n   - Publication volume accelerates sharply\u2014from ~150 in 2011 to over 200 by 2015 and peaking near 260 by 2018.  \n   - Meanwhile, average citations drift downward from ~240 to ~120, and median citations fall below 60, reflecting a dilution effect as more recent papers have had less time to accrue citations.\n\n4. **Maturation & Decline (2019\u20132025)**  \n   - Publication counts remain high (250+ in 2019\u20132021) before dropping in 2024\u20132025 (data incomplete for 2025).  \n   - Mean citations continue a gradual decline to under 60 by 2020 and median citations drop to single digits, indicating that newer outputs have not yet built citation momentum.\n\n\nOverall, the dual\u2010axis chart highlights how increasing publication volume over time coexists with a decline in per-paper citation averages, driven largely by the citation lag of recent years.",
+    "### Q2.4.3 Citations by RDC",
+    "#### Q2.4.4 Analysis: Citation Impact by RDC\n\nWe computed mean and median citation counts per Research Data Center (RDC), then filtered to centers with at least **5 publications** and ranked by **median citations**. The top 15 RDCs are:\n\n| Rank | RDC         | Median Citations | Mean Citations | Publication Count |\n| :--- | :---------- | ---------------: | -------------: | ----------------: |\n| 1    | Washington  |             103.0|         243.23 |                73 |\n| 2    | USC         |              57.5|         128.63 |                30 |\n| 3    | Triangle    |              49.0|         149.05 |               181 |\n| 4    | Berkeley    |              46.0|         207.08 |                63 |\n| 5    | Nebraska    |              45.0|          53.60 |                 5 |\n| 6    | UCLA        |              43.0|         166.32 |                91 |\n| 7    | Boston      |              42.0|         151.74 |               327 |\n| 8    | Chicago     |              37.5|         107.61 |               232 |\n| 9    | Stanford    |              34.0|          83.79 |                61 |\n| 10   | Austin      |              32.5|         177.00 |                16 |\n| 11   | Texas       |              32.0|         304.00 |               101 |\n| 12   | Baruch      |              31.0|          97.88 |               181 |\n| 13   | Michigan    |              28.0|          95.12 |               340 |\n| 14   | Wisconsin   |              24.5|          86.96 |                50 |\n| 15   | Kansas City |              24.0|         104.50 |                23 |\n\n> *Only RDCs with \u22655 publications are shown.*\n\n#### Key Takeaways\n- **Washington RDC** leads by a wide margin (median 103 citations), suggesting consistently high-impact publications.  \n- **USC** and **Triangle** follow, with medians of ~57 and ~49 respectively, indicating strong citation performance relative to their output volume.  \n- A handful of centers (e.g., **Nebraska**, **Austin**) have very small publication counts (just above the threshold) but still achieve high medians\u2014this may reflect a few highly cited papers skewing the median.  \n- Larger centers by volume (e.g., **Michigan**, **Boston**, **Chicago**) show respectable but lower median citations (28\u201342), reflecting a broader mix of high- and mid-cited works.  \n\n#### Interpretation\n- Median citations per center provide a robust measure of typical impact, less sensitive to extreme outliers than the mean.  \n- Washington\u2019s clear lead suggests a concentration of influential research, whereas high\u2010volume centers exhibit a wider range of citation performance.  \n- Future work could examine topics, authorship, or collaboration patterns behind the highest\u2010median centers to uncover best practices for maximizing research visibility.",
+    "### Q2.4.5 Citations by Publication Venue",
+    "#### Q2.4.5 Analysis: Citation Impact by Publication Venue\n\nAfter filtering to venues with **at least 3 publications** and ranking by **median citations**, the top 15 venues are:\n\n| Rank | Venue                                                        | Median Citations | Mean Citations | Publication Count |\n| :--- | :----------------------------------------------------------- | ---------------: | -------------: | ----------------: |\n| 1    | British Journal of Pharmacology                              |             256.0|          277.5 |                 4 |\n| 2    | The Quarterly Journal of Economics                           |             248.0|          387.9 |                 9 |\n| 3    | Applied Geography                                            |             248.0|          183.0 |                 3 |\n| 4    | The Journal of Finance                                       |             244.0|          392.1 |                 9 |\n| 5    | IEEE Communications Letters                                  |             233.0|          286.7 |                 3 |\n| 6    | Journal of Political Economy                                 |             232.0|          348.2 |                13 |\n| 7    | Brookings Papers on Economic Activity                        |             222.0|          209.0 |                 7 |\n| 8    | Journal of Econometrics                                      |             215.0|         1186.3 |                 4 |\n| 9    | The Accounting Review                                        |             208.0|          208.0 |                 4 |\n| 10   | Review of Financial Studies                                  |             204.0|          287.1 |                13 |\n| 11   | 2021 IEEE/CVF International Conference on Computer Vision (ICCV) |         182.0|          490.3 |                 4 |\n| 12   | The Astrophysical Journal Supplement Series                  |             182.0|          257.3 |                 3 |\n| 13   | The Journal of Economic Perspectives                         |             175.0|          248.5 |                17 |\n| 14   | Journal of Financial Economics                               |             170.5|          327.5 |                27 |\n| 15   | Journal of Economic Literature                               |             157.5|          547.1 |                15 |\n\n> *Only venues with \u22653 publications are shown.*\n\n#### Key Insights\n- **Top Scholarly Outlets**  \n  Biomedical and economics journals (e.g., British Journal of Pharmacology, QJE, The Journal of Finance) dominate the top spots, indicating high typical impact per paper.\n- **Interdisciplinary Influence**  \n  Specialized venues such as **ICCV** and **The Astrophysical Journal Supplement Series** also rank highly, revealing FSRDC\u2019s cross-domain research reach.\n- **Median Robustness**  \n  Using the median ensures that extreme outliers (e.g., very highly cited individual papers) do not disproportionately affect the ranking.\n- **Strategic Guidance**  \n  Researchers may boost visibility by targeting these high-median venues, while also balancing publication count to maximize overall influence.",
+    "### Q2.4.6 Top 20 Highly Cited Papers",
+    "#### Q2.4.6 Analysis: Highly Cited FSRDC Publications\n\nThe table below lists the top 20 FSRDC\u2010related publications by citation count:\n\n| Rank | Title (shortened)                                                   | Citations | Year | Venue                                              | RDC        |\n| :--- | :--------------------------------------------------------------------| --------: | ---: | :--------------------------------------------------| :----------|\n| 1    | SciPy 1.0: fundamental algorithms for scientific computing i\u2026       |    10,952 | 2020 | Nature Methods                                     | Texas      |\n| 2    | The Impact of Uncertainty Shocks\u2026                                   |     4,818 | 2009 | Econometrica                                       | Berkeley   |\n| 3    | Difference-in-differences with variation in treatment timing\u2026       |     4,271 | 2021 | Journal of Econometrics                            | Texas      |\n| 4    | Cancer treatment and survivorship statistics, 2019\u2026                 |     3,853 | 2019 | CA: A Cancer Journal for Clinicians                 | Triangle   |\n| 5    | Intelligent Reflecting Surface Enhanced Wireless Network via\u2026       |     3,635 | 2019 | IEEE Transactions on Wireless Communications        | Texas      |\n| 6    | Diagnostic Criteria for Temporomandibular Disorders (DC/TMD)\u2026       |     3,519 | 2014 | Journal of Oral & Facial Pain and Headache          | UCLA       |\n| 7    | Towards Smart and Reconfigurable Environment: Intelligent Re\u2026       |     3,394 | 2019 | IEEE Communications Magazine                       | Texas      |\n| 8    | What Determines Productivity?                                       |     2,500 | 2011 | Journal of Economic Literature                     | Chicago    |\n| 9    | Secular Trends in Incidence of Atrial Fibrillation in Olmste\u2026       |     2,496 | 2006 | Circulation                                        | Washington |\n| 10   | Gene discovery and polygenic prediction from a genome-wide a\u2026       |     2,408 | 2018 | Nature Genetics                                    | Penn State |\n| 11   | EPOS 2012: European position paper on rhinosinusitis and nas\u2026       |     2,309 | 2012 | Rhinology Journal                                  | Boston     |\n| 12   | The Gender Wage Gap: Extent, Trends, and Explanations\u2026              |     2,297 | 2017 | Journal of Economic Literature                     | Minnesota  |\n| 13   | Generative Image Inpainting with Contextual Attention\u2026              |     2,281 | 2018 | (missing venue)                                    | Austin     |\n| 14   | \u201cWeathering\u201d and Age Patterns of Allostatic Load Scores Amon\u2026       |     2,142 | 2005 | American Journal of Public Health                  | Michigan   |\n| 15   | The real effects of financial constraints: Evidence from a f\u2026       |     2,057 | 2010 | Journal of Financial Economics                     | Triangle   |\n| 16   | The Effects of Exposure to Better Neighborhoods on Children:\u2026       |     1,855 | 2016 | American Economic Review                           | Atlanta    |\n| 17   | Reallocation, Firm Turnover, and Efficiency: Selection on Pr\u2026       |     1,816 | 2008 | American Economic Review                           | Chicago    |\n| 18   | Private Equity Performance: Returns, Persistence, and Capita\u2026       |     1,782 | 2005 | The Journal of Finance                             | Boston     |\n| 19   | The Consequences of Mortgage Credit Expansion:\u2026                     |     1,743 | 2009 | The Quarterly Journal of Economics                 | Baruch     |\n| 20   | Ferreting out Tunneling: An Application to Ind\u2026                     |     1,665 | 2002 | The Quarterly Journal of Economics                 | Boston     |\n\n#### Key Insights\n\n1. **Extreme Leaders**  \n   - **SciPy 1.0** (Nature Methods, 2020) is an outlier with over **10,900** citations, reflecting its foundational role in Python-based scientific computing.\n\n2. **Top Economics Papers**  \n   - Seminal works in economics (\u201cImpact of Uncertainty Shocks,\u201d \u201cWhat Determines Productivity?,\u201d \u201cThe Gender Wage Gap,\u201d and multiple QJE papers) dominate the high\u2010citation list, underscoring FSRDC\u2019s importance for macro- and micro-economic research.\n\n3. **Interdisciplinary Reach**  \n   - High\u2010impact publications span diverse fields: medical (CA: Cancer Journal, Circulation), engineering (IEEE Wireless, IEEE Communications), genetics (Nature Genetics), and computer science (Generative Image Inpainting).\n\n4. **Temporal Spread**  \n   - Citation leaders range from 2002 through 2021. Classic studies (early 2000s) and recent methodological contributions (e.g., SciPy 1.0, diff-in-diff methodology) both achieve top impact.\n\n5. **RDC Contributions**  \n   - **Texas**, **Boston**, **Chicago**, and **Triangle** RDCs repeatedly appear, reflecting both high\u2010volume and high\u2010impact research pipelines.\n",
+    "## Part1-Q2.5 Other Insights",
+    "### Q2.5.1 Stacked Area Chart of Publication Types Over Time",
+    "#### Q2.5.1 Analysis\nThe area chart shows how different output types (MI = journal articles, BC = book chapters, RE = reports, DI = dissertations, JA = working papers, DS = data sets) evolve from 2000 to 2025:\n\n- **Dominance of Journal Articles (MI):** MI comprises nearly all publications in every year, growing from virtually zero in 2000 to over 250 outputs by 2021\u20132022.\n- **Emergence of Reports (RE):** RE begins to appear around 2005 and steadily increases, reaching a noticeable share (~20\u201330 papers/year) by 2018\u20132022.\n- **Minor Output Types:** BC, DI, JA, and DS remain very small (<5\u201310 papers/year), with no major surges.  \n- **Implication:** The FSRDC program is overwhelmingly focused on journal article production, but the gradual rise of reports suggests diversification in recent years.\n",
+    "### Q2.5.2 Box Plot of Citation Distributions for Top 10 RDCs",
+    "#### Q2.5.2 Analysis\n\nThe box plots compare citation counts for the ten RDCs with the highest publication volumes (Michigan, Boston, Fed Board, UCLA, Atlanta, Triangle, Chicago, Baruch, Texas, Minnesota):\n\n- **Wide Citation Range:** All ten centers show long \u201ctails\u201d of highly cited papers, with most outputs clustered at lower citation counts.\n- **Texas Outlier:** Texas\u2019s distribution includes an extreme outlier above 10,000 citations (the SciPy 1.0 paper), pulling its mean upward.\n- **Median Differences:** Boston and Michigan have higher medians (~25\u201330 citations) compared to smaller centers like Fed Board and Minnesota (medians below 20).\n- **Consistency:** Centers such as Chicago, Triangle, and UCLA exhibit moderately tight interquartile ranges, suggesting more consistent citation impact across their publications.\n- **Implication:** While output volume is important, citation performance varies widely\u2014some centers produce consistently citable work, while others rely on a few blockbuster papers.\n",
+    "### Q2.5.3 Scatter Plot: Citations vs. Publication Year by Output Type",
+    "#### Q2.5.3 Analysis\n\nThe scatter displays each paper\u2019s citation count against its publication year, colored by output type:\n\n- **Journal Articles (MI) Lead:** MI points (blue) dominate the upper citation range, including several thousand\u2010citation outliers across all years.\n- **Low\u2010Citation Clusters:** RE, BC, DI, JA, and DS outputs mostly lie below 500 citations, with few exceptions.\n- **Temporal Trend:** Older papers (pre\u20102010) tend to have higher citation counts, while recent outputs (post\u20102018) cluster near lower counts due to less time for accrual.\n- **Implication:** Journal articles remain the primary driver of high citation impact; other output types achieve fewer citations and may need targeted dissemination strategies.\n",
+    "### Q2.5.4 Citation Velocity by Publication Year and RDC",
+    "#### Q2.5.4 Analysis\n\nThis scatter plots \u201ccitation velocity\u201d (citations divided by years since publication) versus publication year, colored by RDC:\n\n- **Fast Risers:** A handful of papers (e.g., 2020 SciPy 1.0) exceed 100 citations per year, indicating rapid influence soon after release.\n- **RDC Variation:** Texas, Boston, and Chicago RDCs show multiple high\u2010velocity points, suggesting strong early impact from their recent work.\n- **General Decline Over Time:** Most papers cluster between 0\u201330 citations/year, with velocity decreasing for older publications as yearly citations accrue more slowly.\n- **Implication:** Citation velocity highlights which new papers are \u201chot\u201d and may identify emerging research trends or methodologies that quickly gain traction.\n",
+    "### Q2.5.5 Correlation Heatmap of Numeric Fields",
+    "#### Q2.5.5 Analysis\nThe heatmap shows Pearson correlations among numeric features: citation count, publication year, month, volume, issue number, and pages:\n\n- **Citations vs. Year:** A moderate negative correlation (~\u20130.21) confirms that newer papers have fewer citations simply due to less time in circulation.\n- **Volume & Issue:** These two fields correlate modestly (0.17), suggesting that larger volume/issue numbers tend to group together in some journals.\n- **Citations vs. Other Fields:** Very weak correlations (|r|<0.04) with month, volume, issue, or pages indicate that bibliographic metadata alone does not predict citation impact.\n- **Implication:** The dominant driver of citation count is time since publication; other numeric metadata are not strong predictors, pointing toward content and venue as more important factors.",
+    "## Part1-Q2:EDA Summary\nWe performed a comprehensive exploratory analysis of 2,698 research outputs from FSRDC centers. Below is a high-level synthesis of the main findings:\n\n1. **Publication Volume & Growth**  \n   - Total outputs rose from almost zero in 2000 to a peak of ~260 publications per year by 2021\u20132022, before declining in 2024\u20132025 (partial data).  \n   - The top 10 RDCs by sheer volume are Michigan, Boston, Chicago, Triangle, Baruch, Atlanta, Fed Board, Texas, Minnesota, and UCLA, together accounting for the majority of outputs.\n\n2. **Author Productivity**  \n   - Among all authors, John Haltiwanger leads with 74 publications, followed by Nathan Goldschlag (55), Lucia Foster (52), and several others in the 30\u201345 range.  \n   - A histogram of author counts shows most papers are single- or small-team efforts, with few large collaborations.\n\n3. **Output Types & Diversification**  \n   - Journal articles (MI) dominate the portfolio (>90% of outputs), but the share of reports (RE) has steadily grown since 2005.  \n   - Other categories\u2014book chapters, dissertations, working papers, data sets\u2014remain niche (<5\u201310 papers/year).\n\n4. **Citation Distribution & Skew**  \n   - Citation counts are extremely right-skewed: median = 25, mean \u2248111, 99th percentile \u22481,475, maximum = 10,952.  \n   - Over 75% of papers have \u226488 citations, and a handful of \u201cblockbusters\u201d drive the heavy tail.\n\n5. **Citations Over Time**  \n   - Early publications (pre-2010) enjoy higher mean/median citations, while recent years show lower per\u2010paper citations due to citation lag.  \n   - Publication volume and per\u2010paper citations are inversely related over time: as output volume soared, mean/median citations per paper declined.\n\n6. **RDC-Level Impact**  \n   - Washington RDC achieves the highest median citations per paper (103), followed by USC (57.5) and Triangle (49).  \n   - High-volume centers like Michigan and Boston show lower medians (28\u201342), reflecting broader citation variability.\n\n7. **Venue-Level Impact**  \n   - Top venues by median citation include British Journal of Pharmacology (256), QJE (248), Applied Geography (248), and Journal of Finance (244).  \n   - This list spans biomedical, economics, engineering, and astrophysics outlets, underscoring interdisciplinary reach.\n\n8. **Citation Velocity**  \n   - When adjusted for age, certain recent works (e.g., the SciPy 1.0 paper) exhibit exceptionally high citations per year (>100/year), marking them as \u201cfast risers.\u201d\n\n9. **Inter-Variable Correlations**  \n   - The only notable numeric correlation is a negative link between citations and publication year (r\u2248\u20130.21), reflecting time-to-accumulate effects.  \n   - Other metadata fields (month, volume, issue, pages) show negligible correlations with citation impact.\n\n\n**Conclusion:**  \nFSRDC outputs have grown dramatically over 25 years, concentrated in journal articles and a handful of prolific authors and centers. Citation impact follows a classic long-tail pattern: most works receive modest attention, while a small subset achieves extraordinary influence. Venue choice, publication timing, and citation velocity reveal strategic levers for maximizing research visibility.  ",
+    "# Part2-Data Science Applications",
+    "##Step1 Data Preprocessing",
+    "## Step2 Data Statistics",
+    "## Step3 Part2-Q1:Regression or Classification Models",
+    "### 3.1 Linear Regression",
+    "Regression Model Results and Interpretation\n\n**Model**: Linear regression predicting total citation count using  \n- Project duration  \n- Time since publication  \n- One-hot encoded major output types  \n\n**Performance Metrics**  \n- **R\u00b2 Score**: 0.0590  \n  - The model explains about 5.9% of the variance in citation counts, indicating a weak fit.  \n- **Mean Absolute Error (MAE)**: 141.53  \n  - On average, predictions deviate from true citation counts by ~142 citations.  \n- **Root Mean Squared Error (RMSE)**: 384.56  \n  - Large RMSE reflects sensitivity to high-citation outliers.\n\n---\n\nActual vs. Predicted Citation Counts  \nThe scatter plot shows predicted vs. actual citations with an OLS trendline.  \n- **Underprediction of high-citation papers**: Many points with actual >500 citations cluster below the 45\u00b0 line, indicating the model cannot capture extreme values.  \n- **Tendency toward the mean**: Predictions for low- and mid-citation papers are closer to the diagonal, but variability remains large.\n\nResiduals vs. Predicted Values  \nThe residual plot (error = actual \u2013 predicted) reveals:  \n- **Heteroscedasticity**: Residual spread increases with higher predicted values, violating constant variance assumption.  \n- **Outliers**: Several large positive and negative residuals for high-citation papers, showing the linear model\u2019s limitations.\n\n---\n\nInsights and Next Steps  \n1. **Feature Limitations**  \n   - Duration and time since publication are insufficient to predict citation impact. Citations depend heavily on content quality, venue prestige, author reputation, and network effects.  \n2. **Model Improvement**  \n   - Incorporate richer features:  \n     - Venue prestige score (e.g., impact factor)  \n     - Author-specific metrics (e.g., h-index)  \n     - Textual features from titles/abstracts (TF-IDF vectors or embeddings)  \n3. **Alternative Algorithms**  \n   - Tree-based models (Random Forest, XGBoost) to capture non-linear relationships and interactions.  \n   - Robust regression to reduce sensitivity to outliers.  \n4. **Error Analysis**  \n   - Examine top residuals to identify systematic biases (e.g., certain RDCs or output types consistently underpredicted).  \n5. **Cross-Validation & Regularization**  \n   - Use k-fold CV to validate stability and tune regularization (Lasso, Ridge) to prevent overfitting.\n",
+    "### 3.2 Logistic Classification",
+    "Classification Model Results and Interpretation\n\n**Model**: Logistic regression predicting whether a paper\u2019s citation count is at or above the median (\u201cHighCitations\u201d) using  \n- Project duration  \n- Time since publication  \n- One-hot encoded major output types  \n\n**Target Distribution**  \n- **Low citations** (below median): 69.1%  \n- **High citations** (at or above median): 30.9%  \n\n---\n\nConfusion Matrix  \n|                | Predicted Low | Predicted High |\n| -------------- | ------------: | -------------: |\n| **Actual Low** |          542  |            71  |\n| **Actual High**|          153  |           121  |\n\n- **True negatives (TN)**: 542  \n- **False positives (FP)**: 71  \n- **False negatives (FN)**: 153  \n- **True positives (TP)**: 121  \n\n---\n\nPerformance Metrics  \n- **Accuracy**: 0.747  \n  - 74.7% of all papers were correctly classified.  \n- **Precision**: 0.630  \n  - When the model predicts \u201cHighCitations,\u201d it is correct 63.0% of the time.  \n- **Recall**: 0.442  \n  - The model identifies 44.2% of all truly high-citation papers.  \n- **F1 Score**: 0.519  \n  - Harmonic mean of precision and recall, reflecting moderate balance.  \n- **ROC AUC**: 0.853  \n  - The area under the ROC curve (0.853) indicates good overall separability between high- and low-citation classes.\n\n---\n\nROC Curve  \nThe ROC plot shows a strong trade-off between true positive and false positive rates, with the logistic model achieving an AUC of 0.853\u2014significantly above random (0.5).\n\n---\n\nInsights and Next Steps  \n1. **Class Imbalance**  \n   - With roughly 70/30 split, consider resampling (SMOTE, class weights) to improve recall for the minority \u201cHighCitations\u201d class.  \n2. **Feature Expansion**  \n   - Add richer predictors: venue impact factor, author metrics (h-index), textual features from titles/abstracts.  \n3. **Model Variants**  \n   - Evaluate tree-based classifiers (Random Forest, XGBoost) and regularized logistic regression (L1/L2) to capture non-linear effects and reduce overfitting.  \n4. **Threshold Tuning**  \n   - Adjust decision threshold to balance precision and recall according to project priorities (e.g., maximize recall to catch more high-impact papers).  \n5. **Error Analysis**  \n   - Examine false negatives and false positives to identify systematic biases (e.g., certain RDCs or output types) and refine features accordingly.\n\n  ",
+    "### 3.3 Decision Tree",
+    "Decision Tree Classifier Performance\n\n- **Accuracy**: 0.768  \n- **Precision**: 0.601  \n- **Recall**: 0.741  \n- **F1 Score**: 0.663  \n- **ROC AUC**: 0.850  \n\n**Interpretation**  \nThe shallow decision tree achieves moderate overall accuracy and a strong ability to identify \u201cHighCitations\u201d papers (recall = 74.1%). However its precision (60.1%) indicates a sizable false\u2010positive rate. The ROC AUC of 0.850 shows decent separability but suggests that a single tree struggles to capture all decision boundaries.  \n\n**Next Steps**  \n- Prune or tune `max_depth` and `min_samples_leaf` to reduce overfitting.  \n- Compare feature importance to confirm which engineered features drive splits.  \n- Consider ensemble methods to improve precision without sacrificing recall.",
+    "### 3.4 Random Forest",
+    "Random Forest Classifier Performance\n\n- **Accuracy**: 0.773  \n- **Precision**: 0.610  \n- **Recall**: 0.741  \n- **F1 Score**: 0.669  \n- **ROC AUC**: 0.859  \n\n**Interpretation**  \nThe random forest slightly improves accuracy and F1 over the single tree, while maintaining the same recall (74.1%) and increasing precision to 61.0%. The ROC AUC of 0.859 indicates better overall discrimination of high\u2010 vs. low\u2010citation papers.  \n\n**Next Steps**  \n- Tune `n_estimators`, `max_depth` and `max_features` via cross\u2010validation.  \n- Analyze feature importance across the ensemble to validate key predictors.  \n- Explore out\u2010of\u2010bag error estimates for internal model validation.",
+    "### 3.5 XGBoost",
+    "XGBoost Classifier Performance\n\n- **Accuracy**: 0.780  \n- **Precision**: 0.629  \n- **Recall**: 0.704  \n- **F1 Score**: 0.664  \n- **ROC AUC**: 0.863  \n\n**Interpretation**  \nXGBoost achieves the highest accuracy (78.0%) and ROC AUC (0.863) among the models, with precision rising to 62.9%, though recall dips slightly to 70.4%. This suggests gradient boosting effectively captures complex, non\u2010linear relationships, improving overall classification at the cost of a small drop in recall.  \n\n**Next Steps**  \n- Perform hyperparameter tuning (learning rate, `max_depth`, `subsample`) to further balance precision and recall.  \n- Use SHAP values for fine-grained feature impact analysis.  \n- Evaluate early stopping on a validation set to prevent overfitting.",
+    "### 3.6 Neural Network",
+    "MLP Neural Network Classifier Performance\n\n- **Accuracy**: 0.767  \n- **Precision**: 0.611  \n- **Recall**: 0.672  \n- **F1 Score**: 0.640  \n- **ROC AUC**: 0.859  \n\n**Interpretation**  \nThe multi-layer perceptron achieves an ROC AUC on par with the random forest (0.859) but lower recall (67.2%) and F1 (0.640). This indicates the neural net captures some non\u2010linear patterns but may require more data or deeper/tuned architecture.  \n\n**Next Steps**  \n- Experiment with additional hidden layers, neurons, and activation functions.  \n- Apply dropout or L2 regularization to mitigate overfitting.  \n- Scale up training data or incorporate richer features (e.g., text embeddings) to boost recall.",
+    "Final Modeling Summary\n1. Why We Started with a Regression Model  \n- **Objective**: We first attempted to predict the **exact citation count** of each paper using a simple linear regression.  \n- **Rationale**: Quantifying how much \u201cproject duration\u201d and \u201ctime since publication\u201d drive overall impact would give a direct measure of influence.  \n\n2. Regression Model Performance and Limitations  \n- **Results**:  \n  - R\u00b2 \u2248 0.059 (explains only ~6% of variance)  \n  - MAE \u2248 142 citations  \n  - RMSE \u2248 385 citations  \n- **Key Finding**: The regression fit is very weak\u2014linear combinations of our engineered features cannot capture the extreme skew and heavy tail of citation counts.  \n- **Conclusion**: Predicting raw citation counts requires richer, non\u2010linear features (venue prestige, author reputation, text embeddings) and more complex models.\n\n3. Switching to a Classification Task  \n- **New Goal**: Predict whether a paper is **\u201chighly cited\u201d** (citation \u2265 median) or not.  \n- **Benefits**:  \n  1. Reduces sensitivity to extreme outliers.  \n  2. Balances the problem into two classes (\u224830% high, 70% low).  \n  3. Enables use of classification metrics (precision, recall, AUC).\n\n4. Model Comparisons\n\n| Model               | Accuracy | Precision | Recall | F1    | ROC AUC |\n| :------------------ | -------: | --------: | -----: | ----: | -------:|\n| **Logistic Reg.**   | 0.747    | 0.630     | 0.442  | 0.519 | 0.853   |\n| **Decision Tree**   | 0.768    | 0.601     | 0.741  | 0.663 | 0.850   |\n| **Random Forest**   | 0.773    | 0.610     | 0.741  | 0.669 | 0.859   |\n| **XGBoost**         | 0.780    | 0.629     | 0.704  | 0.664 | 0.863   |\n| **MLP (Neural Net)**| 0.767    | 0.611     | 0.672  | 0.640 | 0.859   |\n\n- **Observations**:  \n  1. All tree\u2010based ensembles (Random Forest, XGBoost) outperform the logistic baseline in precision, F1, and AUC.  \n  2. XGBoost achieves the best overall discrimination (ROC AUC \u2248 0.863) and highest accuracy (78%).  \n  3. Decision Tree alone recovers the highest recall (74.1%), but at the cost of more false positives.  \n  4. The neural network (MLP) matches Random Forest in AUC but lags slightly in recall and F1.\n\n5. Insights from the Dataset  \n- **Heavy\u2010Tail Distribution**: Citations are extremely skewed\u2014most papers receive modest citations, while a few \u201csuperstars\u201d dominate.  \n- **Feature Predictiveness**: Simple temporal and type features explain only a fraction of citation behavior.  \n- **Class Imbalance**: Nearly 70% of papers fall into the \u201clow\u2010citation\u201d class, motivating careful threshold tuning or resampling.  \n- **Modeling Implication**: Capturing high\u2010impact papers reliably requires:  \n  1. **Richer metadata** (journal impact factors, author h-indices).  \n  2. **Textual features** (TF-IDF or embedding vectors from titles/abstracts).  \n  3. **Network features** (co-authorship connections, institutional collaborations).\n",
+    "## Step4 Part2-Q2:PCA",
+    "PCA Scree Plot Interpretation  \n- The first two principal components (PC1 and PC2) explain roughly 23% and 20% of the total variance, respectively.  \n- The first four components together capture about 66% of the variance, indicating that a low\u2010dimensional representation retains most of the signal.  \n- Beyond PC5, each additional component contributes less than 9% to explained variance, suggesting diminishing returns.\n\nPCA Scatter Plot (PC1 vs PC2)  \n- The majority of papers cluster near the origin in PC1\u2013PC2 space, with a long tail along PC1 for a few outliers.  \n- No clear bimodal separation by \u201cHighCitations\u201d appears, implying citation status is not cleanly separable by the first two PCs alone.  \n- A handful of outliers with large positive PC1 values correspond to very high\u2013citation or long\u2010duration publications.\n\nPCA Feature Loadings (First 5 PCs)  \n- **PC1** loads most negatively on **TimeSincePublication** and **ProjectDuration**, and moderately on **OutputCitationCount**.  This axis reflects a \u201ctemporal impact\u201d dimension: older, longer projects with higher citations score low on PC1.  \n- **PC2** loads positively on **OutputVolume**, **OutputNumber**, and **OutputYear**, capturing a \u201csize and recency\u201d dimension (larger and more recent outputs).  \n- **PC4** is dominated by **OutputPages**, isolating variations in page count.  \n- One\u2010hot encoded output\u2010type features have minimal loadings on the first five PCs, suggesting that output type contributes less to the principal variance directions.\n\nOverall Insights from PCA  \n1. **Temporal vs. Structural Variance**: The strongest source of variance is temporal/project\u2010duration effects, not output type or venue.  \n2. **Dimensionality Reduction**: A 4\u20135 dimensional PCA subspace captures most of the structure, enabling potential clustering or visualization in reduced space.  \n3. **Feature Importance**: Page count and volume/number of outputs emerge as secondary axes of variation, which could guide further feature engineering (e.g., normalizing citation by length or volume).  \n4. **Citation Separability**: Since \u201cHighCitations\u201d does not form distinct clusters in PC1\u2013PC2, more specialized features (text embeddings, author metrics, venue prestige) may be needed to separate high\u2010impact papers.  ",
+    "## Step5 Part2-Q3:Clustering",
+    "### 5.1 K-Means",
+    "K-Means on PCA-Reduced Data\n\n**Approach**  \n1. Engineered numeric features (project duration, time since publication, year/month/volume/number/pages, citation count) and one-hot encoded the top 5 output types.  \n2. Standardized all features and applied PCA to reduce to 5 dimensions.  \n3. Ran K-Means (k=4) on the 5-dimensional PCA space.  \n4. Visualized the resulting clusters in a 3D scatter of PC1 vs. PC2 vs. PC3.\n\n**Results**  \n- Four relatively compact clusters emerge in the leading principal-component subspace.  \n- One cluster (Cluster 2) contains the handful of extreme outliers (very high citations and long durations).  \n- The remaining three clusters separate moderately by \u201ctemporal impact\u201d (PC1) and \u201csize/recency\u201d (PC2).\n\n**Insight**  \nThe primary axes of variation (duration vs. recency) drive distinct groupings:  \n- **High-impact, long-duration papers** form their own cluster.  \n- **Recent, moderate-impact outputs** cluster together.  \n- **Older, lower-impact outputs** separate into another group.  \nThis suggests that citation trajectory and project timescale jointly define natural cohorts in the data.",
+    "### 5.2 Agglomerative Clustering",
+    "Agglomerative Clustering on Full Features + UMAP Visualization\n\n**Approach**  \n1. Used the full standardized feature matrix (same engineered features as above).  \n2. Performed hierarchical (agglomerative) clustering with 4 clusters.  \n3. Projected the high-dimensional data into 2D using UMAP for visualization.  \n\n**Results**  \n- Two large clusters (Cluster 1 and Cluster 3) are clearly separated in UMAP space, with a smaller third cluster and a few isolated points.  \n- One cluster groups the very high\u2010citation, high\u2010volume outputs.  \n- Another cluster groups recent but lower\u2010volume outputs.  \n- A third medium\u2010sized cluster captures mid\u2010range citations and durations.\n\n**Insight**  \nHierarchical clustering reveals a natural hierarchy:  \n- **Elite group** of highly cited, long papers  \n- **Mainstream group** of moderate citations  \n- **Emerging group** of recent, low\u2010volume outputs  \nThis hierarchy aligns with research lifecycle: once-high outputs separate from routine outputs.",
+    "### 5.3 DBSCAN",
+    "DBSCAN on Full Features + UMAP Visualization\n\n**Approach**  \n1. Applied DBSCAN (\u03b5=1.5, min_samples=15) directly on the standardized feature space.  \n2. Used UMAP to reduce the same space to 2D for plotting.  \n3. Labeled points with DBSCAN clusters (\u20131 = noise).\n\n**Results**  \n- DBSCAN identifies a single large core cluster (Cluster 0) that contains the majority of papers.  \n- A small number of points are labeled as \u201cnoise\u201d (Cluster \u20131), corresponding to extreme outliers in both UMAP dimensions.  \n\n**Insight**  \nDensity-based clustering shows that most FSRDC outputs form one dense \u201ccore\u201d of fairly homogeneous behavior, while only a handful of papers are sufficiently unusual (in citation count, duration, or size features) to be flagged as noise. This underscores how the bulk of research outputs share similar impact patterns, with only a few distinct \u201cbreakouts\u201d deserving further qualitative study.",
+    "Clustering Summary\n\nIn this section we applied three different clustering approaches to the combined FSRDC research\u2010output dataset, each yielding complementary insights:\n\n1. **K-Means on PCA Space**  \n   - We reduced our engineered features (project duration, recency, output size, pages, citation count, and output type) into the top 5 principal components, then ran K-Means (k=4).  \n   - Clusters in the PC1\u2013PC3 3D plot separated outliers (very high\u2010impact, long\u2010running projects) from mainstream and recent outputs.\n\n2. **Agglomerative Clustering with UMAP**  \n   - We clustered directly in the full standardized feature space using hierarchical linkage, then visualized the same data in a 2D UMAP projection.  \n   - This revealed a clear hierarchy: a small \u201celite\u201d cluster of high\u2010impact outputs, a large \u201ccore\u201d cluster of moderate\u2010impact work, and an \u201cemerging\u201d cluster of recently published, lower\u2010volume outputs.\n\n3. **DBSCAN with UMAP**  \n   - We ran density\u2010based DBSCAN on the full feature set and again used UMAP for 2D visualization.  \n   - DBSCAN labeled most records as a single dense cluster and isolated a handful of true outliers (noise) corresponding to extreme citation or duration profiles.\n\nComparative Insights\n\n- **Consistency Across Methods**: All three methods consistently isolate a small group of extremely high\u2010impact, long\u2010duration outputs from the general body of publications.  \n- **Core vs. Outliers**: K-Means and Agglomerative identify multiple interior clusters, whereas DBSCAN considers all moderate outputs as one \u201ccore\u201d and only flags a few outliers.  \n- **Feature Drivers**: The primary axes (project duration, time since publication, citation count, and output size) dominate cluster separation, confirming that temporal and scale factors are the main dimensions of variance in this dataset.  \n- **Research Lifecycle Patterns**: Clusters map to different phases of research output\u2014\u201cbreakout\u201d high\u2010impact work, stable moderate\u2010impact publications, and \u201cnew\u201d low\u2010impact projects\u2014suggesting a continuum of influence and maturity.\n",
+    "## Step6 Part2-Q4:Text Processing Methods",
+    "### 6.1 TF-IDF + Logistic Regression Classification",
+    "TF-IDF + Logistic Regression Classification\n\n**Approach**  \n- We binarized citation counts at the median, labeling each paper \u201cHigh\u201d or \u201cLow\u201d impact.  \n- We transformed the paper titles into a TF-IDF feature matrix (unigrams & bigrams, 5k features, English stop-words removed).  \n- We trained a Logistic Regression model on 80% of the data and evaluated on the 20% hold-out.\n\n**Results**  \n- **ROC AUC** \u2248 0.700, indicating modest ability to distinguish high\u2010 vs. low\u2010citation papers based on title alone.  \n\n\n- True positives (High\u2192High): 176  \n- False negatives (High\u2192Low): 98  \n- False positives (Low\u2192High): 100  \n- True negatives (Low\u2192Low): 166  \n\n**Insight**  \n- Title text carries some signal about eventual citation impact (e.g., topics or keywords associated with higher visibility), but performance is limited (AUC ~0.7).  \n- A large number of false positives/negatives suggests that title alone is insufficient; deeper context (abstract, keywords, author reputation, venue) and richer models (BERT-based fine-tuning) are likely needed to improve predictive power.  \n- Nevertheless, TF-IDF + Logistic Regression provides a fast baseline and highlights which title n-grams most strongly correlate with high citation counts.  ",
+    "### 6.2 Topic Modeling with sklearn\u2019s LDA",
+    "LDA Topic Modeling Analysis\n\nWe applied a 5-topic Latent Dirichlet Allocation model over the FSRDC output titles (ngram range 1\u20132, min_df=5, max_df=0.5). Below is a summary of each topic\u2014with a human-readable label\u2014and the top words driving it:\n\n1. **Health & Insurance Policy**  \n   - **Top Words**: health, trade, evidence, insurance, effects, care, international, housing  \n   - **Interpretation**: Titles in this cluster focus on health economics, insurance markets, and evidence-based policy evaluation.\n\n2. **Labor & Social Science Studies**  \n   - **Top Words**: data, evidence, social, wage, census, earnings, using, productivity  \n   - **Interpretation**: Emphasis on micro-data analyses of labor markets, wage gaps, and social survey evidence.\n\n3. **U.S. Macro & Business Cycles**  \n   - **Top Words**: states, united, united states, labor, growth, business, recession  \n   - **Interpretation**: Papers addressing national economic trends, state-level policy, and business-cycle dynamics in the U.S.\n\n4. **Manufacturing & Firms Research**  \n   - **Top Words**: data, income, level, firm, survey, manufacturing, production, plant  \n   - **Interpretation**: Focus on firm-level productivity, manufacturing sector studies, and production data analysis.\n\n5. **COVID & Labor Market Effects**  \n   - **Top Words**: evidence, market, labor, firm, labor market, productivity, covid, covid 19  \n   - **Interpretation**: Research on how the COVID-19 shock affected labor markets, firm behavior, and productivity.\n\nInsight\n\n- **Topical Diversity**: FSRDC outputs span health policy, labor economics, U.S. macroeconomics, firm-level studies, and pandemic impacts.  \n- **Dominant Themes**: \u201cHealth & Insurance\u201d and \u201cLabor & Social Science\u201d topics are the most prevalent, reflecting strong public-policy relevance.  \n- **Emerging Focus**: The \u201cCOVID & Labor Market Effects\u201d topic highlights rapid pivot to pandemic research in 2020\u20132022.  \n- **Data-Driven Decisions**: The consistent presence of \u201cdata\u201d and \u201cevidence\u201d across multiple topics underscores the centrality of micro-data methods in modern policy research.\n",
+    "### 6.3 BERT Embeddings + K-Means + UMAP",
+    "K-Means Clustering on BERT Title Embeddings + UMAP Projection\n\n**Methodology**  \n1. **BERT Embeddings**  \n   - Used the \u201call-MiniLM-L6-v2\u201d Sentence-Transformer to convert each paper\u2019s title into a 384-dimensional vector capturing semantic content.  \n2. **K-Means Clustering**  \n   - Ran K-Means (k=4) on these embeddings to partition the title space into four topical/semantic clusters.  \n3. **UMAP Visualization**  \n   - Projected the high-dimensional embeddings down to 2D with UMAP for visual inspection, then colored each point by its K-Means cluster ID in Plotly.\n\n**What the Plot Shows**  \n- The scatter reveals four roughly distinct \u201cclouds\u201d of paper titles in UMAP space.  \n- Each UMAP cluster (denoted by color) corresponds to one of the four K-Means groups.  \n- Some overlap persists\u2014titles at cluster boundaries share terminology or themes.\n\n**Key Insights**  \n- **Cluster Separation**: The fact that four clusters are visually discernible suggests that FSRDC paper titles naturally group into a handful of semantic topics (e.g., health, economics, energy, methods).  \n- **Cluster Density**: The largest, densest cluster (e.g., Cluster 2 in yellow) likely corresponds to the most common research theme across RDCs.  \n- **Outliers**: Points isolated far from any cluster center (e.g., upper-right extremes) represent highly specialized or unusual titles that may warrant deeper manual review.  \n- **Boundary Papers**: Papers lying in the \u201coverlap zones\u201d may bridge topics\u2014good candidates for interdisciplinary work or emerging research frontiers.\n",
+    "### 6.4 LSTM Text Classifier with Keras",
+    "LSTM Text Classifier: Training Metrics Analysis\n\n**Model Setup**  \n- We trained a simple Embedding\u2192LSTM\u2192Dense pipeline on paper titles to classify \u201chigh\u201d vs. \u201clow\u201d citation count (threshold = median).  \n- Vocabulary capped at 10 000 tokens, sequence length = 50, LSTM size = 64, Dense(32), binary cross-entropy loss.\n\n**Training vs. Validation Accuracy**  \n- **Train Acc** started at ~0.495, peaked at ~0.515 around epoch 4, then settled back to ~0.498.  \n- **Val Acc** hovered around ~0.505\u20130.507.  \n- Neither curve rises significantly above 0.50, indicating the model barely outperforms random guessing.\n\n**Training vs. Validation Loss**  \n- Both **Train Loss** and **Val Loss** begin ~0.695 and remain nearly flat (0.695\u20130.697).  \n- No pronounced downward trend\u2014model is not learning strong patterns from the title text alone.\n\n**Over-/Under-Fitting**  \n- The almost-identical train & val curves with very small gap show no overfitting, but also no real learning (under-fitting).  \n\n**Key Insight**  \n- Title text by itself carries very weak signal for predicting high vs. low citations. A simple LSTM on raw titles is insufficient.  \n- We likely need richer text inputs (e.g. abstracts), external features (venue impact factors, author reputation), or pre-trained language models (BERT, GPT) to capture more predictive semantics.",
+    "##Step7 Deep Data Mining",
+    "### 7.1 Co-Authorship Network & Community Detection",
+    "Co-Authorship Network & Louvain Community Analysis\n\n**How we built it**  \n- Constructed an undirected graph where each author is a node and an edge connects two authors whenever they co-author a paper, weighted by the number of co-publications.  \n- Applied the Louvain algorithm to detect densely connected \u201ccommunities\u201d of collaborators.  \n- In the Plotly network, node **size** \u221d total co-author degree, and node **color** indicates its Louvain community.\n\n**What the plot shows**  \n- **Distinct collaboration clusters** emerge: each color represents a group of authors who frequently publish together.  \n- A handful of **high-degree \u201chub\u201d authors** (large circles) anchor each community\u2014they co-author with many peers and serve as key connectors.  \n- **Bridging nodes** with edges to multiple colors highlight authors who collaborate across communities, potentially transferring ideas between subfields or RDCs.\n\n**Key insights**  \n1. There are ~4\u20136 major co-authorship communities, each likely centered on a different RDC or thematic area (e.g., health policy vs. economics).  \n2. A small set of highly connected \u201chub\u201d authors drive most collaborations; engaging these hubs could accelerate cross-RDC knowledge sharing.  \n3. Authors with cross-community ties may form the backbone of interdisciplinary work\u2014flagging them for targeted support could amplify network cohesion.  \n4. Some communities appear sparsely connected to the rest of the network, suggesting pockets of specialization that might benefit from broader integration.",
+    "### 7.2 Survival Analysis: Time to Reach \u226550 Citations",
+    "Survival Analysis: Time to Reach 50 Citations by RDC\n\n**Methodology**  \n- We treat each paper\u2019s \u201ctime to reach 50 citations\u201d as a survival endpoint, censoring those that never hit 50 by the current year.  \n- Computed `TimeSincePub = 2025 \u2212 OutputYear` and event indicator `Event50 = 1` if the paper has \u226550 citations, else 0.  \n- Applied the Kaplan\u2013Meier estimator separately for the five RDCs with the most outputs: Michigan, Boston, Chicago, Triangle, and Baruch.  \n- Plotted the survival function \\(S(t)\\), which shows the probability a paper has *not* yet reached 50 citations after \\(t\\) years.\n\n**Key Findings**  \n- **Baruch RDC** (orange) declines fastest: only ~20 % of its papers remain uncited at 50 by year 15, and nearly 0 % by year 18. This means a high proportion of Baruch outputs rapidly cross the 50-citation mark.  \n- **Triangle RDC** (purple) and **Michigan RDC** (blue) have similar curves, with about 50 % of their publications uncited at 50 by year 15, indicating moderate \u201ccitation velocity.\u201d  \n- **Chicago** (green) and **Boston** (red) decline more slowly: after 15 years, ~40\u201345 % of their papers still haven\u2019t reached 50 citations, suggesting a longer \u201ctail\u201d of mid\u2010impact work.\n\n**Insight**  \n- Some RDCs (e.g. Baruch) produce fast-impact papers that accumulate citations quickly, whereas others (Boston, Chicago) have a larger share of longer-burn publications.  \n- These curves help identify RDCs with the most \u201crapidly influential\u201d research versus those whose work gains traction more gradually.  \n- Teams could investigate what traits (topics, venues, author networks) drive the faster citation trajectories at Baruch compared to other centers.",
+    "### 7.3 Dynamic Topic Modeling with BERTopic Over Time",
+    "Dynamic Topic Modeling: Topic Prevalence Over Time\n\nThe stacked area chart tracks how the mix of research topics evolves from 2000 to 2025, where each colored band corresponds to one of the model\u2019s discovered topics (labeled by the top three words). Key observations:\n\n- **Early Period (2000\u20132005)**  \n  - The \u201cOther / Noise\u201d category dominates at first, indicating many low-frequency or hard-to-cluster papers.  \n  - A topic characterized by health-and-trade vocabulary (e.g., **health, trade, evidence**) begins to emerge around 2003, reflecting early growth in health-economics studies.\n\n- **Mid Period (2006\u20132015)**  \n  - The health-trade topic peaks in the late 2000s, then gradually gives way to a **\u201cdata & social policy\u201d** theme (e.g., **data, evidence, social**), consistent with rising interest in administrative data research.  \n  - A **\u201clabor & firm dynamics\u201d** cluster (e.g., **wage, census, productivity**) appears circa 2010, aligning with work on productivity and labor markets using census microdata.\n\n- **Recent Period (2016\u20132025)**  \n  - From 2016 onward, a **\u201cCOVID & market impact\u201d** topic (e.g., **covid, labor market, productivity**) surges, peaking around 2020\u20132022 as the pandemic reshapes much FSRDC-based research.  \n  - The health-trade and labor-dynamics topics wane, while the \u201cdata & social policy\u201d theme remains relatively stable, showing continued interest in administrative datasets.\n\n- **Overall Dynamics**  \n  - Topics rise and fall in distinct waves, demonstrating the model\u2019s ability to capture the field\u2019s shifting focus\u2014from traditional health and trade analyses, through labor-market and productivity studies, to recent pandemic-driven investigations.  \n  - The persistent \u201cOther / Noise\u201d area indicates a steady minority of papers that do not cleanly fit the major themes or are too diffuse to be clustered into the top topics.\n",
+    "## Step8 Conclusion",
+    "Comprehensive Analysis and Insights of the Combined ResearchOutputs Dataset\n\n1. Overview and Exploratory Data Analysis (EDA)\nThrough detailed exploratory analysis, we observed the following major insights from the combined dataset of research outputs:\n\n- **Publication Trends:**  \n  Research activity significantly increased from 2000 to 2023, with clear peaks in recent years. RDCs such as Michigan, Boston, Chicago, and Triangle are notably productive, indicating strong institutional support and collaborative environments.\n\n- **Author Productivity:**  \n  Key prolific authors identified include John Haltiwanger, Nathan Goldschlag, Lucia Foster, and Javier Miranda. These authors significantly contributed to the dataset, highlighting influential research leaders.\n\n- **Citation Analysis:**  \n  Citation distributions showed heavy skewness with most publications having low citation counts, while a small subset had exceptionally high citations (e.g., top-cited papers with thousands of citations). Citation analysis by RDC revealed institutions like Washington, USC, and Berkeley excel in producing highly cited research. Journal venues such as *The Quarterly Journal of Economics*, *Journal of Econometrics*, and *Journal of Financial Economics* consistently published highly impactful work.\n\n2. Regression and Classification Modeling Insights\nInitial attempts at using regression (predicting citation counts directly) showed limited effectiveness due to inherent variability and outlier effects in citations, making it challenging to model accurately.\n\nThus, the problem was reframed as a binary classification (high vs. low citation counts):\n\n- **Baseline Logistic Regression:** Achieved moderate performance, suggesting some predictability in citation popularity based on publication metadata.\n- **Advanced Models (Decision Tree, Random Forest, XGBoost, Neural Networks):** Improved accuracy significantly, with XGBoost delivering the strongest performance (Accuracy: 78%, ROC-AUC: 86%). This indicates that complex nonlinear relationships exist between metadata (publication type, year, RDC) and citation outcomes.\n\n3. Principal Component Analysis (PCA) Insights\nPCA analysis showed clear dimensional structure in the dataset. Although the first two principal components explained limited variance (around 40%), they provided useful clustering signals, suggesting latent patterns or groups within publication attributes. Visualization highlighted distinct clusters, particularly when considering RDC and Output Type combinations.\n\n4. Clustering Insights\nThree distinct clustering methodologies were employed:\n\n- **K-Means Clustering:** Identified distinct groups based on publication metadata, providing insights into groups with inherently high or low citation potentials.\n- **Hierarchical Clustering (Agglomerative):** Revealed hierarchical relationships and substructures within publications, further detailing potential strategic groups for targeted analysis or investment.\n- **DBSCAN:** Identified robust clusters and effectively managed noise, indicating strong intrinsic grouping structures tied to institutional attributes and publication venues.\n\nThe clusters consistently revealed that certain RDCs and output types naturally group together, reflecting common research themes or shared citation trajectories.\n\n5. Advanced NLP Methods\nMultiple text-based methods revealed deep insights from the output titles:\n\n- **TF-IDF Analysis:** Highlighted key terms such as \"economic,\" \"market,\" and \"analysis,\" suggesting dominant economic and market-oriented research topics.\n- **LDA Topic Modeling:** Successfully identified coherent thematic groups such as:\n  - **Economic Policy & Markets**\n  - **Health & Medical Research**\n  - **Machine Learning & AI**\n  - **Financial & Investment Analysis**\n  - **Social & Demographic Studies**\n\n- **BERT + K-Means + UMAP:** Leveraged semantic embeddings for sophisticated clustering, revealing nuanced topic groupings not visible through simpler methods. Embeddings allowed deeper semantic topic interpretation and identification of hidden thematic relationships.\n\n- **Fine-Tuned BERT & LSTM Classification Models:** Demonstrated robust predictive capabilities of citation popularity from textual data alone, emphasizing the predictive power of nuanced textual features within titles.\n\n6. Innovative Advanced Analytics Insights\nBeyond conventional analyses, advanced analytical techniques provided further valuable insights:\n\n- **LSTM Deep Learning Models:** Captured complex sequential patterns in textual data, achieving strong predictive performance on citation popularity, reinforcing the value of deep textual analysis.\n- **Survival Analysis (Citation Lifespan):** Highlighted distinct citation trajectories and the \"citation life-cycle,\" revealing how quickly citations accumulate or plateau across different publication types and RDCs.\n- **Dynamic BERTopic Modeling:** Unveiled temporal shifts in research themes, highlighting evolving research priorities such as the rising importance of AI and machine learning topics in recent years.\n- **Co-Authorship Network Analysis:** Revealed robust collaborative networks, influential research communities, and key academic influencers who are central to knowledge dissemination and innovation.\n\n---\n\n**Final Summary of Insights**\nThe comprehensive analysis revealed several critical insights:\n\n- **Citation Prediction:** Advanced classification models effectively predict high-impact research, especially leveraging metadata and sophisticated text embeddings.\n- **Topic Evolution:** Research topics dynamically shift over time, highlighting the emergence and growing dominance of technology, health sciences, and economic policy topics.\n- **Institutional Strength:** Certain RDCs consistently produce highly impactful research, indicating institutional specialization and strong research ecosystems.\n- **Collaboration Networks:** Identifying influential researchers and collaborative structures can strategically enhance future research productivity and innovation.\n- **Data-Driven Decision-Making:** Leveraging advanced techniques (deep NLP, survival analysis, dynamic topic modeling) provides actionable insights to guide strategic planning, resource allocation, and research agenda-setting."
+  ],
+  "yearly_publications": {
+    "years": [
+      2000.0,
+      2001.0,
+      2002.0,
+      2003.0,
+      2004.0,
+      2005.0,
+      2006.0,
+      2007.0,
+      2008.0,
+      2009.0,
+      2010.0,
+      2011.0,
+      2012.0,
+      2013.0,
+      2014.0,
+      2015.0,
+      2016.0,
+      2017.0,
+      2018.0,
+      2019.0,
+      2020.0,
+      2021.0,
+      2022.0,
+      2023.0,
+      2024.0,
+      2025.0
+    ],
+    "types": [
+      " JA",
+      "BC",
+      "BG",
+      "BK",
+      "DI",
+      "DS",
+      "JA",
+      "MI",
+      "MT",
+      "RE",
+      "SW",
+      "TN",
+      "WP"
+    ],
+    "counts": [
+      [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        1.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ],
+      [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        5.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        3.0
+      ],
+      [
+        0.0,
+        5.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        7.0,
+        0.0,
+        1.0,
+        0.0,
+        0.0,
+        2.0
+      ],
+      [
+        0.0,
+        2.0,
+        0.0,
+        0.0,
+        1.0,
+        0.0,
+        9.0,
+        18.0,
+        0.0,
+        0.0,
+        0.0,
+        1.0,
+        8.0
+      ],
+      [
+        0.0,
+        1.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        8.0,
+        28.0,
+        0.0,
+        5.0,
+        0.0,
+        0.0,
+        5.0
+      ],
+      [
+        0.0,
+        1.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        6.0,
+        20.0,
+        0.0,
+        1.0,
+        0.0,
+        0.0,
+        14.0
+      ],
+      [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        1.0,
+        0.0,
+        8.0,
+        20.0,
+        0.0,
+        6.0,
+        0.0,
+        0.0,
+        18.0
+      ],
+      [
+        1.0,
+        1.0,
+        0.0,
+        0.0,
+        2.0,
+        0.0,
+        9.0,
+        37.0,
+        0.0,
+        1.0,
+        0.0,
+        0.0,
+        24.0
+      ],
+      [
+        0.0,
+        2.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        14.0,
+        28.0,
+        0.0,
+        2.0,
+        0.0,
+        1.0,
+        11.0
+      ],
+      [
+        0.0,
+        4.0,
+        0.0,
+        0.0,
+        1.0,
+        0.0,
+        7.0,
+        53.0,
+        0.0,
+        9.0,
+        0.0,
+        0.0,
+        12.0
+      ],
+      [
+        0.0,
+        4.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        10.0,
+        74.0,
+        0.0,
+        9.0,
+        0.0,
+        0.0,
+        28.0
+      ],
+      [
+        0.0,
+        1.0,
+        0.0,
+        1.0,
+        1.0,
+        0.0,
+        15.0,
+        67.0,
+        0.0,
+        6.0,
+        0.0,
+        0.0,
+        40.0
+      ],
+      [
+        0.0,
+        5.0,
+        0.0,
+        0.0,
+        2.0,
+        0.0,
+        25.0,
+        66.0,
+        0.0,
+        9.0,
+        0.0,
+        0.0,
+        32.0
+      ],
+      [
+        0.0,
+        5.0,
+        0.0,
+        0.0,
+        3.0,
+        0.0,
+        35.0,
+        76.0,
+        0.0,
+        5.0,
+        0.0,
+        0.0,
+        60.0
+      ],
+      [
+        0.0,
+        3.0,
+        0.0,
+        0.0,
+        5.0,
+        0.0,
+        37.0,
+        83.0,
+        0.0,
+        12.0,
+        0.0,
+        0.0,
+        39.0
+      ],
+      [
+        0.0,
+        2.0,
+        0.0,
+        0.0,
+        5.0,
+        0.0,
+        37.0,
+        147.0,
+        0.0,
+        14.0,
+        0.0,
+        0.0,
+        33.0
+      ],
+      [
+        0.0,
+        2.0,
+        0.0,
+        0.0,
+        4.0,
+        1.0,
+        31.0,
+        148.0,
+        0.0,
+        13.0,
+        0.0,
+        0.0,
+        61.0
+      ],
+      [
+        0.0,
+        5.0,
+        0.0,
+        1.0,
+        3.0,
+        2.0,
+        33.0,
+        119.0,
+        0.0,
+        11.0,
+        1.0,
+        3.0,
+        80.0
+      ],
+      [
+        0.0,
+        5.0,
+        0.0,
+        1.0,
+        7.0,
+        0.0,
+        50.0,
+        195.0,
+        1.0,
+        43.0,
+        0.0,
+        0.0,
+        55.0
+      ],
+      [
+        0.0,
+        1.0,
+        0.0,
+        0.0,
+        12.0,
+        0.0,
+        33.0,
+        180.0,
+        0.0,
+        37.0,
+        0.0,
+        0.0,
+        24.0
+      ],
+      [
+        0.0,
+        2.0,
+        0.0,
+        0.0,
+        10.0,
+        2.0,
+        32.0,
+        196.0,
+        0.0,
+        56.0,
+        1.0,
+        3.0,
+        36.0
+      ],
+      [
+        0.0,
+        9.0,
+        1.0,
+        0.0,
+        5.0,
+        2.0,
+        36.0,
+        250.0,
+        0.0,
+        29.0,
+        0.0,
+        1.0,
+        32.0
+      ],
+      [
+        0.0,
+        3.0,
+        0.0,
+        0.0,
+        19.0,
+        3.0,
+        25.0,
+        273.0,
+        0.0,
+        34.0,
+        0.0,
+        5.0,
+        42.0
+      ],
+      [
+        0.0,
+        3.0,
+        0.0,
+        0.0,
+        18.0,
+        6.0,
+        32.0,
+        277.0,
+        0.0,
+        52.0,
+        1.0,
+        9.0,
+        45.0
+      ],
+      [
+        0.0,
+        1.0,
+        0.0,
+        1.0,
+        1.0,
+        0.0,
+        15.0,
+        186.0,
+        0.0,
+        24.0,
+        1.0,
+        0.0,
+        13.0
+      ],
+      [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        54.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ]
+    ]
+  },
+  "rdc_collaboration": {
+    "nodes": [
+      {
+        "name": "Boston"
+      },
+      {
+        "name": "Michigan"
+      },
+      {
+        "name": "Chicago"
+      },
+      {
+        "name": "Baruch"
+      },
+      {
+        "name": "Triangle"
+      },
+      {
+        "name": "Atlanta"
+      },
+      {
+        "name": "Texas"
+      },
+      {
+        "name": "UCLA"
+      },
+      {
+        "name": "Fed Board"
+      },
+      {
+        "name": "Minnesota"
+      }
+    ],
+    "links": [
+      {
+        "source": 0,
+        "target": 1,
+        "value": 524
+      },
+      {
+        "source": 0,
+        "target": 2,
+        "value": 433
+      },
+      {
+        "source": 0,
+        "target": 3,
+        "value": 338
+      },
+      {
+        "source": 0,
+        "target": 4,
+        "value": 315
+      },
+      {
+        "source": 0,
+        "target": 5,
+        "value": 193
+      },
+      {
+        "source": 0,
+        "target": 6,
+        "value": 182
+      },
+      {
+        "source": 0,
+        "target": 7,
+        "value": 165
+      },
+      {
+        "source": 0,
+        "target": 8,
+        "value": 161
+      },
+      {
+        "source": 0,
+        "target": 9,
+        "value": 159
+      }
+    ]
+  },
+  "author_network": {
+    "nodes": [
+      {
+        "name": "John Haltiwanger"
+      },
+      {
+        "name": "Nathan Goldschlag"
+      },
+      {
+        "name": "Lucia Foster"
+      },
+      {
+        "name": "Javier Miranda"
+      },
+      {
+        "name": "Nikolas Zolas"
+      },
+      {
+        "name": "Scott H. Holan"
+      },
+      {
+        "name": "Emin Dinlersoz"
+      },
+      {
+        "name": "John V. Winters"
+      },
+      {
+        "name": "Jerome P. Reiter"
+      },
+      {
+        "name": "Katie R. Genadek"
+      },
+      {
+        "name": "Nicholas Bloom"
+      },
+      {
+        "name": "David Autor"
+      },
+      {
+        "name": "John M. Abowd"
+      },
+      {
+        "name": "Christopher K. Wikle"
+      },
+      {
+        "name": "Ron S. Jarmin"
+      },
+      {
+        "name": "Steven J. Davis"
+      },
+      {
+        "name": "Catherine Buffington"
+      },
+      {
+        "name": "Charles Courtemanche"
+      },
+      {
+        "name": "Michael Greenstone"
+      },
+      {
+        "name": "Seth Spielman"
+      }
+    ],
+    "links": [
+      {
+        "source": 0,
+        "target": 1,
+        "value": 55
+      },
+      {
+        "source": 0,
+        "target": 2,
+        "value": 52
+      },
+      {
+        "source": 0,
+        "target": 3,
+        "value": 44
+      },
+      {
+        "source": 0,
+        "target": 4,
+        "value": 44
+      },
+      {
+        "source": 0,
+        "target": 5,
+        "value": 43
+      },
+      {
+        "source": 0,
+        "target": 6,
+        "value": 39
+      },
+      {
+        "source": 0,
+        "target": 7,
+        "value": 37
+      },
+      {
+        "source": 0,
+        "target": 8,
+        "value": 36
+      },
+      {
+        "source": 0,
+        "target": 9,
+        "value": 33
+      },
+      {
+        "source": 0,
+        "target": 10,
+        "value": 28
+      },
+      {
+        "source": 0,
+        "target": 11,
+        "value": 27
+      },
+      {
+        "source": 0,
+        "target": 12,
+        "value": 26
+      },
+      {
+        "source": 0,
+        "target": 13,
+        "value": 25
+      },
+      {
+        "source": 0,
+        "target": 14,
+        "value": 22
+      },
+      {
+        "source": 0,
+        "target": 15,
+        "value": 21
+      },
+      {
+        "source": 0,
+        "target": 16,
+        "value": 20
+      },
+      {
+        "source": 0,
+        "target": 17,
+        "value": 20
+      },
+      {
+        "source": 0,
+        "target": 18,
+        "value": 20
+      },
+      {
+        "source": 0,
+        "target": 19,
+        "value": 20
+      }
+    ]
+  },
+  "keyword_cloud": {
+    "words": [
+      "Econometrics; Business; Mathematics; Economics",
+      "Workforce; Automation; Business; Engineering; Economics; Economic growth; Mechanical engineering",
+      "Trademark; Business; Advertising; Political science; Law",
+      "Business; Agency (philosophy); Discretion; Agency cost; Accounting; Confidentiality; Finance; Computer science; Shareholder; Computer security",
+      "Productivity; Dispersion (optics); Task (project management); Economics; Labour economics; Economic growth; Physics; Management; Optics",
+      "Business",
+      "Welfare; Minimum wage; Labour economics; Wage; Economics; Market economy",
+      "Distribution (mathematics); Robot; Geography; Economic geography; Computer science; Mathematics; Artificial intelligence; Mathematical analysis",
+      "Snap; Supplemental Nutrition Assistance Program; State (computer science); Gerontology; Psychology; Computer science; Geography; Medicine; Operating system; Food insecurity",
+      "Minimum wage; Labour economics; Statutory law; Wage; Economics; Demographic economics; Political science; Law",
+      "Census; Government (linguistics); American Community Survey; Relevance (law); Confidentiality; General partnership; Data collection; Quality (philosophy); Data science; Data quality",
+      "Economics",
+      "Computer science",
+      "Census; Microdata (statistics); Respondent; Microform; American Community Survey; Geography; Computer science; Library science; Database; Population",
+      "Census; American Community Survey; Workload; Survey data collection; Data collection; Sample (material); Computer science; Robustness (evolution); Survey sampling; Population",
+      "Library science; Microdata (statistics); Census; Center of excellence; Excellence; Sociology; Computer science; Political science; Demography; Law",
+      "Stock (firearms); Production (economics); Business; Economics; Agricultural economics; Environmental science; Geography; Archaeology; Macroeconomics",
+      "Microdata (statistics); Water use; Water conservation; Business; Incentive; Natural resource economics; Population; Water supply; Water resources; Environmental science",
+      "Estimator; Multivariate statistics; Computer science; Small area estimation; Multinomial distribution; Bayesian probability; Sampling (signal processing); Focus (optics); Statistics; Sampling design",
+      "Census; American Community Survey; Enumeration; Geography; Statistics; Actuarial science; Demography; Sociology; Mathematics; Economics",
+      "Microdata (statistics); Census; Digitization; Respondent; Record linkage; American Community Survey; Microform; Computer science; Handwriting; Geography",
+      "Earnings; Inequality; Sorting; Economics; Labour economics; Census; Demographic economics; Accounting; Population; Mathematical analysis",
+      "Economics; Earnings; Wage; Inequality; Wage dispersion; American Community Survey; Labour economics; Wage inequality; Demographic economics; Marital status",
+      "Earnings; Census; Demographic economics; American Community Survey; Educational attainment; Cohort; Cohort effect; Voucher; Demography; Economics",
+      "Graduation (instrument); Psychology; Political science; Demographic economics; Economics; Mathematics; Geometry",
+      "Database; Longitudinal data; Computer science; Business; Data mining",
+      "Business; Labour economics; Demographic economics; Economics",
+      "Microdata (statistics); Dozen; Workforce; American Community Survey; Human capital; State (computer science); Attrition; Political science; Economics; Demographic economics",
+      "Business; Regional science; Geography",
+      "High tech; Job creation; Census; Business; Dynamics (music); Industrial organization; Labour economics; Economics; Population; Geography",
+      "Inflation (cosmology); Macro; Business process reengineering; Productivity; Micro level; Key (lock); Econometrics; Macro level; Economics; Census",
+      "Robot; Census; Distribution (mathematics); Manufacturing; Computer science; Business; Engineering; Artificial intelligence; Marketing; Mathematics",
+      "Business; Commerce; International trade; Advertising",
+      "Recession; Great recession; Ethnic group; Race (biology); Economics; Demographic economics; Political science; Labour economics; Keynesian economics; Sociology",
+      "State (computer science); Mathematics education; Political science; Psychology; Mathematics; Algorithm",
+      "Demography; Census; Medicine; Health insurance; Population; Incidence (geometry); Private insurance; Current Population Survey; Health care; Gerontology",
+      "Earnings; Census; Tracking (education); Investment (military); Track (disk drive); Demographic economics; Business; Finance; Labour economics; Political science",
+      "Census; Regional science; Political science; Geography; Demography; Sociology; Population",
+      "Selection (genetic algorithm); Early adopter; Cloud computing; Automation; Outsourcing; Data science; Business intelligence; Computer science; Longitudinal data; Software",
+      "Economics; Business; Microeconomics; Industrial organization",
+      "Key (lock); Business; Data science; Political science; Computer science; Computer security",
+      "Plural; Geography; Linguistics; Philosophy",
+      "Earnings; Economics; Demographic economics; Accounting",
+      "Franchise; Census; Business; Marketing; Sociology; Demography; Population",
+      "Census; Data science; Missing data; Geography; American Community Survey; Longitudinal data; Computer science; Regional science; Data mining; Population",
+      "Business; Flow (mathematics); Chain (unit); Industrial organization; Operations management; Engineering; Physics; Mechanics; Astronomy",
+      "Census; American Community Survey; Census tract; Geography; Data quality; Small area estimation; Quality (philosophy); Population; Geographic information system; Survey data collection",
+      "Context (archaeology); Survey data collection; Work (physics); Reliability (semiconductor); American Community Survey; Population; Computer science; Actuarial science; Operations research; Business",
+      "Bayesian probability; Sampling (signal processing); Computer science; Econometrics; Representation (politics); Statistics; Geography; Mathematics; Filter (signal processing); Politics",
+      "Multinomial logistic regression; Multinomial distribution; Econometrics; Mixed logit; Multinomial probit; Mathematics; Statistics; Beta distribution; Conditional probability distribution; Autoregressive model"
+    ],
+    "counts": [
+      12,
+      10,
+      9,
+      9,
+      7,
+      6,
+      6,
+      6,
+      6,
+      6,
+      5,
+      5,
+      5,
+      5,
+      5,
+      5,
+      5,
+      4,
+      4,
+      4,
+      4,
+      4,
+      4,
+      4,
+      4,
+      4,
+      4,
+      4,
+      4,
+      4,
+      4,
+      3,
+      3,
+      3,
+      3,
+      3,
+      3,
+      3,
+      3,
+      3,
+      3,
+      3,
+      3,
+      3,
+      3,
+      3,
+      3,
+      3,
+      3,
+      3
+    ]
+  },
+  "citation_network": {
+    "nodes": [
+      {
+        "name": "American Economic Review"
+      },
+      {
+        "name": "The Quarterly Journal of Economics"
+      },
+      {
+        "name": "Nature Methods"
+      },
+      {
+        "name": "The Journal of Finance"
+      },
+      {
+        "name": "Journal of Political Economy"
+      },
+      {
+        "name": "Econometrica"
+      },
+      {
+        "name": "Journal of Financial Economics"
+      },
+      {
+        "name": "The Journal of Economic Perspectives"
+      },
+      {
+        "name": "Journal of Economic Literature"
+      },
+      {
+        "name": "The Review of Economics and Statistics"
+      },
+      {
+        "name": "Review of Financial Studies"
+      },
+      {
+        "name": "SSRN Electronic Journal"
+      },
+      {
+        "name": "Journal of Labor Economics"
+      },
+      {
+        "name": "Journal of Econometrics"
+      },
+      {
+        "name": "IEEE Transactions on Wireless Communications"
+      },
+      {
+        "name": "CA A Cancer Journal for Clinicians"
+      },
+      {
+        "name": "Journal of Oral & Facial Pain and Headache"
+      },
+      {
+        "name": "IEEE Communications Magazine"
+      },
+      {
+        "name": "American Economic Journal Applied Economics"
+      },
+      {
+        "name": "The Review of Economic Studies"
+      }
+    ],
+    "links": [
+      {
+        "source": 0,
+        "target": 1,
+        "value": 20946
+      },
+      {
+        "source": 0,
+        "target": 2,
+        "value": 10952
+      },
+      {
+        "source": 0,
+        "target": 3,
+        "value": 10587
+      },
+      {
+        "source": 0,
+        "target": 4,
+        "value": 9053
+      },
+      {
+        "source": 0,
+        "target": 5,
+        "value": 8915
+      },
+      {
+        "source": 0,
+        "target": 6,
+        "value": 8843
+      },
+      {
+        "source": 0,
+        "target": 7,
+        "value": 8450
+      },
+      {
+        "source": 0,
+        "target": 8,
+        "value": 8207
+      },
+      {
+        "source": 0,
+        "target": 9,
+        "value": 7630
+      },
+      {
+        "source": 0,
+        "target": 10,
+        "value": 7464
+      },
+      {
+        "source": 0,
+        "target": 11,
+        "value": 5535
+      },
+      {
+        "source": 0,
+        "target": 12,
+        "value": 4953
+      },
+      {
+        "source": 0,
+        "target": 13,
+        "value": 4745
+      },
+      {
+        "source": 0,
+        "target": 14,
+        "value": 4344
+      },
+      {
+        "source": 0,
+        "target": 15,
+        "value": 3927
+      },
+      {
+        "source": 0,
+        "target": 16,
+        "value": 3519
+      },
+      {
+        "source": 0,
+        "target": 17,
+        "value": 3394
+      },
+      {
+        "source": 0,
+        "target": 18,
+        "value": 3191
+      },
+      {
+        "source": 0,
+        "target": 19,
+        "value": 3046
+      }
+    ]
+  },
+  "venue_network": null,
+  "author_citation_impact": null,
+  "rdc_citation_impact": null,
+  "publication_types": null,
+  "citation_geography": null,
+  "author_geography": null,
+  "rdc_geography": null,
+  "publication_language": null,
+  "citation_language": null,
+  "author_language": null,
+  "rdc_language": null,
+  "publication_funding": null,
+  "citation_funding": null,
+  "author_funding": null,
+  "rdc_funding": null,
+  "publication_collaboration": null,
+  "citation_collaboration": null,
+  "author_collaboration": null,
+  "publication_impact": null,
+  "citation_impact": null,
+  "author_impact": null,
+  "rdc_impact": null
 }

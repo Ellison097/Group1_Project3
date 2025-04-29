@@ -6,6 +6,7 @@
     <title>Group1 Project3 - Research Output Analysis</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
     <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
     <style>
         body {
             padding-top: 2rem;
@@ -13,9 +14,29 @@
         }
         .section {
             margin-bottom: 3rem;
+            padding: 2rem;
+            background-color: #f8f9fa;
+            border-radius: 0.5rem;
         }
         .plot-container {
             margin: 2rem 0;
+            background-color: white;
+            padding: 1rem;
+            border-radius: 0.25rem;
+            box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.075);
+        }
+        .analysis {
+            margin-top: 2rem;
+            padding: 1rem;
+            background-color: white;
+            border-radius: 0.25rem;
+        }
+        .nav-pills {
+            margin-bottom: 2rem;
+        }
+        .loading {
+            text-align: center;
+            padding: 2rem;
         }
     </style>
 </head>
@@ -27,40 +48,69 @@
             <p class="lead">A comprehensive analysis of FSRDC research outputs</p>
         </header>
 
-        <section class="section">
-            <h2>Publication Trends</h2>
-            <div class="plot-container" id="publication-trends"></div>
+        <nav class="nav nav-pills nav-fill">
+            <a class="nav-link active" href="#overview">Overview</a>
+            <a class="nav-link" href="#publications">Publications</a>
+            <a class="nav-link" href="#citations">Citations</a>
+            <a class="nav-link" href="#topics">Topics</a>
+            <a class="nav-link" href="#collaboration">Collaboration</a>
+            <a class="nav-link" href="#networks">Networks</a>
+        </nav>
+
+        <section id="overview" class="section">
+            <h2>Overview</h2>
             <div class="analysis">
-                <h3>Analysis</h3>
-                <p>The analysis of publication trends reveals significant growth in research output from 2000 to 2023, with clear peaks in recent years. The data shows that RDCs such as Michigan, Boston, Chicago, and Triangle are particularly productive, indicating strong institutional support and collaborative environments.</p>
+                <div id="overview-content"></div>
             </div>
         </section>
 
-        <section class="section">
+        <section id="publications" class="section">
+            <h2>Publication Analysis</h2>
+            <div class="plot-container" id="publication-trends"></div>
+            <div class="plot-container" id="yearly-publications"></div>
+            <div class="plot-container" id="rdc-productivity"></div>
+            <div class="analysis">
+                <h3>Analysis</h3>
+                <div id="publication-analysis"></div>
+            </div>
+        </section>
+
+        <section id="citations" class="section">
             <h2>Citation Analysis</h2>
             <div class="plot-container" id="citation-analysis"></div>
+            <div class="plot-container" id="venue-impact"></div>
+            <div class="plot-container" id="citation-velocity"></div>
             <div class="analysis">
                 <h3>Analysis</h3>
-                <p>Citation distributions show heavy skewness with most publications having low citation counts, while a small subset has exceptionally high citations. The analysis by RDC reveals that institutions like Washington, USC, and Berkeley excel in producing highly cited research.</p>
+                <div id="citation-analysis-content"></div>
             </div>
         </section>
 
-        <section class="section">
-            <h2>Topic Modeling</h2>
+        <section id="topics" class="section">
+            <h2>Topic Analysis</h2>
             <div class="plot-container" id="topic-modeling"></div>
+            <div class="plot-container" id="topic-evolution"></div>
+            <div class="plot-container" id="keyword-cloud"></div>
             <div class="analysis">
                 <h3>Analysis</h3>
-                <p>Topic modeling reveals several dominant research themes, including economic policy, market analysis, and health research. The analysis shows how these themes have evolved over time, with particular growth in technology-related topics in recent years.</p>
+                <div id="topic-analysis-content"></div>
             </div>
         </section>
 
-        <section class="section">
-            <h2>Collaboration Networks</h2>
-            <div class="plot-container" id="collaboration-networks"></div>
+        <section id="collaboration" class="section">
+            <h2>Collaboration Analysis</h2>
+            <div class="plot-container" id="author-productivity"></div>
+            <div class="plot-container" id="rdc-collaboration"></div>
             <div class="analysis">
                 <h3>Analysis</h3>
-                <p>The collaboration network analysis identifies key researchers and institutions that serve as central nodes in the research ecosystem. This analysis helps understand how knowledge flows through the network and identifies potential collaboration opportunities.</p>
+                <div id="collaboration-analysis-content"></div>
             </div>
+        </section>
+
+        <section id="networks" class="section">
+            <h2>Network Analysis</h2>
+            <div class="plot-container" id="author-network"></div>
+            <div class="plot-container" id="citation-network"></div>
         </section>
 
         <footer class="text-center mt-5">
@@ -70,5 +120,35 @@
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
     <script src="js/plots.js"></script>
+    <script>
+        // Add smooth scrolling
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+
+        // Update active nav link
+        window.addEventListener('scroll', function() {
+            let sections = document.querySelectorAll('section');
+            let navLinks = document.querySelectorAll('.nav-link');
+            
+            sections.forEach(section => {
+                let sectionTop = section.offsetTop;
+                let sectionHeight = section.clientHeight;
+                if (window.pageYOffset >= sectionTop - 60) {
+                    navLinks.forEach(link => {
+                        link.classList.remove('active');
+                        if (link.getAttribute('href') === '#' + section.id) {
+                            link.classList.add('active');
+                        }
+                    });
+                }
+            });
+        });
+    </script>
 </body>
 </html> 
