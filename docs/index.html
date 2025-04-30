@@ -67,6 +67,9 @@
             background-color: white;
             border-radius: 0.5rem;
             box-shadow: var(--card-shadow);
+            display: flex;
+            flex-wrap: wrap;
+            gap: 2rem;
         }
 
         .plot-container h3 {
@@ -74,6 +77,34 @@
             margin-bottom: 1rem;
             font-size: 1.2rem;
             font-weight: 600;
+            width: 100%;
+        }
+
+        .plot-wrapper {
+            flex: 1;
+            min-width: 300px;
+        }
+
+        .analysis-wrapper {
+            flex: 1;
+            min-width: 300px;
+            padding: 1rem;
+            background-color: #f8f9fa;
+            border-radius: 0.5rem;
+            border-left: 4px solid var(--secondary-color);
+        }
+
+        .analysis-wrapper h4 {
+            color: var(--primary-color);
+            margin-bottom: 1rem;
+            font-size: 1.1rem;
+            font-weight: 600;
+        }
+
+        .analysis-content {
+            color: #666;
+            line-height: 1.6;
+            font-size: 0.95rem;
         }
 
         .section-title {
@@ -92,6 +123,14 @@
         @media (max-width: 768px) {
             .grid-container {
                 grid-template-columns: 1fr;
+            }
+            
+            .plot-container {
+                flex-direction: column;
+            }
+            
+            .plot-wrapper, .analysis-wrapper {
+                width: 100%;
             }
         }
 
@@ -132,32 +171,229 @@
                 <div class="grid-container">
                     <div class="plot-container">
                         <h3>Top 10 RDCs by Output Count</h3>
-                        <div id="P1_Q2_1_Top_10_RDCs_by_Output_Count">
-                            <iframe 
-                                src="output_plots/P1_Q2_1_Top_10_RDCs_by_Output_Count.html" 
-                                style="width:100%; height:500px; border:none;"
-                                onerror="this.parentElement.innerHTML='<div class=\'plot-error\'>Error loading plot. Please check console for details.</div>'"
-                            ></iframe>
+                        <div class="plot-wrapper">
+                            <div id="P1_Q2_1_Top_10_RDCs_by_Output_Count">
+                                <iframe 
+                                    src="output_plots/P1_Q2_1_Top_10_RDCs_by_Output_Count.html" 
+                                    style="width:100%; height:500px; border:none;"
+                                    onerror="this.parentElement.innerHTML='<div class=\'plot-error\'>Error loading plot. Please check console for details.</div>'"
+                                ></iframe>
+                            </div>
+                        </div>
+                        <div class="analysis-wrapper">
+                            <h4>Analysis</h4>
+                            <div class="analysis-content">
+                                <h5>Q2.1 Analysis: Top 10 RDCs by Number of Research Outputs</h5>
+                                
+                                <p>After analyzing 2,698 research outputs, we identified the top 10 Research Data Centers (RDCs) based on the number of outputs they produced.</p>
+                                
+                                <div class="table-responsive">
+                                    <table class="table table-bordered">
+                                        <thead>
+                                            <tr>
+                                                <th>Rank</th>
+                                                <th>RDC Name</th>
+                                                <th>Number of Outputs</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td>1</td>
+                                                <td>Michigan</td>
+                                                <td>342</td>
+                                            </tr>
+                                            <tr>
+                                                <td>2</td>
+                                                <td>Boston</td>
+                                                <td>323</td>
+                                            </tr>
+                                            <tr>
+                                                <td>3</td>
+                                                <td>Chicago</td>
+                                                <td>239</td>
+                                            </tr>
+                                            <tr>
+                                                <td>4</td>
+                                                <td>Triangle</td>
+                                                <td>179</td>
+                                            </tr>
+                                            <tr>
+                                                <td>5</td>
+                                                <td>Baruch</td>
+                                                <td>178</td>
+                                            </tr>
+                                            <tr>
+                                                <td>6</td>
+                                                <td>Atlanta</td>
+                                                <td>136</td>
+                                            </tr>
+                                            <tr>
+                                                <td>7</td>
+                                                <td>Fed Board</td>
+                                                <td>118</td>
+                                            </tr>
+                                            <tr>
+                                                <td>8</td>
+                                                <td>Texas</td>
+                                                <td>103</td>
+                                            </tr>
+                                            <tr>
+                                                <td>9</td>
+                                                <td>Minnesota</td>
+                                                <td>100</td>
+                                            </tr>
+                                            <tr>
+                                                <td>10</td>
+                                                <td>UCLA</td>
+                                                <td>91</td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+
+                                <p><strong>Key observations include:</strong></p>
+                                <ul>
+                                    <li><strong>Michigan RDC</strong> leads with the highest number of research outputs (342), significantly ahead of other centers.</li>
+                                    <li><strong>Boston RDC</strong> follows closely with 323 outputs, also demonstrating strong research productivity.</li>
+                                    <li><strong>Chicago RDC</strong> ranks third, contributing 239 outputs.</li>
+                                    <li>The top five centers (Michigan, Boston, Chicago, Triangle, and Baruch) each produced over 170 outputs, highlighting their consistent research activity.</li>
+                                    <li>Centers ranked sixth through tenth (Atlanta to UCLA) show a moderate but still substantial level of output, ranging between 90 and 140 publications.</li>
+                                </ul>
+
+                                <p>Overall, the <strong>Michigan and Boston RDCs stand out for their exceptionally high research productivity</strong>, while other centers maintain a steady and meaningful contribution.</p>
+                                <p>The accompanying horizontal bar chart clearly illustrates the output distribution, with Michigan and Boston having noticeably longer bars compared to the rest, reflecting their leadership positions in research contributions.</p>
+                            </div>
                         </div>
                     </div>
                     <div class="plot-container">
                         <h3>Publications per Year</h3>
-                        <div id="P1_Q2_2_Publications_per_Year">
-                            <iframe 
-                                src="output_plots/P1_Q2_2_Publications_per_Year.html" 
-                                style="width:100%; height:500px; border:none;"
-                                onerror="this.parentElement.innerHTML='<div class=\'plot-error\'>Error loading plot. Please check console for details.</div>'"
-                            ></iframe>
+                        <div class="plot-wrapper">
+                            <div id="P1_Q2_2_Publications_per_Year">
+                                <iframe 
+                                    src="output_plots/P1_Q2_2_Publications_per_Year.html" 
+                                    style="width:100%; height:500px; border:none;"
+                                    onerror="this.parentElement.innerHTML='<div class=\'plot-error\'>Error loading plot. Please check console for details.</div>'"
+                                ></iframe>
+                            </div>
+                        </div>
+                        <div class="analysis-wrapper">
+                            <h4>Analysis</h4>
+                            <div class="analysis-content">
+                                <h5>Q2.2 Analysis: Number of Publications per Year</h5>
+                                
+                                <p>The trend of the number of research outputs from 2000 to 2025 shows several distinct phases:</p>
+                                
+                                <ul>
+                                    <li><strong>2000–2007</strong>: The number of publications increased steadily but remained relatively low, starting from just 1 publication in 2000 and reaching 37 in 2007.</li>
+                                    <li><strong>2008–2013</strong>: Moderate growth was observed during this period, with annual outputs fluctuating between 30 and 93 publications per year.</li>
+                                    <li><strong>2014–2017</strong>: A significant acceleration occurred, as the number of publications grew rapidly from 93 in 2014 to a peak of 151 in 2016.</li>
+                                    <li><strong>2018–2022</strong>: This period marked the highest productivity, with outputs exceeding 190 publications each year and peaking at over 250 publications in 2021 and 2022.</li>
+                                    <li><strong>2023–2025</strong>: A noticeable decline is observed after 2022, with the number of publications dropping to 196 in 2024 and only 54 in 2025. This sharp decrease in 2025 is likely due to data incompleteness, as 2025 may not have finished at the time of data collection.</li>
+                                </ul>
+
+                                <h5>Key Insights:</h5>
+                                <ul>
+                                    <li>The overall trend indicates strong growth in research output over the last two decades, especially after 2015.</li>
+                                    <li>The peak years (2020–2022) suggest a maturation of research activities and possibly greater utilization of FSRDC resources.</li>
+                                    <li>The recent decline (2024–2025) should be interpreted cautiously, as it may reflect incomplete reporting rather than an actual drop in research productivity.</li>
+                                </ul>
+
+                                <p>The line chart clearly visualizes these phases, highlighting both the rapid expansion phase and the potential data artifact in the most recent years.</p>
+                            </div>
                         </div>
                     </div>
                     <div class="plot-container">
                         <h3>Top 10 Authors</h3>
-                        <div id="P1_Q2_3_Top_10_Authors">
-                            <iframe 
-                                src="output_plots/P1_Q2_3_Top_10_Authors.html" 
-                                style="width:100%; height:500px; border:none;"
-                                onerror="this.parentElement.innerHTML='<div class=\'plot-error\'>Error loading plot. Please check console for details.</div>'"
-                            ></iframe>
+                        <div class="plot-wrapper">
+                            <div id="P1_Q2_3_Top_10_Authors">
+                                <iframe 
+                                    src="output_plots/P1_Q2_3_Top_10_Authors.html" 
+                                    style="width:100%; height:500px; border:none;"
+                                    onerror="this.parentElement.innerHTML='<div class=\'plot-error\'>Error loading plot. Please check console for details.</div>'"
+                                ></iframe>
+                            </div>
+                        </div>
+                        <div class="analysis-wrapper">
+                            <h4>Analysis</h4>
+                            <div class="analysis-content">
+                                <h5>Q2.3 Analysis: Top 10 Most Prolific Authors</h5>
+                                
+                                <p>Based on the publication data, the top 10 most prolific authors are identified as follows:</p>
+                                
+                                <div class="table-responsive">
+                                    <table class="table table-bordered">
+                                        <thead>
+                                            <tr>
+                                                <th>Rank</th>
+                                                <th>Author</th>
+                                                <th>Number of Publications</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td>1</td>
+                                                <td>John Haltiwanger</td>
+                                                <td>74</td>
+                                            </tr>
+                                            <tr>
+                                                <td>2</td>
+                                                <td>Nathan Goldschlag</td>
+                                                <td>55</td>
+                                            </tr>
+                                            <tr>
+                                                <td>3</td>
+                                                <td>Lucia Foster</td>
+                                                <td>52</td>
+                                            </tr>
+                                            <tr>
+                                                <td>4</td>
+                                                <td>Nikolas Zolas</td>
+                                                <td>44</td>
+                                            </tr>
+                                            <tr>
+                                                <td>5</td>
+                                                <td>Javier Miranda</td>
+                                                <td>44</td>
+                                            </tr>
+                                            <tr>
+                                                <td>6</td>
+                                                <td>Scott H. Holan</td>
+                                                <td>43</td>
+                                            </tr>
+                                            <tr>
+                                                <td>7</td>
+                                                <td>Emin Dinlersoz</td>
+                                                <td>39</td>
+                                            </tr>
+                                            <tr>
+                                                <td>8</td>
+                                                <td>John V. Winters</td>
+                                                <td>37</td>
+                                            </tr>
+                                            <tr>
+                                                <td>9</td>
+                                                <td>Jerome P. Reiter</td>
+                                                <td>36</td>
+                                            </tr>
+                                            <tr>
+                                                <td>10</td>
+                                                <td>Katie R. Genadek</td>
+                                                <td>33</td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+
+                                <h5>Key Observations:</h5>
+                                <ul>
+                                    <li><strong>John Haltiwanger</strong> is the most prolific author, contributing to 74 research outputs, significantly ahead of the second-ranked author.</li>
+                                    <li><strong>Nathan Goldschlag</strong> and <strong>Lucia Foster</strong> also demonstrate strong research activity, with 55 and 52 publications respectively.</li>
+                                    <li>Several authors, including <strong>Nikolas Zolas</strong> and <strong>Javier Miranda</strong>, are tied closely with 44 publications each.</li>
+                                    <li>The overall distribution shows a relatively gradual decrease in the number of publications from the top author down to the tenth, indicating a strong and active group of researchers leading FSRDC-related work.</li>
+                                </ul>
+
+                                <p>The horizontal bar chart clearly visualizes the dominance of the top contributors, with John Haltiwanger standing out significantly compared to his peers.</p>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -166,52 +402,638 @@
                 <div class="grid-container">
                     <div class="plot-container">
                         <h3>Citation Distribution (Log Scale)</h3>
-                        <div id="P1_Q2_4_1_Citation_Distribution_Log">
-                            <iframe 
-                                src="output_plots/P1_Q2_4_1_Citation_Distribution_Log.html" 
-                                style="width:100%; height:500px; border:none;"
-                                onerror="this.parentElement.innerHTML='<div class=\'plot-error\'>Error loading plot. Please check console for details.</div>'"
-                            ></iframe>
+                        <div class="plot-wrapper">
+                            <div id="P1_Q2_4_1_Citation_Distribution_Log">
+                                <iframe 
+                                    src="output_plots/P1_Q2_4_1_Citation_Distribution_Log.html" 
+                                    style="width:100%; height:500px; border:none;"
+                                    onerror="this.parentElement.innerHTML='<div class=\'plot-error\'>Error loading plot. Please check console for details.</div>'"
+                                ></iframe>
+                            </div>
+                        </div>
+                        <div class="analysis-wrapper">
+                            <h4>Analysis</h4>
+                            <div class="analysis-content">
+                                <h5>Q2.4.1 Findings: Citation Patterns of FSRDC Outputs</h5>
+                                
+                                <p>After analyzing citation counts for 2,698 FSRDC-related publications, several key insights emerge:</p>
+                                
+                                <h5>Overall Skewness</h5>
+                                <ul>
+                                    <li>The distribution is highly right-skewed: although the mean citation count is <strong>111.2</strong>, the median is only <strong>25</strong>, indicating that most papers receive relatively few citations while a small number achieve very high impact.</li>
+                                </ul>
+
+                                <h5>Concentration of Low-Cited Works</h5>
+                                <ul>
+                                    <li><strong>25%</strong> of publications have <strong>5 or fewer</strong> citations.</li>
+                                    <li><strong>50%</strong> (median) have <strong>25 or fewer</strong> citations.</li>
+                                    <li><strong>75%</strong> have <strong>87.75 or fewer</strong> citations.</li>
+                                </ul>
+
+                                <h5>Heavy Tail of High-Cited Papers</h5>
+                                <ul>
+                                    <li>The <strong>90th percentile</strong> sits at <strong>242</strong> citations, the <strong>95th percentile</strong> at <strong>464</strong>, and the <strong>99th percentile</strong> at <strong>1,475</strong>.</li>
+                                    <li>The maximum citation count is <strong>10,952</strong>, highlighting a small elite group of exceptionally influential studies.</li>
+                                </ul>
+
+                                <h5>Implications</h5>
+                                <ul>
+                                    <li>The majority of FSRDC outputs achieve modest visibility, while a few "blockbuster" papers drive overall citation metrics.</li>
+                                    <li>This long-tail pattern suggests that targeted support for high-potential research (e.g., through collaborative projects or dissemination efforts) may amplify overall impact.</li>
+                                </ul>
+
+                                <h5>Next Steps</h5>
+                                <ul>
+                                    <li>Investigate characteristics (authors, topics, venues, RDC centers) of top-cited papers to understand drivers of influence.</li>
+                                    <li>Explore strategies to raise the citation profile of mid-range works (e.g., open access, wider dissemination).</li>
+                                </ul>
+
+                                <p>These findings underscore that while FSRDC outputs collectively contribute to the literature, a small fraction of publications account for a disproportionate share of citations.</p>
+                            </div>
                         </div>
                     </div>
                     <div class="plot-container">
                         <h3>Citations Over Time</h3>
-                        <div id="P1_Q2_4_2_Citations_Over_Time">
-                            <iframe 
-                                src="output_plots/P1_Q2_4_2_Citations_Over_Time.html" 
-                                style="width:100%; height:500px; border:none;"
-                                onerror="this.parentElement.innerHTML='<div class=\'plot-error\'>Error loading plot. Please check console for details.</div>'"
-                            ></iframe>
+                        <div class="plot-wrapper">
+                            <div id="P1_Q2_4_2_Citations_Over_Time">
+                                <iframe 
+                                    src="output_plots/P1_Q2_4_2_Citations_Over_Time.html" 
+                                    style="width:100%; height:500px; border:none;"
+                                    onerror="this.parentElement.innerHTML='<div class=\'plot-error\'>Error loading plot. Please check console for details.</div>'"
+                                ></iframe>
+                            </div>
+                        </div>
+                        <div class="analysis-wrapper">
+                            <h4>Analysis</h4>
+                            <div class="analysis-content">
+                                <h5>Q2.4.2 Analysis: Citations Over Time</h5>
+                                
+                                <p>The time-series analysis of citation counts alongside publication volume reveals these patterns:</p>
+                                
+                                <h5>1. Early Years (2000–2004)</h5>
+                                <ul>
+                                    <li>Very few publications in the 2000–2001 period, but those early works accumulate high citations (mean >500, median >180) due to longer exposure time.</li>
+                                </ul>
+
+                                <h5>2. Growth Phase (2005–2010)</h5>
+                                <ul>
+                                    <li>Both mean and median citations per year stabilize around 200–400 (mean) and 80–140 (median).</li>
+                                    <li>Publication output rises gradually from under 50 to around 150 outputs per year.</li>
+                                </ul>
+
+                                <h5>3. Rapid Expansion (2011–2018)</h5>
+                                <ul>
+                                    <li>Publication volume accelerates sharply—from ~150 in 2011 to over 200 by 2015 and peaking near 260 by 2018.</li>
+                                    <li>Meanwhile, average citations drift downward from ~240 to ~120, and median citations fall below 60, reflecting a dilution effect as more recent papers have had less time to accrue citations.</li>
+                                </ul>
+
+                                <h5>4. Maturation & Decline (2019–2025)</h5>
+                                <ul>
+                                    <li>Publication counts remain high (250+ in 2019–2021) before dropping in 2024–2025 (data incomplete for 2025).</li>
+                                    <li>Mean citations continue a gradual decline to under 60 by 2020 and median citations drop to single digits, indicating that newer outputs have not yet built citation momentum.</li>
+                                </ul>
+
+                                <p>Overall, the dual‐axis chart highlights how increasing publication volume over time coexists with a decline in per-paper citation averages, driven largely by the citation lag of recent years.</p>
+                            </div>
                         </div>
                     </div>
                     <div class="plot-container">
                         <h3>Top RDCs by Median Citations</h3>
-                        <div id="P1_Q2_4_4_Top_RDCs_by_Median_Citations">
-                            <iframe 
-                                src="output_plots/P1_Q2_4_4_Top_RDCs_by_Median_Citations.html" 
-                                style="width:100%; height:500px; border:none;"
-                                onerror="this.parentElement.innerHTML='<div class=\'plot-error\'>Error loading plot. Please check console for details.</div>'"
-                            ></iframe>
+                        <div class="plot-wrapper">
+                            <div id="P1_Q2_4_4_Top_RDCs_by_Median_Citations">
+                                <iframe 
+                                    src="output_plots/P1_Q2_4_4_Top_RDCs_by_Median_Citations.html" 
+                                    style="width:100%; height:500px; border:none;"
+                                    onerror="this.parentElement.innerHTML='<div class=\'plot-error\'>Error loading plot. Please check console for details.</div>'"
+                                ></iframe>
+                            </div>
+                        </div>
+                        <div class="analysis-wrapper">
+                            <h4>Analysis</h4>
+                            <div class="analysis-content">
+                                <h5>Q2.4.4 Analysis: Citation Impact by RDC</h5>
+                                
+                                <p>We computed mean and median citation counts per Research Data Center (RDC), then filtered to centers with at least <strong>5 publications</strong> and ranked by <strong>median citations</strong>. The top 15 RDCs are:</p>
+                                
+                                <div class="table-responsive">
+                                    <table class="table table-bordered">
+                                        <thead>
+                                            <tr>
+                                                <th>Rank</th>
+                                                <th>RDC</th>
+                                                <th>Median Citations</th>
+                                                <th>Mean Citations</th>
+                                                <th>Publication Count</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td>1</td>
+                                                <td>Washington</td>
+                                                <td>103.0</td>
+                                                <td>243.23</td>
+                                                <td>73</td>
+                                            </tr>
+                                            <tr>
+                                                <td>2</td>
+                                                <td>USC</td>
+                                                <td>57.5</td>
+                                                <td>128.63</td>
+                                                <td>30</td>
+                                            </tr>
+                                            <tr>
+                                                <td>3</td>
+                                                <td>Triangle</td>
+                                                <td>49.0</td>
+                                                <td>149.05</td>
+                                                <td>181</td>
+                                            </tr>
+                                            <tr>
+                                                <td>4</td>
+                                                <td>Berkeley</td>
+                                                <td>46.0</td>
+                                                <td>207.08</td>
+                                                <td>63</td>
+                                            </tr>
+                                            <tr>
+                                                <td>5</td>
+                                                <td>Nebraska</td>
+                                                <td>45.0</td>
+                                                <td>53.60</td>
+                                                <td>5</td>
+                                            </tr>
+                                            <tr>
+                                                <td>6</td>
+                                                <td>UCLA</td>
+                                                <td>43.0</td>
+                                                <td>166.32</td>
+                                                <td>91</td>
+                                            </tr>
+                                            <tr>
+                                                <td>7</td>
+                                                <td>Boston</td>
+                                                <td>42.0</td>
+                                                <td>151.74</td>
+                                                <td>327</td>
+                                            </tr>
+                                            <tr>
+                                                <td>8</td>
+                                                <td>Chicago</td>
+                                                <td>37.5</td>
+                                                <td>107.61</td>
+                                                <td>232</td>
+                                            </tr>
+                                            <tr>
+                                                <td>9</td>
+                                                <td>Stanford</td>
+                                                <td>34.0</td>
+                                                <td>83.79</td>
+                                                <td>61</td>
+                                            </tr>
+                                            <tr>
+                                                <td>10</td>
+                                                <td>Austin</td>
+                                                <td>32.5</td>
+                                                <td>177.00</td>
+                                                <td>16</td>
+                                            </tr>
+                                            <tr>
+                                                <td>11</td>
+                                                <td>Texas</td>
+                                                <td>32.0</td>
+                                                <td>304.00</td>
+                                                <td>101</td>
+                                            </tr>
+                                            <tr>
+                                                <td>12</td>
+                                                <td>Baruch</td>
+                                                <td>31.0</td>
+                                                <td>97.88</td>
+                                                <td>181</td>
+                                            </tr>
+                                            <tr>
+                                                <td>13</td>
+                                                <td>Michigan</td>
+                                                <td>28.0</td>
+                                                <td>95.12</td>
+                                                <td>340</td>
+                                            </tr>
+                                            <tr>
+                                                <td>14</td>
+                                                <td>Wisconsin</td>
+                                                <td>24.5</td>
+                                                <td>86.96</td>
+                                                <td>50</td>
+                                            </tr>
+                                            <tr>
+                                                <td>15</td>
+                                                <td>Kansas City</td>
+                                                <td>24.0</td>
+                                                <td>104.50</td>
+                                                <td>23</td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+
+                                <p><em>Only RDCs with ≥5 publications are shown.</em></p>
+
+                                <h5>Key Takeaways</h5>
+                                <ul>
+                                    <li><strong>Washington RDC</strong> leads by a wide margin (median 103 citations), suggesting consistently high-impact publications.</li>
+                                    <li><strong>USC</strong> and <strong>Triangle</strong> follow, with medians of ~57 and ~49 respectively, indicating strong citation performance relative to their output volume.</li>
+                                    <li>A handful of centers (e.g., <strong>Nebraska</strong>, <strong>Austin</strong>) have very small publication counts (just above the threshold) but still achieve high medians—this may reflect a few highly cited papers skewing the median.</li>
+                                    <li>Larger centers by volume (e.g., <strong>Michigan</strong>, <strong>Boston</strong>, <strong>Chicago</strong>) show respectable but lower median citations (28–42), reflecting a broader mix of high- and mid-cited works.</li>
+                                </ul>
+
+                                <h5>Interpretation</h5>
+                                <ul>
+                                    <li>Median citations per center provide a robust measure of typical impact, less sensitive to extreme outliers than the mean.</li>
+                                    <li>Washington's clear lead suggests a concentration of influential research, whereas high‐volume centers exhibit a wider range of citation performance.</li>
+                                    <li>Future work could examine topics, authorship, or collaboration patterns behind the highest‐median centers to uncover best practices for maximizing research visibility.</li>
+                                </ul>
+                            </div>
                         </div>
                     </div>
                     <div class="plot-container">
                         <h3>Top Venues by Median Citations</h3>
-                        <div id="P1_Q2_4_5_Top_Venues_by_Median_Citations">
-                            <iframe 
-                                src="output_plots/P1_Q2_4_5_Top_Venues_by_Median_Citations.html" 
-                                style="width:100%; height:500px; border:none;"
-                                onerror="this.parentElement.innerHTML='<div class=\'plot-error\'>Error loading plot. Please check console for details.</div>'"
-                            ></iframe>
+                        <div class="plot-wrapper">
+                            <div id="P1_Q2_4_5_Top_Venues_by_Median_Citations">
+                                <iframe 
+                                    src="output_plots/P1_Q2_4_5_Top_Venues_by_Median_Citations.html" 
+                                    style="width:100%; height:500px; border:none;"
+                                    onerror="this.parentElement.innerHTML='<div class=\'plot-error\'>Error loading plot. Please check console for details.</div>'"
+                                ></iframe>
+                            </div>
+                        </div>
+                        <div class="analysis-wrapper">
+                            <h4>Analysis</h4>
+                            <div class="analysis-content">
+                                <h5>Q2.4.5 Analysis: Citation Impact by Publication Venue</h5>
+                                
+                                <p>After filtering to venues with <strong>at least 3 publications</strong> and ranking by <strong>median citations</strong>, the top 15 venues are:</p>
+                                
+                                <div class="table-responsive">
+                                    <table class="table table-bordered">
+                                        <thead>
+                                            <tr>
+                                                <th>Rank</th>
+                                                <th>Venue</th>
+                                                <th>Median Citations</th>
+                                                <th>Mean Citations</th>
+                                                <th>Publication Count</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td>1</td>
+                                                <td>British Journal of Pharmacology</td>
+                                                <td>256.0</td>
+                                                <td>277.5</td>
+                                                <td>4</td>
+                                            </tr>
+                                            <tr>
+                                                <td>2</td>
+                                                <td>The Quarterly Journal of Economics</td>
+                                                <td>248.0</td>
+                                                <td>387.9</td>
+                                                <td>9</td>
+                                            </tr>
+                                            <tr>
+                                                <td>3</td>
+                                                <td>Applied Geography</td>
+                                                <td>248.0</td>
+                                                <td>183.0</td>
+                                                <td>3</td>
+                                            </tr>
+                                            <tr>
+                                                <td>4</td>
+                                                <td>The Journal of Finance</td>
+                                                <td>244.0</td>
+                                                <td>392.1</td>
+                                                <td>9</td>
+                                            </tr>
+                                            <tr>
+                                                <td>5</td>
+                                                <td>IEEE Communications Letters</td>
+                                                <td>233.0</td>
+                                                <td>286.7</td>
+                                                <td>3</td>
+                                            </tr>
+                                            <tr>
+                                                <td>6</td>
+                                                <td>Journal of Political Economy</td>
+                                                <td>232.0</td>
+                                                <td>348.2</td>
+                                                <td>13</td>
+                                            </tr>
+                                            <tr>
+                                                <td>7</td>
+                                                <td>Brookings Papers on Economic Activity</td>
+                                                <td>222.0</td>
+                                                <td>209.0</td>
+                                                <td>7</td>
+                                            </tr>
+                                            <tr>
+                                                <td>8</td>
+                                                <td>Journal of Econometrics</td>
+                                                <td>215.0</td>
+                                                <td>1186.3</td>
+                                                <td>4</td>
+                                            </tr>
+                                            <tr>
+                                                <td>9</td>
+                                                <td>The Accounting Review</td>
+                                                <td>208.0</td>
+                                                <td>208.0</td>
+                                                <td>4</td>
+                                            </tr>
+                                            <tr>
+                                                <td>10</td>
+                                                <td>Review of Financial Studies</td>
+                                                <td>204.0</td>
+                                                <td>287.1</td>
+                                                <td>13</td>
+                                            </tr>
+                                            <tr>
+                                                <td>11</td>
+                                                <td>2021 IEEE/CVF International Conference on Computer Vision (ICCV)</td>
+                                                <td>182.0</td>
+                                                <td>490.3</td>
+                                                <td>4</td>
+                                            </tr>
+                                            <tr>
+                                                <td>12</td>
+                                                <td>The Astrophysical Journal Supplement Series</td>
+                                                <td>182.0</td>
+                                                <td>257.3</td>
+                                                <td>3</td>
+                                            </tr>
+                                            <tr>
+                                                <td>13</td>
+                                                <td>The Journal of Economic Perspectives</td>
+                                                <td>175.0</td>
+                                                <td>248.5</td>
+                                                <td>17</td>
+                                            </tr>
+                                            <tr>
+                                                <td>14</td>
+                                                <td>Journal of Financial Economics</td>
+                                                <td>170.5</td>
+                                                <td>327.5</td>
+                                                <td>27</td>
+                                            </tr>
+                                            <tr>
+                                                <td>15</td>
+                                                <td>Journal of Economic Literature</td>
+                                                <td>157.5</td>
+                                                <td>547.1</td>
+                                                <td>15</td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+
+                                <p><em>Only venues with ≥3 publications are shown.</em></p>
+
+                                <h5>Key Insights</h5>
+                                <ul>
+                                    <li><strong>Top Scholarly Outlets</strong><br>
+                                        Biomedical and economics journals (e.g., British Journal of Pharmacology, QJE, The Journal of Finance) dominate the top spots, indicating high typical impact per paper.</li>
+                                    <li><strong>Interdisciplinary Influence</strong><br>
+                                        Specialized venues such as <strong>ICCV</strong> and <strong>The Astrophysical Journal Supplement Series</strong> also rank highly, revealing FSRDC's cross-domain research reach.</li>
+                                    <li><strong>Median Robustness</strong><br>
+                                        Using the median ensures that extreme outliers (e.g., very highly cited individual papers) do not disproportionately affect the ranking.</li>
+                                    <li><strong>Strategic Guidance</strong><br>
+                                        Researchers may boost visibility by targeting these high-median venues, while also balancing publication count to maximize overall influence.</li>
+                                </ul>
+                            </div>
                         </div>
                     </div>
                     <div class="plot-container">
                         <h3>Top 20 Cited Papers</h3>
-                        <div id="P1_Q2_4_6_Top_20_Cited_Papers">
-                            <iframe 
-                                src="output_plots/P1_Q2_4_6_Top_20_Cited_Papers.html" 
-                                style="width:100%; height:500px; border:none;"
-                                onerror="this.parentElement.innerHTML='<div class=\'plot-error\'>Error loading plot. Please check console for details.</div>'"
-                            ></iframe>
+                        <div class="plot-wrapper">
+                            <div id="P1_Q2_4_6_Top_20_Cited_Papers">
+                                <iframe 
+                                    src="output_plots/P1_Q2_4_6_Top_20_Cited_Papers.html" 
+                                    style="width:100%; height:500px; border:none;"
+                                    onerror="this.parentElement.innerHTML='<div class=\'plot-error\'>Error loading plot. Please check console for details.</div>'"
+                                ></iframe>
+                            </div>
+                        </div>
+                        <div class="analysis-wrapper">
+                            <h4>Analysis</h4>
+                            <div class="analysis-content">
+                                <h5>Q2.4.6 Analysis: Highly Cited FSRDC Publications</h5>
+                                
+                                <p>The table below lists the top 20 FSRDC‐related publications by citation count:</p>
+                                
+                                <div class="table-responsive">
+                                    <table class="table table-bordered">
+                                        <thead>
+                                            <tr>
+                                                <th>Rank</th>
+                                                <th>Title (shortened)</th>
+                                                <th>Citations</th>
+                                                <th>Year</th>
+                                                <th>Venue</th>
+                                                <th>RDC</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td>1</td>
+                                                <td>SciPy 1.0: fundamental algorithms for scientific computing i…</td>
+                                                <td>10,952</td>
+                                                <td>2020</td>
+                                                <td>Nature Methods</td>
+                                                <td>Texas</td>
+                                            </tr>
+                                            <tr>
+                                                <td>2</td>
+                                                <td>The Impact of Uncertainty Shocks…</td>
+                                                <td>4,818</td>
+                                                <td>2009</td>
+                                                <td>Econometrica</td>
+                                                <td>Berkeley</td>
+                                            </tr>
+                                            <tr>
+                                                <td>3</td>
+                                                <td>Difference-in-differences with variation in treatment timing…</td>
+                                                <td>4,271</td>
+                                                <td>2021</td>
+                                                <td>Journal of Econometrics</td>
+                                                <td>Texas</td>
+                                            </tr>
+                                            <tr>
+                                                <td>4</td>
+                                                <td>Cancer treatment and survivorship statistics, 2019…</td>
+                                                <td>3,853</td>
+                                                <td>2019</td>
+                                                <td>CA: A Cancer Journal for Clinicians</td>
+                                                <td>Triangle</td>
+                                            </tr>
+                                            <tr>
+                                                <td>5</td>
+                                                <td>Intelligent Reflecting Surface Enhanced Wireless Network via…</td>
+                                                <td>3,635</td>
+                                                <td>2019</td>
+                                                <td>IEEE Transactions on Wireless Communications</td>
+                                                <td>Texas</td>
+                                            </tr>
+                                            <tr>
+                                                <td>6</td>
+                                                <td>Diagnostic Criteria for Temporomandibular Disorders (DC/TMD)…</td>
+                                                <td>3,519</td>
+                                                <td>2014</td>
+                                                <td>Journal of Oral & Facial Pain and Headache</td>
+                                                <td>UCLA</td>
+                                            </tr>
+                                            <tr>
+                                                <td>7</td>
+                                                <td>Towards Smart and Reconfigurable Environment: Intelligent Re…</td>
+                                                <td>3,394</td>
+                                                <td>2019</td>
+                                                <td>IEEE Communications Magazine</td>
+                                                <td>Texas</td>
+                                            </tr>
+                                            <tr>
+                                                <td>8</td>
+                                                <td>What Determines Productivity?</td>
+                                                <td>2,500</td>
+                                                <td>2011</td>
+                                                <td>Journal of Economic Literature</td>
+                                                <td>Chicago</td>
+                                            </tr>
+                                            <tr>
+                                                <td>9</td>
+                                                <td>Secular Trends in Incidence of Atrial Fibrillation in Olmste…</td>
+                                                <td>2,496</td>
+                                                <td>2006</td>
+                                                <td>Circulation</td>
+                                                <td>Washington</td>
+                                            </tr>
+                                            <tr>
+                                                <td>10</td>
+                                                <td>Gene discovery and polygenic prediction from a genome-wide a…</td>
+                                                <td>2,408</td>
+                                                <td>2018</td>
+                                                <td>Nature Genetics</td>
+                                                <td>Penn State</td>
+                                            </tr>
+                                            <tr>
+                                                <td>11</td>
+                                                <td>EPOS 2012: European position paper on rhinosinusitis and nas…</td>
+                                                <td>2,309</td>
+                                                <td>2012</td>
+                                                <td>Rhinology Journal</td>
+                                                <td>Boston</td>
+                                            </tr>
+                                            <tr>
+                                                <td>12</td>
+                                                <td>The Gender Wage Gap: Extent, Trends, and Explanations…</td>
+                                                <td>2,297</td>
+                                                <td>2017</td>
+                                                <td>Journal of Economic Literature</td>
+                                                <td>Minnesota</td>
+                                            </tr>
+                                            <tr>
+                                                <td>13</td>
+                                                <td>Generative Image Inpainting with Contextual Attention…</td>
+                                                <td>2,281</td>
+                                                <td>2018</td>
+                                                <td>(missing venue)</td>
+                                                <td>Austin</td>
+                                            </tr>
+                                            <tr>
+                                                <td>14</td>
+                                                <td>"Weathering" and Age Patterns of Allostatic Load Scores Amon…</td>
+                                                <td>2,142</td>
+                                                <td>2005</td>
+                                                <td>American Journal of Public Health</td>
+                                                <td>Michigan</td>
+                                            </tr>
+                                            <tr>
+                                                <td>15</td>
+                                                <td>The real effects of financial constraints: Evidence from a f…</td>
+                                                <td>2,057</td>
+                                                <td>2010</td>
+                                                <td>Journal of Financial Economics</td>
+                                                <td>Triangle</td>
+                                            </tr>
+                                            <tr>
+                                                <td>16</td>
+                                                <td>The Effects of Exposure to Better Neighborhoods on Children:…</td>
+                                                <td>1,855</td>
+                                                <td>2016</td>
+                                                <td>American Economic Review</td>
+                                                <td>Atlanta</td>
+                                            </tr>
+                                            <tr>
+                                                <td>17</td>
+                                                <td>Reallocation, Firm Turnover, and Efficiency: Selection on Pr…</td>
+                                                <td>1,816</td>
+                                                <td>2008</td>
+                                                <td>American Economic Review</td>
+                                                <td>Chicago</td>
+                                            </tr>
+                                            <tr>
+                                                <td>18</td>
+                                                <td>Private Equity Performance: Returns, Persistence, and Capita…</td>
+                                                <td>1,782</td>
+                                                <td>2005</td>
+                                                <td>The Journal of Finance</td>
+                                                <td>Boston</td>
+                                            </tr>
+                                            <tr>
+                                                <td>19</td>
+                                                <td>The Consequences of Mortgage Credit Expansion:…</td>
+                                                <td>1,743</td>
+                                                <td>2009</td>
+                                                <td>The Quarterly Journal of Economics</td>
+                                                <td>Baruch</td>
+                                            </tr>
+                                            <tr>
+                                                <td>20</td>
+                                                <td>Ferreting out Tunneling: An Application to Ind…</td>
+                                                <td>1,665</td>
+                                                <td>2002</td>
+                                                <td>The Quarterly Journal of Economics</td>
+                                                <td>Boston</td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+
+                                <h5>Key Insights</h5>
+                                <ol>
+                                    <li><strong>Extreme Leaders</strong>
+                                        <ul>
+                                            <li><strong>SciPy 1.0</strong> (Nature Methods, 2020) is an outlier with over <strong>10,900</strong> citations, reflecting its foundational role in Python-based scientific computing.</li>
+                                        </ul>
+                                    </li>
+                                    <li><strong>Top Economics Papers</strong>
+                                        <ul>
+                                            <li>Seminal works in economics ("Impact of Uncertainty Shocks," "What Determines Productivity?", "The Gender Wage Gap," and multiple QJE papers) dominate the high‐citation list, underscoring FSRDC's importance for macro- and micro-economic research.</li>
+                                        </ul>
+                                    </li>
+                                    <li><strong>Interdisciplinary Reach</strong>
+                                        <ul>
+                                            <li>High‐impact publications span diverse fields: medical (CA: Cancer Journal, Circulation), engineering (IEEE Wireless, IEEE Communications), genetics (Nature Genetics), and computer science (Generative Image Inpainting).</li>
+                                        </ul>
+                                    </li>
+                                    <li><strong>Temporal Spread</strong>
+                                        <ul>
+                                            <li>Citation leaders range from 2002 through 2021. Classic studies (early 2000s) and recent methodological contributions (e.g., SciPy 1.0, diff-in-diff methodology) both achieve top impact.</li>
+                                        </ul>
+                                    </li>
+                                    <li><strong>RDC Contributions</strong>
+                                        <ul>
+                                            <li><strong>Texas</strong>, <strong>Boston</strong>, <strong>Chicago</strong>, and <strong>Triangle</strong> RDCs repeatedly appear, reflecting both high‐volume and high‐impact research pipelines.</li>
+                                        </ul>
+                                    </li>
+                                </ol>
+                            </div>
                         </div>
                     </div>
                 </div>
