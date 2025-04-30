@@ -43,12 +43,16 @@
 }
 
 \title{Group1Project3}
-\author{Licheng Guo}
+\author{Licheng Guo, Yukun Gao, Qiming Zhang, Zining Hua, Yixuan Xu, Yongchen Lu}
 \date{\today}
+
 
 \begin{document}
 
-\maketitle
+\maketitle  
+\begin{center}
+  \href{https://ellison097.github.io/Group1_Project3/}{\texttt{https://ellison097.github.io/Group1\_Project3/}}
+\end{center}
 
 \tableofcontents
 \newpage
@@ -56,19 +60,31 @@
 \section{Introduction}
 
 \subsection{Project Overview}
-The Group1 Project3 represents a significant undertaking in the field of academic research analytics, specifically focusing on the Federal Statistical Research Data Centers (FSRDC) ecosystem. This comprehensive data science project was initiated to address critical questions about research productivity, impact, and patterns within the FSRDC network. By leveraging advanced data processing techniques and sophisticated analytical methods, the project provides unprecedented insights into the dynamics of academic research output and its broader implications.
+The Project represents a comprehensive data science analysis of the Federal Statistical Research Data Centers (FSRDC) ecosystem, focusing on 2,698 research outputs spanning from 2000 to 2025. This analysis provides unprecedented insights into the dynamics of academic research output and its broader implications for research management and policy development.
 
-At its core, the project seeks to understand how research output evolves over time, how different RDCs contribute to the academic landscape, and what factors influence the impact of research publications. The analysis spans a substantial dataset of 2,698 research outputs, covering a 25-year period from 2000 to 2025. This extensive temporal coverage allows for meaningful analysis of trends and patterns in academic research production and impact.
+At its core, the project seeks to understand how research output evolves over time, how different RDCs contribute to the academic landscape, and what factors influence the impact of research publications. Our analysis reveals several key findings:
 
-The project's methodology combines traditional statistical analysis with cutting-edge machine learning techniques. We employ a multi-faceted approach that includes data cleaning and preprocessing, exploratory data analysis, predictive modeling, and advanced text analysis. This comprehensive methodology enables us to extract meaningful insights from various aspects of the research output data, including publication metadata, citation patterns, and textual content.
+\begin{itemize}
+    \item \textbf{Research Output Growth:} The number of publications increased from near zero in 2000 to approximately 260 per year by 2021-2022, with a slight decline in 2024-2025 (partial data). This 25-fold increase demonstrates the growing importance of FSRDC in academic research.
+    
+    \item \textbf{Top Performing RDCs:} Michigan, Boston, Chicago, Triangle, Baruch, Atlanta, Fed Board, Texas, Minnesota, and UCLA emerged as the most productive centers, collectively accounting for over 70\% of total outputs. This concentration highlights the role of institutional support and collaborative environments in research productivity.
+    
+    \item \textbf{Author Productivity:} John Haltiwanger leads with 74 publications, followed by Nathan Goldschlag (55) and Lucia Foster (52), demonstrating the concentration of research output among a few prolific authors. This pattern suggests the importance of sustained research engagement and expertise development.
+    
+    \item \textbf{Publication Types:} Journal articles dominate (over 90\% of outputs), with reports showing steady growth since 2005. Other categories (book chapters, dissertations, working papers) remain niche, indicating the preference for traditional academic dissemination channels.
+    
+    \item \textbf{Citation Patterns:} Citation distribution is highly skewed, with a median of 25 citations, mean of 111, and maximum of 10,952. Washington RDC achieves the highest median citations (103), followed by USC (57.5) and Triangle (49), suggesting varying levels of research impact across institutions.
+\end{itemize}
 
-One of the project's key strengths lies in its ability to analyze research output across multiple dimensions. We examine temporal trends to understand how research productivity and impact have evolved over the past two decades. This analysis reveals important patterns in publication volume, citation accumulation, and research focus areas. At the institutional level, we assess the productivity and impact of different RDCs, identifying centers of excellence and understanding the factors that contribute to their success.
+Our methodology combines traditional statistical analysis with advanced machine learning techniques, providing a multi-dimensional understanding of research patterns:
 
-The project also delves into author-level analysis, identifying prolific researchers and understanding their contribution patterns. This aspect of the analysis helps in recognizing key contributors to the field and understanding collaboration patterns. Additionally, we conduct venue-level analysis to assess the impact of different publication outlets and their role in disseminating research findings.
-
-A particularly innovative aspect of the project is its use of advanced text analysis techniques. Through topic modeling and semantic analysis of research titles, we identify emerging research themes and track their evolution over time. This analysis provides valuable insights into the changing landscape of research priorities and interests within the FSRDC network.
-
-The project's findings have significant implications for research policy, institutional strategy, and individual career development. By understanding the patterns and factors that contribute to research impact, stakeholders can make more informed decisions about resource allocation, collaboration opportunities, and research direction. The project's comprehensive approach and detailed analysis provide a solid foundation for evidence-based decision-making in the academic research ecosystem.
+\begin{itemize}
+    \item \textbf{Data Processing:} Implemented a robust pipeline for data cleaning, deduplication, and enrichment using OpenAlex and Crossref APIs. The pipeline successfully processed 2,698 research outputs with comprehensive error handling for API rate limits and data inconsistencies.
+    
+    \item \textbf{Analysis Techniques:} Applied regression, classification (XGBoost achieving 78\% accuracy), PCA, clustering (K-Means, DBSCAN), and advanced NLP methods (BERT, LSTM). These techniques revealed complex patterns in research productivity and impact.
+    
+    \item \textbf{Innovative Approaches:} Developed novel combinations like BERT+K-Means+UMAP for topic modeling and implemented survival analysis for citation lifespan prediction. These methods provided deeper insights into research themes and impact trajectories.
+\end{itemize}
 
 \subsection{Project Architecture}
 The project implements a comprehensive data processing and analysis pipeline for research output data. The architecture consists of the following components:
@@ -108,7 +124,7 @@ The project implements a comprehensive data processing and analysis pipeline for
     \end{itemize}
     \item Citation Enriched Data $\rightarrow$ Insights \& Visualizations
     \begin{itemize}
-        \item \texttt{Code/EDA.ipynb}
+        \item \texttt{Code/Group1\_Project3\_P1Q2(EDA)+P2(DataMining).ipynb}
     \end{itemize}
 \end{enumerate}
 
@@ -408,6 +424,8 @@ The pipeline can be executed in four different ways:
 \end{itemize}
 
 \subsection{EDA Analysis Results and Visualizations}
+\paragraph{\textbf{For interactive visual charts and more detailed analysis for each chart, please refer to\textit{Group1\_Project3\_P1Q2(EDA)+P2(DataMining).ipynb}}}\
+
 We performed a comprehensive exploratory analysis of 2,698 research outputs from FSRDC centers. Below is a high-level synthesis of the main findings:
 
 \begin{enumerate}
@@ -470,7 +488,7 @@ FSRDC outputs have grown dramatically over 25 years, concentrated in journal art
 
 
 \section{Using Python for Data Science Applications}
-
+\paragraph{\textbf{For interactive visual charts and more detailed analysis for each chart, please refer to\textit{Group1\_Project3\_P1Q2(EDA)+P2(DataMining).ipynb}}}\
 
 \begin{enumerate}
   \item \textbf{Overview and Exploratory Data Analysis (EDA)}\\
@@ -542,16 +560,44 @@ The comprehensive analysis revealed several critical insights:
 \end{itemize}
 
 \section{GitHub Pages Site}
-\href{https://github.com/Ellison097/Group1_Project3}{\texttt{https://github.com/Ellison097/Group1\_Project3}}
+\href{https://ellison097.github.io/Group1_Project3}{\texttt{https://ellison097.github.io/Group1\_Project3}}
 
 \section{Conclusion}
-The Group1 Project3 has successfully demonstrated the transformative potential of data science in academic research analysis. Through an innovative combination of traditional statistical methods and advanced machine learning techniques, we have developed a comprehensive understanding of research output patterns within the FSRDC ecosystem. The project's findings provide valuable insights that extend beyond mere academic interest, offering practical implications for research management and policy development.
+The Project has successfully demonstrated the transformative potential of data science in academic research analysis. Through an innovative combination of traditional statistical methods and advanced machine learning techniques, we have developed a comprehensive understanding of research output patterns within the FSRDC ecosystem. Our key findings and contributions include:
 
-One of the project's most significant achievements is the development of a robust and scalable data processing pipeline. This pipeline efficiently handles large-scale research data, ensuring data quality and consistency throughout the analysis process. The implementation of sophisticated text analysis techniques has enabled us to extract meaningful patterns from research titles, revealing underlying themes and trends that would otherwise remain hidden. Our predictive models have demonstrated remarkable accuracy in identifying potentially high-impact research, providing valuable tools for research evaluation and planning.
+\begin{itemize}
+    \item \textbf{Data Processing Pipeline:} Developed an efficient pipeline that processes 2,698 research outputs, implementing robust error handling for API rate limits, network issues, and data format inconsistencies. The pipeline successfully enriched data with citation information and metadata from multiple sources, ensuring data quality and consistency throughout the analysis process.
+    
+    \item \textbf{Research Productivity Analysis:} Identified clear patterns in research output growth, showing a 25-fold increase from 2000 to 2022. Our analysis revealed that 10 RDCs account for over 70\% of total outputs, with Michigan, Boston, and Chicago leading in volume. This concentration of research output has important implications for resource allocation and research policy.
+    
+    \item \textbf{Impact Assessment:} Demonstrated that citation impact follows a power-law distribution, with Washington RDC achieving the highest median citations (103). Our analysis showed that early publications (pre-2010) enjoy higher citation rates, while recent works show lower rates due to citation lag. These findings provide valuable insights for research evaluation and impact prediction.
+    
+    \item \textbf{Advanced Analytics:} Successfully applied machine learning techniques:
+    \begin{itemize}
+        \item XGBoost achieved 78\% accuracy in predicting high-impact research
+        \item BERT+K-Means+UMAP identified 5 distinct research themes
+        \item Survival analysis revealed citation accumulation patterns
+    \end{itemize}
+    These techniques enabled us to extract meaningful patterns from research titles and metadata, revealing underlying themes and trends that would otherwise remain hidden.
+    
+    \item \textbf{Practical Applications:} Our findings have direct implications for:
+    \begin{itemize}
+        \item Research funding allocation based on RDC productivity and impact
+        \item Collaboration strategy development using co-authorship networks
+        \item Publication venue selection based on citation patterns
+        \item Early identification of high-impact research using our predictive models
+    \end{itemize}
+    These applications demonstrate the project's value for research management and policy development.
+\end{itemize}
 
-The project's findings have far-reaching implications for various stakeholders in the research ecosystem. For research policymakers, our analysis provides evidence-based insights for funding decisions and resource allocation. The identification of high-impact research patterns and successful collaboration models can inform the development of more effective research policies. At the institutional level, our findings help RDCs understand their position in the research landscape and identify opportunities for strategic development. Individual researchers can benefit from our analysis of successful publication patterns and collaboration networks, informing their career development strategies.
+Looking forward, the project opens several promising avenues for future research and development:
 
-Looking forward, the project opens several promising avenues for future research and development. The expansion of the analysis to include more recent data would provide up-to-date insights into current research trends. Incorporating additional data sources, such as grant information and research funding data, could enhance the comprehensiveness of the analysis. The development of real-time monitoring systems for research impact would enable more dynamic and responsive research management. The creation of interactive visualization tools would make our findings more accessible to a broader range of stakeholders.
+\begin{itemize}
+    \item Incorporating grant funding data to analyze research investment impact
+    \item Developing real-time monitoring systems for research impact
+    \item Extending the analysis to include more recent publications
+    \item Creating interactive visualization tools for research stakeholders
+\end{itemize}
 
 This project represents a significant step forward in the application of data science to academic research analysis. By combining rigorous methodology with practical applications, we have created a framework that can guide future studies in academic impact analysis. The project's findings and methodologies provide a foundation for data-driven decision-making in research management, contributing to the ongoing evolution of evidence-based research policy and practice.
 

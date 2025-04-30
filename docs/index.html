@@ -6,149 +6,325 @@
     <title>Group1 Project3 - Research Output Analysis</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
     <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
     <style>
+        :root {
+            --primary-color: #2c3e50;
+            --secondary-color: #3498db;
+            --background-color: #f8f9fa;
+            --card-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
         body {
-            padding-top: 2rem;
-            padding-bottom: 2rem;
+            background-color: var(--background-color);
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
         }
-        .section {
-            margin-bottom: 3rem;
-            padding: 2rem;
-            background-color: #f8f9fa;
+
+        .header {
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            color: white;
+            padding: 3rem 0;
+            margin-bottom: 2rem;
+            box-shadow: var(--card-shadow);
+        }
+
+        .nav-tabs {
+            background-color: white;
+            padding: 1rem;
             border-radius: 0.5rem;
-        }
-        .plot-container {
-            margin: 2rem 0;
-            background-color: white;
-            padding: 1rem;
-            border-radius: 0.25rem;
-            box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.075);
-        }
-        .analysis {
-            margin-top: 2rem;
-            padding: 1rem;
-            background-color: white;
-            border-radius: 0.25rem;
-        }
-        .nav-pills {
+            box-shadow: var(--card-shadow);
             margin-bottom: 2rem;
         }
-        .loading {
-            text-align: center;
+
+        .nav-tabs .nav-link {
+            color: var(--primary-color);
+            font-weight: 500;
+            padding: 1rem 2rem;
+            border: none;
+            border-radius: 0.5rem;
+            margin: 0 0.5rem;
+            transition: all 0.3s ease;
+        }
+
+        .nav-tabs .nav-link.active {
+            background-color: var(--secondary-color);
+            color: white;
+        }
+
+        .nav-tabs .nav-link:hover:not(.active) {
+            background-color: rgba(52, 152, 219, 0.1);
+        }
+
+        .tab-content {
+            background-color: white;
             padding: 2rem;
+            border-radius: 0.5rem;
+            box-shadow: var(--card-shadow);
+        }
+
+        .plot-container {
+            margin: 1.5rem 0;
+            padding: 1.5rem;
+            background-color: white;
+            border-radius: 0.5rem;
+            box-shadow: var(--card-shadow);
+        }
+
+        .plot-container h3 {
+            color: var(--primary-color);
+            margin-bottom: 1rem;
+            font-size: 1.2rem;
+            font-weight: 600;
+        }
+
+        .section-title {
+            color: var(--primary-color);
+            margin: 2rem 0 1rem;
+            font-weight: 600;
+        }
+
+        .grid-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+            gap: 1.5rem;
+            margin: 1.5rem 0;
+        }
+
+        @media (max-width: 768px) {
+            .grid-container {
+                grid-template-columns: 1fr;
+            }
         }
     </style>
 </head>
 <body>
-    <div class="container">
-        <header class="text-center mb-5">
+    <div class="header text-center">
+        <div class="container">
             <h1>Group1 Project3</h1>
             <h2>Research Output Analysis</h2>
             <p class="lead">A comprehensive analysis of FSRDC research outputs</p>
-        </header>
+        </div>
+    </div>
 
-        <nav class="nav nav-pills nav-fill">
-            <a class="nav-link active" href="#overview">Overview</a>
-            <a class="nav-link" href="#publications">Publications</a>
-            <a class="nav-link" href="#citations">Citations</a>
-            <a class="nav-link" href="#topics">Topics</a>
-            <a class="nav-link" href="#collaboration">Collaboration</a>
-            <a class="nav-link" href="#networks">Networks</a>
-        </nav>
+    <div class="container">
+        <ul class="nav nav-tabs nav-fill" id="myTab" role="tablist">
+            <li class="nav-item" role="presentation">
+                <button class="nav-link active" id="eda-tab" data-bs-toggle="tab" data-bs-target="#eda" type="button" role="tab">EDA</button>
+            </li>
+            <li class="nav-item" role="presentation">
+                <button class="nav-link" id="ds-tab" data-bs-toggle="tab" data-bs-target="#ds" type="button" role="tab">Data Science Applications</button>
+            </li>
+        </ul>
 
-        <section id="overview" class="section">
-            <h2>Overview</h2>
-            <div class="analysis">
-                <div id="overview-content"></div>
+        <div class="tab-content" id="myTabContent">
+            <!-- EDA Tab -->
+            <div class="tab-pane fade show active" id="eda" role="tabpanel">
+                <h3 class="section-title">Publication Analysis</h3>
+                <div class="grid-container">
+                    <div class="plot-container">
+                        <h3>Top 10 RDCs by Output Count</h3>
+                        <div id="P1_Q2_1_Top_10_RDCs_by_Output_Count"></div>
+                    </div>
+                    <div class="plot-container">
+                        <h3>Publications per Year</h3>
+                        <div id="P1_Q2_2_Publications_per_Year"></div>
+                    </div>
+                    <div class="plot-container">
+                        <h3>Top 10 Authors</h3>
+                        <div id="P1_Q2_3_Top_10_Authors"></div>
+                    </div>
+                </div>
+
+                <h3 class="section-title">Citation Analysis</h3>
+                <div class="grid-container">
+                    <div class="plot-container">
+                        <h3>Citation Distribution (Log Scale)</h3>
+                        <div id="P1_Q2_4_1_Citation_Distribution_Log"></div>
+                    </div>
+                    <div class="plot-container">
+                        <h3>Citations Over Time</h3>
+                        <div id="P1_Q2_4_2_Citations_Over_Time"></div>
+                    </div>
+                    <div class="plot-container">
+                        <h3>Top RDCs by Median Citations</h3>
+                        <div id="P1_Q2_4_4_Top_RDCs_by_Median_Citations"></div>
+                    </div>
+                    <div class="plot-container">
+                        <h3>Top Venues by Median Citations</h3>
+                        <div id="P1_Q2_4_5_Top_Venues_by_Median_Citations"></div>
+                    </div>
+                    <div class="plot-container">
+                        <h3>Top 20 Cited Papers</h3>
+                        <div id="P1_Q2_4_6_Top_20_Cited_Papers"></div>
+                    </div>
+                </div>
+
+                <h3 class="section-title">Publication Types Analysis</h3>
+                <div class="grid-container">
+                    <div class="plot-container">
+                        <h3>Publication Types Over Time</h3>
+                        <div id="P1_Q2_5_1_Pub_Types_Over_Time"></div>
+                    </div>
+                    <div class="plot-container">
+                        <h3>Citation Boxplot by Top RDCs</h3>
+                        <div id="P1_Q2_5_2_Citation_Boxplot_Top_RDCs"></div>
+                    </div>
+                    <div class="plot-container">
+                        <h3>Citations vs Year by Type</h3>
+                        <div id="P1_Q2_5_3_Citations_vs_Year_by_Type"></div>
+                    </div>
+                    <div class="plot-container">
+                        <h3>Citation Velocity</h3>
+                        <div id="P1_Q2_5_4_Citation_Velocity"></div>
+                    </div>
+                    <div class="plot-container">
+                        <h3>Correlation Heatmap</h3>
+                        <div id="P1_Q2_5_5_Correlation_Heatmap"></div>
+                    </div>
+                </div>
             </div>
-        </section>
 
-        <section id="publications" class="section">
-            <h2>Publication Analysis</h2>
-            <div class="plot-container" id="publication-trends"></div>
-            <div class="plot-container" id="yearly-publications"></div>
-            <div class="plot-container" id="rdc-productivity"></div>
-            <div class="analysis">
-                <h3>Analysis</h3>
-                <div id="publication-analysis"></div>
+            <!-- Data Science Applications Tab -->
+            <div class="tab-pane fade" id="ds" role="tabpanel">
+                <h3 class="section-title">Machine Learning Models</h3>
+                <div class="grid-container">
+                    <div class="plot-container">
+                        <h3>Linear Regression - Actual vs Predicted</h3>
+                        <div id="P2_Q1_LinReg_Actual_vs_Pred"></div>
+                    </div>
+                    <div class="plot-container">
+                        <h3>Linear Regression - Residuals</h3>
+                        <div id="P2_Q1_LinReg_Residuals"></div>
+                    </div>
+                    <div class="plot-container">
+                        <h3>Logistic Regression - Confusion Matrix</h3>
+                        <div id="P2_Q1_LogReg_Confusion_Matrix"></div>
+                    </div>
+                    <div class="plot-container">
+                        <h3>Logistic Regression - ROC Curve</h3>
+                        <div id="P2_Q1_LogReg_ROC_Curve"></div>
+                    </div>
+                    <div class="plot-container">
+                        <h3>Decision Tree - Confusion Matrix</h3>
+                        <div id="P2_Q1_DTree_Confusion_Matrix"></div>
+                    </div>
+                    <div class="plot-container">
+                        <h3>Decision Tree - ROC Curve</h3>
+                        <div id="P2_Q1_DTree_ROC_Curve"></div>
+                    </div>
+                    <div class="plot-container">
+                        <h3>Random Forest - Confusion Matrix</h3>
+                        <div id="P2_Q1_RF_Confusion_Matrix"></div>
+                    </div>
+                    <div class="plot-container">
+                        <h3>Random Forest - ROC Curve</h3>
+                        <div id="P2_Q1_RF_ROC_Curve"></div>
+                    </div>
+                    <div class="plot-container">
+                        <h3>XGBoost - Confusion Matrix</h3>
+                        <div id="P2_Q1_XGB_Confusion_Matrix"></div>
+                    </div>
+                    <div class="plot-container">
+                        <h3>XGBoost - ROC Curve</h3>
+                        <div id="P2_Q1_XGB_ROC_Curve"></div>
+                    </div>
+                    <div class="plot-container">
+                        <h3>MLP - Confusion Matrix</h3>
+                        <div id="P2_Q1_MLP_Confusion_Matrix"></div>
+                    </div>
+                    <div class="plot-container">
+                        <h3>MLP - ROC Curve</h3>
+                        <div id="P2_Q1_MLP_ROC_Curve"></div>
+                    </div>
+                </div>
+
+                <h3 class="section-title">Dimensionality Reduction</h3>
+                <div class="grid-container">
+                    <div class="plot-container">
+                        <h3>PCA Scree Plot</h3>
+                        <div id="P2_Q2_PCA_Scree_Plot"></div>
+                    </div>
+                    <div class="plot-container">
+                        <h3>PCA Scatter Plot (PC1 vs PC2)</h3>
+                        <div id="P2_Q2_PCA_Scatter_PC1_PC2"></div>
+                    </div>
+                    <div class="plot-container">
+                        <h3>PCA Loadings Heatmap</h3>
+                        <div id="P2_Q2_PCA_Loadings_Heatmap"></div>
+                    </div>
+                </div>
+
+                <h3 class="section-title">Clustering Analysis</h3>
+                <div class="grid-container">
+                    <div class="plot-container">
+                        <h3>KMeans Clustering (3D PCA)</h3>
+                        <div id="P2_Q3_Cluster_KMeans_PCA_3D_Scatter"></div>
+                    </div>
+                    <div class="plot-container">
+                        <h3>Agglomerative Clustering (UMAP)</h3>
+                        <div id="P2_Q3_Cluster_Agglomerative_UMAP_Scatter"></div>
+                    </div>
+                    <div class="plot-container">
+                        <h3>DBSCAN Clustering (UMAP)</h3>
+                        <div id="P2_Q3_Cluster_DBSCAN_UMAP_Scatter"></div>
+                    </div>
+                </div>
+
+                <h3 class="section-title">Advanced Analysis</h3>
+                <div class="grid-container">
+                    <div class="plot-container">
+                        <h3>Co-Authorship Network</h3>
+                        <div id="P2_Q4_DeepMine_CoAuthorship_Network"></div>
+                    </div>
+                    <div class="plot-container">
+                        <h3>Dynamic Topic Modeling</h3>
+                        <div id="P2_Q4_DeepMine_Dynamic_Topic_Modeling"></div>
+                    </div>
+                    <div class="plot-container">
+                        <h3>Survival Analysis (50 Citations)</h3>
+                        <div id="P2_Q4_DeepMine_Survival_Analysis_50_Citations"></div>
+                    </div>
+                    <div class="plot-container">
+                        <h3>BERT KMeans UMAP</h3>
+                        <div id="P2_Q4_Text_BERT_KMeans_UMAP"></div>
+                    </div>
+                    <div class="plot-container">
+                        <h3>LDA Topic 0 Top Words</h3>
+                        <div id="P2_Q4_Text_LDA_Topic_0_Top_Words"></div>
+                    </div>
+                    <div class="plot-container">
+                        <h3>LDA Topic 1 Top Words</h3>
+                        <div id="P2_Q4_Text_LDA_Topic_1_Top_Words"></div>
+                    </div>
+                    <div class="plot-container">
+                        <h3>LDA Topic 2 Top Words</h3>
+                        <div id="P2_Q4_Text_LDA_Topic_2_Top_Words"></div>
+                    </div>
+                    <div class="plot-container">
+                        <h3>LDA Topic 3 Top Words</h3>
+                        <div id="P2_Q4_Text_LDA_Topic_3_Top_Words"></div>
+                    </div>
+                    <div class="plot-container">
+                        <h3>LDA Topic 4 Top Words</h3>
+                        <div id="P2_Q4_Text_LDA_Topic_4_Top_Words"></div>
+                    </div>
+                    <div class="plot-container">
+                        <h3>LSTM Training Metrics</h3>
+                        <div id="P2_Q4_Text_LSTM_Training_Metrics"></div>
+                    </div>
+                    <div class="plot-container">
+                        <h3>TF-IDF Logistic Regression CM</h3>
+                        <div id="P2_Q4_Text_TFIDF_LogReg_CM"></div>
+                    </div>
+                    <div class="plot-container">
+                        <h3>TF-IDF Logistic Regression ROC</h3>
+                        <div id="P2_Q4_Text_TFIDF_LogReg_ROC"></div>
+                    </div>
+                </div>
             </div>
-        </section>
-
-        <section id="citations" class="section">
-            <h2>Citation Analysis</h2>
-            <div class="plot-container" id="citation-analysis"></div>
-            <div class="plot-container" id="venue-impact"></div>
-            <div class="plot-container" id="citation-velocity"></div>
-            <div class="analysis">
-                <h3>Analysis</h3>
-                <div id="citation-analysis-content"></div>
-            </div>
-        </section>
-
-        <section id="topics" class="section">
-            <h2>Topic Analysis</h2>
-            <div class="plot-container" id="topic-modeling"></div>
-            <div class="plot-container" id="topic-evolution"></div>
-            <div class="plot-container" id="keyword-cloud"></div>
-            <div class="analysis">
-                <h3>Analysis</h3>
-                <div id="topic-analysis-content"></div>
-            </div>
-        </section>
-
-        <section id="collaboration" class="section">
-            <h2>Collaboration Analysis</h2>
-            <div class="plot-container" id="author-productivity"></div>
-            <div class="plot-container" id="rdc-collaboration"></div>
-            <div class="analysis">
-                <h3>Analysis</h3>
-                <div id="collaboration-analysis-content"></div>
-            </div>
-        </section>
-
-        <section id="networks" class="section">
-            <h2>Network Analysis</h2>
-            <div class="plot-container" id="author-network"></div>
-            <div class="plot-container" id="citation-network"></div>
-        </section>
-
-        <footer class="text-center mt-5">
-            <p>© 2024 Group1 Project3 Team</p>
-        </footer>
+        </div>
     </div>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
     <script src="js/plots.js"></script>
-    <script>
-        // Add smooth scrolling
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                e.preventDefault();
-                document.querySelector(this.getAttribute('href')).scrollIntoView({
-                    behavior: 'smooth'
-                });
-            });
-        });
-
-        // Update active nav link
-        window.addEventListener('scroll', function() {
-            let sections = document.querySelectorAll('section');
-            let navLinks = document.querySelectorAll('.nav-link');
-            
-            sections.forEach(section => {
-                let sectionTop = section.offsetTop;
-                let sectionHeight = section.clientHeight;
-                if (window.pageYOffset >= sectionTop - 60) {
-                    navLinks.forEach(link => {
-                        link.classList.remove('active');
-                        if (link.getAttribute('href') === '#' + section.id) {
-                            link.classList.add('active');
-                        }
-                    });
-                }
-            });
-        });
-    </script>
 </body>
 </html> 

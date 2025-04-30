@@ -336,4 +336,76 @@ fetch('js/plot_data.json')
 
         Plotly.newPlot('citation-network', [citationNetworkData], citationNetworkLayout);
     })
-    .catch(error => console.error('Error loading plot data:', error)); 
+    .catch(error => console.error('Error loading plot data:', error));
+
+
+document.addEventListener('DOMContentLoaded', function() {
+    
+    loadPlot('P1_Q2_1_Top_10_RDCs_by_Output_Count', 'output_plots/P1_Q2_1_Top_10_RDCs_by_Output_Count.html');
+    loadPlot('P1_Q2_2_Publications_per_Year', 'output_plots/P1_Q2_2_Publications_per_Year.html');
+    loadPlot('P1_Q2_3_Top_10_Authors', 'output_plots/P1_Q2_3_Top_10_Authors.html');
+    loadPlot('P1_Q2_4_1_Citation_Distribution_Log', 'output_plots/P1_Q2_4_1_Citation_Distribution_Log.html');
+    loadPlot('P1_Q2_4_2_Citations_Over_Time', 'output_plots/P1_Q2_4_2_Citations_Over_Time.html');
+    loadPlot('P1_Q2_4_4_Top_RDCs_by_Median_Citations', 'output_plots/P1_Q2_4_4_Top_RDCs_by_Median_Citations.html');
+    loadPlot('P1_Q2_4_5_Top_Venues_by_Median_Citations', 'output_plots/P1_Q2_4_5_Top_Venues_by_Median_Citations.html');
+    loadPlot('P1_Q2_4_6_Top_20_Cited_Papers', 'output_plots/P1_Q2_4_6_Top_20_Cited_Papers.html');
+    loadPlot('P1_Q2_5_1_Pub_Types_Over_Time', 'output_plots/P1_Q2_5_1_Pub_Types_Over_Time.html');
+    loadPlot('P1_Q2_5_2_Citation_Boxplot_Top_RDCs', 'output_plots/P1_Q2_5_2_Citation_Boxplot_Top_RDCs.html');
+    loadPlot('P1_Q2_5_3_Citations_vs_Year_by_Type', 'output_plots/P1_Q2_5_3_Citations_vs_Year_by_Type.html');
+    loadPlot('P1_Q2_5_4_Citation_Velocity', 'output_plots/P1_Q2_5_4_Citation_Velocity.html');
+    loadPlot('P1_Q2_5_5_Correlation_Heatmap', 'output_plots/P1_Q2_5_5_Correlation_Heatmap.html');
+
+    
+    loadPlot('P2_Q1_LinReg_Actual_vs_Pred', 'output_plots/P2_Q1_LinReg_Actual_vs_Pred.html');
+    loadPlot('P2_Q1_LinReg_Residuals', 'output_plots/P2_Q1_LinReg_Residuals.html');
+    loadPlot('P2_Q1_LogReg_Confusion_Matrix', 'output_plots/P2_Q1_LogReg_Confusion_Matrix.html');
+    loadPlot('P2_Q1_LogReg_ROC_Curve', 'output_plots/P2_Q1_LogReg_ROC_Curve.html');
+    loadPlot('P2_Q1_DTree_Confusion_Matrix', 'output_plots/P2_Q1_DTree_Confusion_Matrix.html');
+    loadPlot('P2_Q1_DTree_ROC_Curve', 'output_plots/P2_Q1_DTree_ROC_Curve.html');
+    loadPlot('P2_Q1_RF_Confusion_Matrix', 'output_plots/P2_Q1_RF_Confusion_Matrix.html');
+    loadPlot('P2_Q1_RF_ROC_Curve', 'output_plots/P2_Q1_RF_ROC_Curve.html');
+    loadPlot('P2_Q1_XGB_Confusion_Matrix', 'output_plots/P2_Q1_XGB_Confusion_Matrix.html');
+    loadPlot('P2_Q1_XGB_ROC_Curve', 'output_plots/P2_Q1_XGB_ROC_Curve.html');
+    loadPlot('P2_Q1_MLP_Confusion_Matrix', 'output_plots/P2_Q1_MLP_Confusion_Matrix.html');
+    loadPlot('P2_Q1_MLP_ROC_Curve', 'output_plots/P2_Q1_MLP_ROC_Curve.html');
+
+    loadPlot('P2_Q2_PCA_Scree_Plot', 'output_plots/P2_Q2_PCA_Scree_Plot.html');
+    loadPlot('P2_Q2_PCA_Scatter_PC1_PC2', 'output_plots/P2_Q2_PCA_Scatter_PC1_PC2.html');
+    loadPlot('P2_Q2_PCA_Loadings_Heatmap', 'output_plots/P2_Q2_PCA_Loadings_Heatmap.html');
+
+    loadPlot('P2_Q3_Cluster_KMeans_PCA_3D_Scatter', 'output_plots/P2_Q3_Cluster_KMeans_PCA_3D_Scatter.html');
+    loadPlot('P2_Q3_Cluster_Agglomerative_UMAP_Scatter', 'output_plots/P2_Q3_Cluster_Agglomerative_UMAP_Scatter.html');
+    loadPlot('P2_Q3_Cluster_DBSCAN_UMAP_Scatter', 'output_plots/P2_Q3_Cluster_DBSCAN_UMAP_Scatter.html');
+
+    loadPlot('P2_Q4_DeepMine_CoAuthorship_Network', 'output_plots/P2_Q4_DeepMine_CoAuthorship_Network.html');
+    loadPlot('P2_Q4_DeepMine_Dynamic_Topic_Modeling', 'output_plots/P2_Q4_DeepMine_Dynamic_Topic_Modeling.html');
+    loadPlot('P2_Q4_DeepMine_Survival_Analysis_50_Citations', 'output_plots/P2_Q4_DeepMine_Survival_Analysis_50_Citations.html');
+    loadPlot('P2_Q4_Text_BERT_KMeans_UMAP', 'output_plots/P2_Q4_Text_BERT_KMeans_UMAP.html');
+    loadPlot('P2_Q4_Text_LDA_Topic_0_Top_Words', 'output_plots/P2_Q4_Text_LDA_Topic_0_Top_Words.html');
+    loadPlot('P2_Q4_Text_LDA_Topic_1_Top_Words', 'output_plots/P2_Q4_Text_LDA_Topic_1_Top_Words.html');
+    loadPlot('P2_Q4_Text_LDA_Topic_2_Top_Words', 'output_plots/P2_Q4_Text_LDA_Topic_2_Top_Words.html');
+    loadPlot('P2_Q4_Text_LDA_Topic_3_Top_Words', 'output_plots/P2_Q4_Text_LDA_Topic_3_Top_Words.html');
+    loadPlot('P2_Q4_Text_LDA_Topic_4_Top_Words', 'output_plots/P2_Q4_Text_LDA_Topic_4_Top_Words.html');
+    loadPlot('P2_Q4_Text_LSTM_Training_Metrics', 'output_plots/P2_Q4_Text_LSTM_Training_Metrics.html');
+    loadPlot('P2_Q4_Text_TFIDF_LogReg_CM', 'output_plots/P2_Q4_Text_TFIDF_LogReg_CM.html');
+    loadPlot('P2_Q4_Text_TFIDF_LogReg_ROC', 'output_plots/P2_Q4_Text_TFIDF_LogReg_ROC.html');
+});
+
+
+function loadPlot(containerId, plotPath) {
+    fetch(plotPath)
+        .then(response => response.text())
+        .then(html => {
+            const container = document.getElementById(containerId);
+            if (container) {
+                container.innerHTML = html;
+            }
+        })
+        .catch(error => {
+            console.error(`Error loading plot ${plotPath}:`, error);
+            const container = document.getElementById(containerId);
+            if (container) {
+                container.innerHTML = `<div class="alert alert-danger">Error loading plot: ${error.message}</div>`;
+            }
+        });
+} 

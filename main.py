@@ -183,8 +183,8 @@ def main():
     
     # Execute the Jupyter notebook if not skipped
     if not args.skip_notebook:
-        notebook_path = "Group1_Project3_P1artQ2(EDA)+P2(DataMining).ipynb"
-        output_path = "Group1_Project3_P1artQ2(EDA)+P2(DataMining)_executed.ipynb"
+        notebook_path = "Group1_Project3_P1Q2(EDA)+P2(DataMining).ipynb"
+        output_path = "Group1_Project3_P1Q2(EDA)+P2(DataMining)_executed.ipynb"
         
         if not execute_notebook(notebook_path, output_path):
             print("\nPipeline stopped due to failure in notebook execution")
