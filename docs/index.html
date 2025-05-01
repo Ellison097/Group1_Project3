@@ -511,7 +511,7 @@
                         <div class="analysis-wrapper">
                             <h4>Analysis</h4>
                             <div class="analysis-content">
-                                <h5>Q2.4.4 Analysis: Citation Impact by RDC</h5>
+                                <h5>Q2.4.3 Analysis: Citation Impact by RDC</h5>
                                 
                                 <p>We computed mean and median citation counts per Research Data Center (RDC), then filtered to centers with at least <strong>5 publications</strong> and ranked by <strong>median citations</strong>. The top 15 RDCs are:</p>
                                 
@@ -669,7 +669,7 @@
                         <div class="analysis-wrapper">
                             <h4>Analysis</h4>
                             <div class="analysis-content">
-                                <h5>Q2.4.5 Analysis: Citation Impact by Publication Venue</h5>
+                                <h5>Q2.4.4 Analysis: Citation Impact by Publication Venue</h5>
                                 
                                 <p>After filtering to venues with <strong>at least 3 publications</strong> and ranking by <strong>median citations</strong>, the top 15 venues are:</p>
                                 
@@ -824,9 +824,8 @@
                         <div class="analysis-wrapper">
                             <h4>Analysis</h4>
                             <div class="analysis-content">
-                                <h5>Q2.4.6 Analysis: Highly Cited FSRDC Publications</h5>
-                                
-                                <p>The table below lists the top 20 FSRDC‐related publications by citation count:</p>
+                                <h5>Q2.4.5 Analysis: Top 20 Cited Papers</h5>
+                                <p>The table below lists the top 20 FSRDC-related publications by citation count:</p>
                                 
                                 <div class="table-responsive">
                                     <table class="table table-bordered">
@@ -1007,41 +1006,25 @@
 
                                 <h5>Key Insights</h5>
                                 <ol>
-                                    <li><strong>Extreme Leaders</strong>
-                                        <ul>
-                                            <li><strong>SciPy 1.0</strong> (Nature Methods, 2020) is an outlier with over <strong>10,900</strong> citations, reflecting its foundational role in Python-based scientific computing.</li>
-                                        </ul>
-                                    </li>
-                                    <li><strong>Top Economics Papers</strong>
-                                        <ul>
-                                            <li>Seminal works in economics ("Impact of Uncertainty Shocks," "What Determines Productivity?", "The Gender Wage Gap," and multiple QJE papers) dominate the high‐citation list, underscoring FSRDC's importance for macro- and micro-economic research.</li>
-                                        </ul>
-                                    </li>
-                                    <li><strong>Interdisciplinary Reach</strong>
-                                        <ul>
-                                            <li>High‐impact publications span diverse fields: medical (CA: Cancer Journal, Circulation), engineering (IEEE Wireless, IEEE Communications), genetics (Nature Genetics), and computer science (Generative Image Inpainting).</li>
-                                        </ul>
-                                    </li>
-                                    <li><strong>Temporal Spread</strong>
-                                        <ul>
-                                            <li>Citation leaders range from 2002 through 2021. Classic studies (early 2000s) and recent methodological contributions (e.g., SciPy 1.0, diff-in-diff methodology) both achieve top impact.</li>
-                                        </ul>
-                                    </li>
-                                    <li><strong>RDC Contributions</strong>
-                                        <ul>
-                                            <li><strong>Texas</strong>, <strong>Boston</strong>, <strong>Chicago</strong>, and <strong>Triangle</strong> RDCs repeatedly appear, reflecting both high‐volume and high‐impact research pipelines.</li>
-                                        </ul>
-                                    </li>
+                                    <li><strong>Extreme Leaders</strong><br>
+                                        <strong>SciPy 1.0</strong> (Nature Methods, 2020) is an outlier with over <strong>10,900</strong> citations, reflecting its foundational role in Python-based scientific computing.</li>
+                                    <li><strong>Top Economics Papers</strong><br>
+                                        Seminal works in economics ("Impact of Uncertainty Shocks," "What Determines Productivity?," "The Gender Wage Gap," and multiple QJE papers) dominate the high-citation list, underscoring FSRDC's importance for macro- and micro-economic research.</li>
+                                    <li><strong>Interdisciplinary Reach</strong><br>
+                                        High-impact publications span diverse fields: medical (CA: Cancer Journal, Circulation), engineering (IEEE Wireless, IEEE Communications), genetics (Nature Genetics), and computer science (Generative Image Inpainting).</li>
+                                    <li><strong>Temporal Spread</strong><br>
+                                        Citation leaders range from 2002 through 2021. Classic studies (early 2000s) and recent methodological contributions (e.g., SciPy 1.0, diff-in-diff methodology) both achieve top impact.</li>
+                                    <li><strong>RDC Contributions</strong><br>
+                                        <strong>Texas</strong>, <strong>Boston</strong>, <strong>Chicago</strong>, and <strong>Triangle</strong> RDCs repeatedly appear, reflecting both high-volume and high-impact research pipelines.</li>
                                 </ol>
                             </div>
                         </div>
                     </div>
                 </div>
 
-                <h3 class="section-title">Publication Types Analysis</h3>
-                <div class="grid-container">
-                    <div class="plot-container">
-                        <h3>Publication Types Over Time</h3>
+                <h3 class="section-title">Publication Types Over Time</h3>
+                <div class="plot-container">
+                    <div class="plot-wrapper">
                         <div id="P1_Q2_5_1_Pub_Types_Over_Time">
                             <iframe 
                                 src="output_plots/P1_Q2_5_1_Pub_Types_Over_Time.html" 
@@ -1050,44 +1033,128 @@
                             ></iframe>
                         </div>
                     </div>
+                    <div class="analysis-wrapper">
+                        <h4>Analysis</h4>
+                        <div class="analysis-content">
+                            <h5>Q2.5.1 Analysis: Publication Types Over Time</h5>
+                            <div class="analysis-text">
+                                <p>The area chart shows how different output types (MI = journal articles, BC = book chapters, RE = reports, DI = dissertations, JA = working papers, DS = data sets) evolve from 2000 to 2025:</p>
+                                <ul>
+                                    <li><strong>Dominance of Journal Articles (MI):</strong> MI comprises nearly all publications in every year, growing from virtually zero in 2000 to over 250 outputs by 2021–2022.</li>
+                                    <li><strong>Emergence of Reports (RE):</strong> RE begins to appear around 2005 and steadily increases, reaching a noticeable share (~20–30 papers/year) by 2018–2022.</li>
+                                    <li><strong>Minor Output Types:</strong> BC, DI, JA, and DS remain very small (<5–10 papers/year), with no major surges.</li>
+                                    <li><strong>Implication:</strong> The FSRDC program is overwhelmingly focused on journal article production, but the gradual rise of reports suggests diversification in recent years.</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
                     <div class="plot-container">
                         <h3>Citation Boxplot by Top RDCs</h3>
-                        <div id="P1_Q2_5_2_Citation_Boxplot_Top_RDCs">
-                            <iframe 
-                                src="output_plots/P1_Q2_5_2_Citation_Boxplot_Top_RDCs.html" 
-                                style="width:100%; height:500px; border:none;"
-                                onerror="this.parentElement.innerHTML='<div class=\'plot-error\'>Error loading plot. Please check console for details.</div>'"
-                            ></iframe>
+                        <div class="plot-wrapper">
+                            <div id="P1_Q2_5_2_Citation_Boxplot_Top_RDCs">
+                                <iframe 
+                                    src="output_plots/P1_Q2_5_2_Citation_Boxplot_Top_RDCs.html" 
+                                    style="width:100%; height:500px; border:none;"
+                                    onerror="this.parentElement.innerHTML='<div class=\'plot-error\'>Error loading plot. Please check console for details.</div>'"
+                                ></iframe>
+                            </div>
                         </div>
-                    </div>
-                    <div class="plot-container">
-                        <h3>Citations vs Year by Type</h3>
-                        <div id="P1_Q2_5_3_Citations_vs_Year_by_Type">
-                            <iframe 
-                                src="output_plots/P1_Q2_5_3_Citations_vs_Year_by_Type.html" 
-                                style="width:100%; height:500px; border:none;"
-                                onerror="this.parentElement.innerHTML='<div class=\'plot-error\'>Error loading plot. Please check console for details.</div>'"
-                            ></iframe>
+                        <div class="analysis-wrapper">
+                            <h4>Analysis</h4>
+                            <div class="analysis-content">
+                                <h5>Q2.5.2 Analysis: Citation Boxplot by Top RDCs</h5>
+                                <div class="analysis-text">
+                                    <p>The box plots compare citation counts for the ten RDCs with the highest publication volumes (Michigan, Boston, Fed Board, UCLA, Atlanta, Triangle, Chicago, Baruch, Texas, Minnesota):</p>
+                                    <ul>
+                                        <li><strong>Wide Citation Range:</strong> All ten centers show long "tails" of highly cited papers, with most outputs clustered at lower citation counts.</li>
+                                        <li><strong>Texas Outlier:</strong> Texas's distribution includes an extreme outlier above 10,000 citations (the SciPy 1.0 paper), pulling its mean upward.</li>
+                                        <li><strong>Median Differences:</strong> Boston and Michigan have higher medians (~25–30 citations) compared to smaller centers like Fed Board and Minnesota (medians below 20).</li>
+                                        <li><strong>Consistency:</strong> Centers such as Chicago, Triangle, and UCLA exhibit moderately tight interquartile ranges, suggesting more consistent citation impact across their publications.</li>
+                                        <li><strong>Implication:</strong> While output volume is important, citation performance varies widely—some centers produce consistently citable work, while others rely on a few blockbuster papers.</li>
+                                    </ul>
+                                </div>
+                            </div>
                         </div>
-                    </div>
-                    <div class="plot-container">
-                        <h3>Citation Velocity</h3>
-                        <div id="P1_Q2_5_4_Citation_Velocity">
-                            <iframe 
-                                src="output_plots/P1_Q2_5_4_Citation_Velocity.html" 
-                                style="width:100%; height:500px; border:none;"
-                                onerror="this.parentElement.innerHTML='<div class=\'plot-error\'>Error loading plot. Please check console for details.</div>'"
-                            ></iframe>
-                        </div>
-                    </div>
-                    <div class="plot-container">
-                        <h3>Correlation Heatmap</h3>
-                        <div id="P1_Q2_5_5_Correlation_Heatmap">
-                            <iframe 
-                                src="output_plots/P1_Q2_5_5_Correlation_Heatmap.html" 
-                                style="width:100%; height:500px; border:none;"
-                                onerror="this.parentElement.innerHTML='<div class=\'plot-error\'>Error loading plot. Please check console for details.</div>'"
-                            ></iframe>
+                        <div class="plot-container">
+                            <h3>Citations vs Year by Type</h3>
+                            <div class="plot-wrapper">
+                                <div id="P1_Q2_5_3_Citations_vs_Year_by_Type">
+                                    <iframe 
+                                        src="output_plots/P1_Q2_5_3_Citations_vs_Year_by_Type.html" 
+                                        style="width:100%; height:500px; border:none;"
+                                        onerror="this.parentElement.innerHTML='<div class=\'plot-error\'>Error loading plot. Please check console for details.</div>'"
+                                    ></iframe>
+                                </div>
+                            </div>
+                            <div class="analysis-wrapper">
+                                <h4>Analysis</h4>
+                                <div class="analysis-content">
+                                    <h5>Q2.5.3 Analysis: Citations vs Year by Type</h5>
+                                    <div class="analysis-text">
+                                        <p>The scatter displays each paper's citation count against its publication year, colored by output type:</p>
+                                        <ul>
+                                            <li><strong>Journal Articles (MI) Lead:</strong> MI points (blue) dominate the upper citation range, including several thousand‐citation outliers across all years.</li>
+                                            <li><strong>Low‐Citation Clusters:</strong> RE, BC, DI, JA, and DS outputs mostly lie below 500 citations, with few exceptions.</li>
+                                            <li><strong>Temporal Trend:</strong> Older papers (pre‐2010) tend to have higher citation counts, while recent outputs (post‐2018) cluster near lower counts due to less time for accrual.</li>
+                                            <li><strong>Implication:</strong> Journal articles remain the primary driver of high citation impact; other output types achieve fewer citations and may need targeted dissemination strategies.</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="plot-container">
+                                <h3>Citation Velocity</h3>
+                                <div class="plot-wrapper">
+                                    <div id="P1_Q2_5_4_Citation_Velocity">
+                                        <iframe 
+                                            src="output_plots/P1_Q2_5_4_Citation_Velocity.html" 
+                                            style="width:100%; height:500px; border:none;"
+                                            onerror="this.parentElement.innerHTML='<div class=\'plot-error\'>Error loading plot. Please check console for details.</div>'"
+                                        ></iframe>
+                                    </div>
+                                </div>
+                                <div class="analysis-wrapper">
+                                    <h4>Analysis</h4>
+                                    <div class="analysis-content">
+                                        <h5>Q2.5.4 Analysis: Citation Velocity</h5>
+                                        <div class="analysis-text">
+                                            <p>This scatter plots "citation velocity" (citations divided by years since publication) versus publication year, colored by RDC:</p>
+                                            <ul>
+                                                <li><strong>Fast Risers:</strong> A handful of papers (e.g., 2020 SciPy 1.0) exceed 100 citations per year, indicating rapid influence soon after release.</li>
+                                                <li><strong>RDC Variation:</strong> Texas, Boston, and Chicago RDCs show multiple high‐velocity points, suggesting strong early impact from their recent work.</li>
+                                                <li><strong>General Decline Over Time:</strong> Most papers cluster between 0–30 citations/year, with velocity decreasing for older publications as yearly citations accrue more slowly.</li>
+                                                <li><strong>Implication:</strong> Citation velocity highlights which new papers are "hot" and may identify emerging research trends or methodologies that quickly gain traction.</li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="plot-container">
+                                    <h3>Correlation Heatmap</h3>
+                                    <div class="plot-wrapper">
+                                        <div id="P1_Q2_5_5_Correlation_Heatmap">
+                                            <iframe 
+                                                src="output_plots/P1_Q2_5_5_Correlation_Heatmap.html" 
+                                                style="width:100%; height:500px; border:none;"
+                                                onerror="this.parentElement.innerHTML='<div class=\'plot-error\'>Error loading plot. Please check console for details.</div>'"
+                                            ></iframe>
+                                        </div>
+                                    </div>
+                                    <div class="analysis-wrapper">
+                                        <h4>Analysis</h4>
+                                        <div class="analysis-content">
+                                            <h5>Q2.5.5 Analysis: Correlation Heatmap</h5>
+                                            <div class="analysis-text">
+                                                <p>The heatmap shows Pearson correlations among numeric features: citation count, publication year, month, volume, issue number, and pages:</p>
+                                                <ul>
+                                                    <li><strong>Citations vs. Year:</strong> A moderate negative correlation (~0.21) confirms that newer papers have fewer citations simply due to less time in circulation.</li>
+                                                    <li><strong>Volume & Issue:</strong> These two fields correlate modestly (0.17), suggesting that larger volume/issue numbers tend to group together in some journals.</li>
+                                                    <li><strong>Citations vs. Other Fields:</strong> Very weak correlations (|r|<\0.04) with month, volume, issue, or pages indicate that bibliographic metadata alone does not predict citation impact.</li>
+                                                    <li><strong>Implication:</strong> The dominant driver of citation count is time since publication; other numeric metadata are not strong predictors, pointing toward content and venue as more important factors.</li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -1099,122 +1166,476 @@
                 <div class="grid-container">
                     <div class="plot-container">
                         <h3>Linear Regression - Actual vs Predicted</h3>
-                        <div id="P2_Q1_LinReg_Actual_vs_Pred">
-                            <iframe 
-                                src="output_plots/P2_Q1_LinReg_Actual_vs_Pred.html" 
-                                style="width:100%; height:500px; border:none;"
-                                onerror="this.parentElement.innerHTML='<div class=\'plot-error\'>Error loading plot. Please check console for details.</div>'"
-                            ></iframe>
+                        <div class="plot-wrapper">
+                            <div id="P2_Q1_LinReg_Actual_vs_Pred">
+                                <iframe 
+                                    src="output_plots/P2_Q1_LinReg_Actual_vs_Pred.html" 
+                                    style="width:100%; height:500px; border:none;"
+                                    onerror="this.parentElement.innerHTML='<div class=\'plot-error\'>Error loading plot. Please check console for details.</div>'"
+                                ></iframe>
+                            </div>
+                        </div>
+                        <div class="analysis-wrapper">
+                            <h4>Analysis</h4>
+                            <div class="analysis-content">
+                                <h5>P2.Q1 Analysis: Linear Regression - Actual vs Predicted</h5>
+                                <div class="analysis-text">
+                                    <h6>Regression Model Results and Interpretation</h6>
+                                    <p><strong>Model:</strong> Linear regression predicting total citation count using</p>
+                                    <ul>
+                                        <li>Project duration</li>
+                                        <li>Time since publication</li>
+                                        <li>One-hot encoded major output types</li>
+                                    </ul>
+                                    <h6>Performance Metrics</h6>
+                                    <ul>
+                                        <li><strong>R² Score:</strong> 0.0590
+                                            <ul>
+                                                <li>The model explains about 5.9% of the variance in citation counts, indicating a weak fit.</li>
+                                            </ul>
+                                        </li>
+                                        <li><strong>Mean Absolute Error (MAE):</strong> 141.53
+                                            <ul>
+                                                <li>On average, predictions deviate from true citation counts by ~142 citations.</li>
+                                            </ul>
+                                        </li>
+                                        <li><strong>Root Mean Squared Error (RMSE):</strong> 384.56
+                                            <ul>
+                                                <li>Large RMSE reflects sensitivity to high-citation outliers.</li>
+                                            </ul>
+                                        </li>
+                                    </ul>
+                                    <h6>Actual vs. Predicted Citation Counts</h6>
+                                    <p>The scatter plot shows predicted vs. actual citations with an OLS trendline.</p>
+                                    <ul>
+                                        <li><strong>Underprediction of high-citation papers:</strong> Many points with actual >500 citations cluster below the 45° line, indicating the model cannot capture extreme values.
+                                        <li><strong>Tendency toward the mean:</strong> Predictions for low- and mid-citation papers are closer to the diagonal, but variability remains large.</li>
+                                    </ul>
+                                </div>
+                            </div>
                         </div>
                     </div>
                     <div class="plot-container">
                         <h3>Linear Regression - Residuals</h3>
-                        <div id="P2_Q1_LinReg_Residuals">
-                            <iframe 
-                                src="output_plots/P2_Q1_LinReg_Residuals.html" 
-                                style="width:100%; height:500px; border:none;"
-                                onerror="this.parentElement.innerHTML='<div class=\'plot-error\'>Error loading plot. Please check console for details.</div>'"
-                            ></iframe>
+                        <div class="plot-wrapper">
+                            <div id="P2_Q1_LinReg_Residuals">
+                                <iframe 
+                                    src="output_plots/P2_Q1_LinReg_Residuals.html" 
+                                    style="width:100%; height:500px; border:none;"
+                                    onerror="this.parentElement.innerHTML='<div class=\'plot-error\'>Error loading plot. Please check console for details.</div>'"
+                                ></iframe>
+                            </div>
+                        </div>
+                        <div class="analysis-wrapper">
+                            <h4>Analysis</h4>
+                            <div class="analysis-content">
+                                <h5>P2.Q1 Analysis: Linear Regression - Residuals</h5>
+                                <div class="analysis-text">
+                                    <h6>Residuals vs. Predicted Values</h6>
+                                    <p>The residual plot (error = actual – predicted) reveals:</p>
+                                    <ul>
+                                        <li><strong>Heteroscedasticity:</strong> Residual spread increases with higher predicted values, violating constant variance assumption.</li>
+                                        <li><strong>Outliers:</strong> Several large positive and negative residuals for high-citation papers, showing the linear model's limitations.</li>
+                                    </ul>
+                                    <h6>Insights and Next Steps</h6>
+                                    <ol>
+                                        <li><strong>Feature Limitations</strong>
+                                            <ul>
+                                                <li>Duration and time since publication are insufficient to predict citation impact. Citations depend heavily on content quality, venue prestige, author reputation, and network effects.</li>
+                                            </ul>
+                                        </li>
+                                        <li><strong>Model Improvement</strong>
+                                            <ul>
+                                                <li>Incorporate richer features:
+                                                    <ul>
+                                                        <li>Venue prestige score (e.g., impact factor)</li>
+                                                        <li>Author-specific metrics (e.g., h-index)</li>
+                                                        <li>Textual features from titles/abstracts (TF-IDF vectors or embeddings)</li>
+                                                    </ul>
+                                                </li>
+                                            </ul>
+                                        </li>
+                                        <li><strong>Alternative Algorithms</strong>
+                                            <ul>
+                                                <li>Tree-based models (Random Forest, XGBoost) to capture non-linear relationships and interactions.</li>
+                                                <li>Robust regression to reduce sensitivity to outliers.</li>
+                                            </ul>
+                                        </li>
+                                        <li><strong>Error Analysis</strong>
+                                            <ul>
+                                                <li>Examine top residuals to identify systematic biases (e.g., certain RDCs or output types consistently underpredicted).</li>
+                                            </ul>
+                                        </li>
+                                        <li><strong>Cross-Validation & Regularization</strong>
+                                            <ul>
+                                                <li>Use k-fold CV to validate stability and tune regularization (Lasso, Ridge) to prevent overfitting.</li>
+                                            </ul>
+                                        </li>
+                                    </ol>
+                                </div>
+                            </div>
                         </div>
                     </div>
                     <div class="plot-container">
                         <h3>Logistic Regression - Confusion Matrix</h3>
-                        <div id="P2_Q1_LogReg_Confusion_Matrix">
-                            <iframe 
-                                src="output_plots/P2_Q1_LogReg_Confusion_Matrix.html" 
-                                style="width:100%; height:500px; border:none;"
-                                onerror="this.parentElement.innerHTML='<div class=\'plot-error\'>Error loading plot. Please check console for details.</div>'"
-                            ></iframe>
+                        <div class="plot-wrapper">
+                            <div id="P2_Q1_LogReg_Confusion_Matrix">
+                                <iframe 
+                                    src="output_plots/P2_Q1_LogReg_Confusion_Matrix.html" 
+                                    style="width:100%; height:500px; border:none;"
+                                    onerror="this.parentElement.innerHTML='<div class=\'plot-error\'>Error loading plot. Please check console for details.</div>'"
+                                ></iframe>
+                            </div>
+                        </div>
+                        <div class="analysis-wrapper">
+                            <h4>Analysis</h4>
+                            <div class="analysis-content">
+                                <h5>P2.Q1 Analysis: Logistic Regression - Confusion Matrix</h5>
+                                <div class="analysis-text">
+                                    <h6>Classification Model Results and Interpretation</h6>
+                                    <p><strong>Model:</strong> Logistic regression predicting whether a paper's citation count is at or above the median ("HighCitations") using</p>
+                                    <ul>
+                                        <li>Project duration</li>
+                                        <li>Time since publication</li>
+                                        <li>One-hot encoded major output types</li>
+                                    </ul>
+                                    <h6>Target Distribution</h6>
+                                    <ul>
+                                        <li><strong>Low citations</strong> (below median): 69.1%</li>
+                                        <li><strong>High citations</strong> (at or above median): 30.9%</li>
+                                    </ul>
+                                    <h6>Confusion Matrix</h6>
+                                    <table class="confusion-matrix">
+                                        <tr>
+                                            <th></th>
+                                            <th>Predicted Low</th>
+                                            <th>Predicted High</th>
+                                        </tr>
+                                        <tr>
+                                            <th>Actual Low</th>
+                                            <td>542</td>
+                                            <td>71</td>
+                                        </tr>
+                                        <tr>
+                                            <th>Actual High</th>
+                                            <td>153</td>
+                                            <td>121</td>
+                                        </tr>
+                                    </table>
+                                    <ul>
+                                        <li><strong>True negatives (TN):</strong> 542</li>
+                                        <li><strong>False positives (FP):</strong> 71</li>
+                                        <li><strong>False negatives (FN):</strong> 153</li>
+                                        <li><strong>True positives (TP):</strong> 121</li>
+                                    </ul>
+                                </div>
+                            </div>
                         </div>
                     </div>
                     <div class="plot-container">
                         <h3>Logistic Regression - ROC Curve</h3>
-                        <div id="P2_Q1_LogReg_ROC_Curve">
-                            <iframe 
-                                src="output_plots/P2_Q1_LogReg_ROC_Curve.html" 
-                                style="width:100%; height:500px; border:none;"
-                                onerror="this.parentElement.innerHTML='<div class=\'plot-error\'>Error loading plot. Please check console for details.</div>'"
-                            ></iframe>
+                        <div class="plot-wrapper">
+                            <div id="P2_Q1_LogReg_ROC_Curve">
+                                <iframe 
+                                    src="output_plots/P2_Q1_LogReg_ROC_Curve.html" 
+                                    style="width:100%; height:500px; border:none;"
+                                    onerror="this.parentElement.innerHTML='<div class=\'plot-error\'>Error loading plot. Please check console for details.</div>'"
+                                ></iframe>
+                            </div>
+                        </div>
+                        <div class="analysis-wrapper">
+                            <h4>Analysis</h4>
+                            <div class="analysis-content">
+                                <h5>P2.Q1 Analysis: Logistic Regression - ROC Curve</h5>
+                                <div class="analysis-text">
+                                    <h6>Performance Metrics</h6>
+                                    <ul>
+                                        <li><strong>Accuracy:</strong> 0.747
+                                            <ul>
+                                                <li>74.7% of all papers were correctly classified.</li>
+                                            </ul>
+                                        </li>
+                                        <li><strong>Precision:</strong> 0.630
+                                            <ul>
+                                                <li>When the model predicts "HighCitations", it is correct 63.0% of the time.</li>
+                                            </ul>
+                                        </li>
+                                        <li><strong>Recall:</strong> 0.442
+                                            <ul>
+                                                <li>The model identifies 44.2% of all truly high-citation papers.</li>
+                                            </ul>
+                                        </li>
+                                        <li><strong>F1 Score:</strong> 0.519
+                                            <ul>
+                                                <li>Harmonic mean of precision and recall, reflecting moderate balance.</li>
+                                            </ul>
+                                        </li>
+                                        <li><strong>ROC AUC:</strong> 0.853
+                                            <ul>
+                                                <li>The area under the ROC curve (0.853) indicates good overall separability between high- and low-citation classes.</li>
+                                            </ul>
+                                        </li>
+                                    </ul>
+                                    <h6>ROC Curve</h6>
+                                    <p>The ROC plot shows a strong trade-off between true positive and false positive rates, with the logistic model achieving an AUC of 0.853—significantly above random (0.5).</p>
+                                    <h6>Insights and Next Steps</h6>
+                                    <ol>
+                                        <li><strong>Class Imbalance</strong>
+                                            <ul>
+                                                <li>With roughly 70/30 split, consider resampling (SMOTE, class weights) to improve recall for the minority "HighCitations" class.</li>
+                                            </ul>
+                                        </li>
+                                        <li><strong>Feature Expansion</strong>
+                                            <ul>
+                                                <li>Add richer predictors: venue impact factor, author metrics (h-index), textual features from titles/abstracts.</li>
+                                            </ul>
+                                        </li>
+                                        <li><strong>Model Variants</strong>
+                                            <ul>
+                                                <li>Evaluate tree-based classifiers (Random Forest, XGBoost) and regularized logistic regression (L1/L2) to capture non-linear effects and reduce overfitting.</li>
+                                            </ul>
+                                        </li>
+                                        <li><strong>Threshold Tuning</strong>
+                                            <ul>
+                                                <li>Adjust decision threshold to balance precision and recall according to project priorities (e.g., maximize recall to catch more high-impact papers).</li>
+                                            </ul>
+                                        </li>
+                                        <li><strong>Error Analysis</strong>
+                                            <ul>
+                                                <li>Examine false negatives and false positives to identify systematic biases (e.g., certain RDCs or output types) and refine features accordingly.</li>
+                                            </ul>
+                                        </li>
+                                    </ol>
+                                </div>
+                            </div>
                         </div>
                     </div>
                     <div class="plot-container">
                         <h3>Decision Tree - Confusion Matrix</h3>
-                        <div id="P2_Q1_DTree_Confusion_Matrix">
-                            <iframe 
-                                src="output_plots/P2_Q1_DTree_Confusion_Matrix.html" 
-                                style="width:100%; height:500px; border:none;"
-                                onerror="this.parentElement.innerHTML='<div class=\'plot-error\'>Error loading plot. Please check console for details.</div>'"
-                            ></iframe>
+                        <div class="plot-wrapper">
+                            <div id="P2_Q1_DTree_Confusion_Matrix">
+                                <iframe 
+                                    src="output_plots/P2_Q1_DTree_Confusion_Matrix.html" 
+                                    style="width:100%; height:500px; border:none;"
+                                    onerror="this.parentElement.innerHTML='<div class=\'plot-error\'>Error loading plot. Please check console for details.</div>'"
+                                ></iframe>
+                            </div>
+                        </div>
+                        <div class="analysis-wrapper">
+                            <h4>Analysis</h4>
+                            <div class="analysis-content">
+                                <h5>P2.Q1 Analysis: Decision Tree - Confusion Matrix</h5>
+                                <div class="analysis-text">
+                                    <h6>Decision Tree Classifier Performance</h6>
+                                    <ul>
+                                        <li><strong>Accuracy:</strong> 0.768</li>
+                                        <li><strong>Precision:</strong> 0.601</li>
+                                        <li><strong>Recall:</strong> 0.741</li>
+                                        <li><strong>F1 Score:</strong> 0.663</li>
+                                        <li><strong>ROC AUC:</strong> 0.850</li>
+                                    </ul>
+                                </div>
+                            </div>
                         </div>
                     </div>
                     <div class="plot-container">
                         <h3>Decision Tree - ROC Curve</h3>
-                        <div id="P2_Q1_DTree_ROC_Curve">
-                            <iframe 
-                                src="output_plots/P2_Q1_DTree_ROC_Curve.html" 
-                                style="width:100%; height:500px; border:none;"
-                                onerror="this.parentElement.innerHTML='<div class=\'plot-error\'>Error loading plot. Please check console for details.</div>'"
-                            ></iframe>
+                        <div class="plot-wrapper">
+                            <div id="P2_Q1_DTree_ROC_Curve">
+                                <iframe 
+                                    src="output_plots/P2_Q1_DTree_ROC_Curve.html" 
+                                    style="width:100%; height:500px; border:none;"
+                                    onerror="this.parentElement.innerHTML='<div class=\'plot-error\'>Error loading plot. Please check console for details.</div>'"
+                                ></iframe>
+                            </div>
+                        </div>
+                        <div class="analysis-wrapper">
+                            <h4>Analysis</h4>
+                            <div class="analysis-content">
+                                <h5>P2.Q1 Analysis: Decision Tree - ROC Curve</h5>
+                                <div class="analysis-text">
+                                    <h6>Interpretation</h6>
+                                    <p>The shallow decision tree achieves moderate overall accuracy and a strong ability to identify "HighCitations" papers (recall = 74.1%). However its precision (60.1%) indicates a sizable false‐positive rate. The ROC AUC of 0.850 shows decent separability but suggests that a single tree struggles to capture all decision boundaries.</p>
+                                    
+                                    <h6>Next Steps</h6>
+                                    <ul>
+                                        <li>Prune or tune <code>max_depth</code> and <code>min_samples_leaf</code> to reduce overfitting.</li>
+                                        <li>Compare feature importance to confirm which engineered features drive splits.</li>
+                                        <li>Consider ensemble methods to improve precision without sacrificing recall.</li>
+                                    </ul>
+                                </div>
+                            </div>
                         </div>
                     </div>
                     <div class="plot-container">
                         <h3>Random Forest - Confusion Matrix</h3>
-                        <div id="P2_Q1_RF_Confusion_Matrix">
-                            <iframe 
-                                src="output_plots/P2_Q1_RF_Confusion_Matrix.html" 
-                                style="width:100%; height:500px; border:none;"
-                                onerror="this.parentElement.innerHTML='<div class=\'plot-error\'>Error loading plot. Please check console for details.</div>'"
-                            ></iframe>
+                        <div class="plot-wrapper">
+                            <div id="P2_Q1_RF_Confusion_Matrix">
+                                <iframe 
+                                    src="output_plots/P2_Q1_RF_Confusion_Matrix.html" 
+                                    style="width:100%; height:500px; border:none;"
+                                    onerror="this.parentElement.innerHTML='<div class=\'plot-error\'>Error loading plot. Please check console for details.</div>'"
+                                ></iframe>
+                            </div>
+                        </div>
+                        <div class="analysis-wrapper">
+                            <h4>Analysis</h4>
+                            <div class="analysis-content">
+                                <h5>P2.Q1 Analysis: Random Forest - Confusion Matrix</h5>
+                                <div class="analysis-text">
+                                    <h6>Random Forest Classifier Performance</h6>
+                                    <ul>
+                                        <li><strong>Accuracy:</strong> 0.773</li>
+                                        <li><strong>Precision:</strong> 0.610</li>
+                                        <li><strong>Recall:</strong> 0.741</li>
+                                        <li><strong>F1 Score:</strong> 0.669</li>
+                                        <li><strong>ROC AUC:</strong> 0.859</li>
+                                    </ul>
+                                </div>
+                            </div>
                         </div>
                     </div>
                     <div class="plot-container">
                         <h3>Random Forest - ROC Curve</h3>
-                        <div id="P2_Q1_RF_ROC_Curve">
-                            <iframe 
-                                src="output_plots/P2_Q1_RF_ROC_Curve.html" 
-                                style="width:100%; height:500px; border:none;"
-                                onerror="this.parentElement.innerHTML='<div class=\'plot-error\'>Error loading plot. Please check console for details.</div>'"
-                            ></iframe>
+                        <div class="plot-wrapper">
+                            <div id="P2_Q1_RF_ROC_Curve">
+                                <iframe 
+                                    src="output_plots/P2_Q1_RF_ROC_Curve.html" 
+                                    style="width:100%; height:500px; border:none;"
+                                    onerror="this.parentElement.innerHTML='<div class=\'plot-error\'>Error loading plot. Please check console for details.</div>'"
+                                ></iframe>
+                            </div>
+                        </div>
+                        <div class="analysis-wrapper">
+                            <h4>Analysis</h4>
+                            <div class="analysis-content">
+                                <h5>P2.Q1 Analysis: Random Forest - ROC Curve</h5>
+                                <div class="analysis-text">
+                                    <h6>Interpretation</h6>
+                                    <p>The random forest slightly improves accuracy and F1 over the single tree, while maintaining the same recall (74.1%) and increasing precision to 61.0%. The ROC AUC of 0.859 indicates better overall discrimination of high‐ vs. low‐citation papers.</p>
+                                    
+                                    <h6>Next Steps</h6>
+                                    <ul>
+                                        <li>Tune <code>n_estimators</code>, <code>max_depth</code> and <code>max_features</code> via cross‐validation.</li>
+                                        <li>Analyze feature importance across the ensemble to validate key predictors.</li>
+                                        <li>Explore out‐of‐bag error estimates for internal model validation.</li>
+                                    </ul>
+                                </div>
+                            </div>
                         </div>
                     </div>
                     <div class="plot-container">
                         <h3>XGBoost - Confusion Matrix</h3>
-                        <div id="P2_Q1_XGB_Confusion_Matrix">
-                            <iframe 
-                                src="output_plots/P2_Q1_XGB_Confusion_Matrix.html" 
-                                style="width:100%; height:500px; border:none;"
-                                onerror="this.parentElement.innerHTML='<div class=\'plot-error\'>Error loading plot. Please check console for details.</div>'"
-                            ></iframe>
+                        <div class="plot-wrapper">
+                            <div id="P2_Q1_XGB_Confusion_Matrix">
+                                <iframe 
+                                    src="output_plots/P2_Q1_XGB_Confusion_Matrix.html" 
+                                    style="width:100%; height:500px; border:none;"
+                                    onerror="this.parentElement.innerHTML='<div class=\'plot-error\'>Error loading plot. Please check console for details.</div>'"
+                                ></iframe>
+                            </div>
+                        </div>
+                        <div class="analysis-wrapper">
+                            <h4>Analysis</h4>
+                            <div class="analysis-content">
+                                <h5>P2.Q1 Analysis: XGBoost - Confusion Matrix</h5>
+                                <div class="analysis-text">
+                                    <h6>XGBoost Classifier Performance</h6>
+                                    <ul>
+                                        <li><strong>Accuracy:</strong> 0.780</li>
+                                        <li><strong>Precision:</strong> 0.629</li>
+                                        <li><strong>Recall:</strong> 0.704</li>
+                                        <li><strong>F1 Score:</strong> 0.664</li>
+                                        <li><strong>ROC AUC:</strong> 0.863</li>
+                                    </ul>
+                                </div>
+                            </div>
                         </div>
                     </div>
                     <div class="plot-container">
                         <h3>XGBoost - ROC Curve</h3>
-                        <div id="P2_Q1_XGB_ROC_Curve">
-                            <iframe 
-                                src="output_plots/P2_Q1_XGB_ROC_Curve.html" 
-                                style="width:100%; height:500px; border:none;"
-                                onerror="this.parentElement.innerHTML='<div class=\'plot-error\'>Error loading plot. Please check console for details.</div>'"
-                            ></iframe>
+                        <div class="plot-wrapper">
+                            <div id="P2_Q1_XGB_ROC_Curve">
+                                <iframe 
+                                    src="output_plots/P2_Q1_XGB_ROC_Curve.html" 
+                                    style="width:100%; height:500px; border:none;"
+                                    onerror="this.parentElement.innerHTML='<div class=\'plot-error\'>Error loading plot. Please check console for details.</div>'"
+                                ></iframe>
+                            </div>
+                        </div>
+                        <div class="analysis-wrapper">
+                            <h4>Analysis</h4>
+                            <div class="analysis-content">
+                                <h5>P2.Q1 Analysis: XGBoost - ROC Curve</h5>
+                                <div class="analysis-text">
+                                    <h6>Interpretation</h6>
+                                    <p>XGBoost achieves the highest accuracy (78.0%) and ROC AUC (0.863) among the models, with precision rising to 62.9%, though recall dips slightly to 70.4%. This suggests gradient boosting effectively captures complex, non‐linear relationships, improving overall classification at the cost of a small drop in recall.</p>
+                                    
+                                    <h6>Next Steps</h6>
+                                    <ul>
+                                        <li>Perform hyperparameter tuning (learning rate, <code>max_depth</code>, <code>subsample</code>) to further balance precision and recall.</li>
+                                        <li>Use SHAP values for fine-grained feature impact analysis.</li>
+                                        <li>Evaluate early stopping on a validation set to prevent overfitting.</li>
+                                    </ul>
+                                </div>
+                            </div>
                         </div>
                     </div>
                     <div class="plot-container">
                         <h3>MLP - Confusion Matrix</h3>
-                        <div id="P2_Q1_MLP_Confusion_Matrix">
-                            <iframe 
-                                src="output_plots/P2_Q1_MLP_Confusion_Matrix.html" 
-                                style="width:100%; height:500px; border:none;"
-                                onerror="this.parentElement.innerHTML='<div class=\'plot-error\'>Error loading plot. Please check console for details.</div>'"
-                            ></iframe>
+                        <div class="plot-wrapper">
+                            <div id="P2_Q1_MLP_Confusion_Matrix">
+                                <iframe 
+                                    src="output_plots/P2_Q1_MLP_Confusion_Matrix.html" 
+                                    style="width:100%; height:500px; border:none;"
+                                    onerror="this.parentElement.innerHTML='<div class=\'plot-error\'>Error loading plot. Please check console for details.</div>'"
+                                ></iframe>
+                            </div>
+                        </div>
+                        <div class="analysis-wrapper">
+                            <h4>Analysis</h4>
+                            <div class="analysis-content">
+                                <h5>P2.Q1 Analysis: MLP - Confusion Matrix</h5>
+                                <div class="analysis-text">
+                                    <h6>MLP Neural Network Classifier Performance</h6>
+                                    <ul>
+                                        <li><strong>Accuracy:</strong> 0.767</li>
+                                        <li><strong>Precision:</strong> 0.611</li>
+                                        <li><strong>Recall:</strong> 0.672</li>
+                                        <li><strong>F1 Score:</strong> 0.640</li>
+                                        <li><strong>ROC AUC:</strong> 0.859</li>
+                                    </ul>
+                                </div>
+                            </div>
                         </div>
                     </div>
                     <div class="plot-container">
                         <h3>MLP - ROC Curve</h3>
-                        <div id="P2_Q1_MLP_ROC_Curve">
-                            <iframe 
-                                src="output_plots/P2_Q1_MLP_ROC_Curve.html" 
-                                style="width:100%; height:500px; border:none;"
-                                onerror="this.parentElement.innerHTML='<div class=\'plot-error\'>Error loading plot. Please check console for details.</div>'"
-                            ></iframe>
+                        <div class="plot-wrapper">
+                            <div id="P2_Q1_MLP_ROC_Curve">
+                                <iframe 
+                                    src="output_plots/P2_Q1_MLP_ROC_Curve.html" 
+                                    style="width:100%; height:500px; border:none;"
+                                    onerror="this.parentElement.innerHTML='<div class=\'plot-error\'>Error loading plot. Please check console for details.</div>'"
+                                ></iframe>
+                            </div>
+                        </div>
+                        <div class="analysis-wrapper">
+                            <h4>Analysis</h4>
+                            <div class="analysis-content">
+                                <h5>P2.Q1 Analysis: MLP - ROC Curve</h5>
+                                <div class="analysis-text">
+                                    <h6>Interpretation</h6>
+                                    <p>The multi-layer perceptron achieves an ROC AUC on par with the random forest (0.859) but lower recall (67.2%) and F1 (0.640). This indicates the neural net captures some non‐linear patterns but may require more data or deeper/tuned architecture.</p>
+                                    
+                                    <h6>Next Steps</h6>
+                                    <ul>
+                                        <li>Experiment with additional hidden layers, neurons, and activation functions.</li>
+                                        <li>Apply dropout or L2 regularization to mitigate overfitting.</li>
+                                        <li>Scale up training data or incorporate richer features (e.g., text embeddings) to boost recall.</li>
+                                    </ul>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -1223,66 +1644,216 @@
                 <div class="grid-container">
                     <div class="plot-container">
                         <h3>PCA Scree Plot</h3>
-                        <div id="P2_Q2_PCA_Scree_Plot">
-                            <iframe 
-                                src="output_plots/P2_Q2_PCA_Scree_Plot.html" 
-                                style="width:100%; height:500px; border:none;"
-                                onerror="this.parentElement.innerHTML='<div class=\'plot-error\'>Error loading plot. Please check console for details.</div>'"
-                            ></iframe>
+                        <div class="plot-wrapper">
+                            <div id="P2_Q2_PCA_Scree_Plot">
+                                <iframe 
+                                    src="output_plots/P2_Q2_PCA_Scree_Plot.html" 
+                                    style="width:100%; height:500px; border:none;"
+                                    onerror="this.parentElement.innerHTML='<div class=\'plot-error\'>Error loading plot. Please check console for details.</div>'"
+                                ></iframe>
+                            </div>
+                        </div>
+                        <div class="analysis-wrapper">
+                            <h4>Analysis</h4>
+                            <div class="analysis-content">
+                                <h5>P2.Q2 Analysis: PCA Scree Plot</h5>
+                                <div class="analysis-text">
+                                    <h6>PCA Scree Plot Interpretation</h6>
+                                    <ul>
+                                        <li>The first two principal components (PC1 and PC2) explain roughly 23% and 20% of the total variance, respectively.</li>
+                                        <li>The first four components together capture about 66% of the variance, indicating that a low‐dimensional representation retains most of the signal.</li>
+                                        <li>Beyond PC5, each additional component contributes less than 9% to explained variance, suggesting diminishing returns.</li>
+                                    </ul>
+                                </div>
+                            </div>
                         </div>
                     </div>
                     <div class="plot-container">
                         <h3>PCA Scatter Plot (PC1 vs PC2)</h3>
-                        <div id="P2_Q2_PCA_Scatter_PC1_PC2">
-                            <iframe 
-                                src="output_plots/P2_Q2_PCA_Scatter_PC1_PC2.html" 
-                                style="width:100%; height:500px; border:none;"
-                                onerror="this.parentElement.innerHTML='<div class=\'plot-error\'>Error loading plot. Please check console for details.</div>'"
-                            ></iframe>
+                        <div class="plot-wrapper">
+                            <div id="P2_Q2_PCA_Scatter_PC1_PC2">
+                                <iframe 
+                                    src="output_plots/P2_Q2_PCA_Scatter_PC1_PC2.html" 
+                                    style="width:100%; height:500px; border:none;"
+                                    onerror="this.parentElement.innerHTML='<div class=\'plot-error\'>Error loading plot. Please check console for details.</div>'"
+                                ></iframe>
+                            </div>
+                        </div>
+                        <div class="analysis-wrapper">
+                            <h4>Analysis</h4>
+                            <div class="analysis-content">
+                                <h5>P2.Q2 Analysis: PCA Scatter Plot (PC1 vs PC2)</h5>
+                                <div class="analysis-text">
+                                    <h6>PCA Scatter Plot (PC1 vs PC2)</h6>
+                                    <ul>
+                                        <li>The majority of papers cluster near the origin in PC1–PC2 space, with a long tail along PC1 for a few outliers.</li>
+                                        <li>No clear bimodal separation by "HighCitations" appears, implying citation status is not cleanly separable by the first two PCs alone.</li>
+                                        <li>A handful of outliers with large positive PC1 values correspond to very high–citation or long‐duration publications.</li>
+                                    </ul>
+                                </div>
+                            </div>
                         </div>
                     </div>
                     <div class="plot-container">
                         <h3>PCA Loadings Heatmap</h3>
-                        <div id="P2_Q2_PCA_Loadings_Heatmap">
-                            <iframe 
-                                src="output_plots/P2_Q2_PCA_Loadings_Heatmap.html" 
-                                style="width:100%; height:500px; border:none;"
-                                onerror="this.parentElement.innerHTML='<div class=\'plot-error\'>Error loading plot. Please check console for details.</div>'"
-                            ></iframe>
+                        <div class="plot-wrapper">
+                            <div id="P2_Q2_PCA_Loadings_Heatmap">
+                                <iframe 
+                                    src="output_plots/P2_Q2_PCA_Loadings_Heatmap.html" 
+                                    style="width:100%; height:500px; border:none;"
+                                    onerror="this.parentElement.innerHTML='<div class=\'plot-error\'>Error loading plot. Please check console for details.</div>'"
+                                ></iframe>
+                            </div>
+                        </div>
+                        <div class="analysis-wrapper">
+                            <h4>Analysis</h4>
+                            <div class="analysis-content">
+                                <h5>P2.Q2 Analysis: PCA Loadings Heatmap</h5>
+                                <div class="analysis-text">
+                                    <h6>PCA Feature Loadings (First 5 PCs)</h6>
+                                    <ul>
+                                        <li><strong>PC1</strong> loads most negatively on <strong>TimeSincePublication</strong> and <strong>ProjectDuration</strong>, and moderately on <strong>OutputCitationCount</strong>. This axis reflects a "temporal impact" dimension: older, longer projects with higher citations score low on PC1.</li>
+                                        <li><strong>PC2</strong> loads positively on <strong>OutputVolume</strong>, <strong>OutputNumber</strong>, and <strong>OutputYear</strong>, capturing a "size and recency" dimension (larger and more recent outputs).</li>
+                                        <li><strong>PC4</strong> is dominated by <strong>OutputPages</strong>, isolating variations in page count.</li>
+                                        <li>One‐hot encoded output‐type features have minimal loadings on the first five PCs, suggesting that output type contributes less to the principal variance directions.</li>
+                                    </ul>
+
+                                    <h6>Overall Insights from PCA</h6>
+                                    <ol>
+                                        <li><strong>Temporal vs. Structural Variance</strong>: The strongest source of variance is temporal/project‐duration effects, not output type or venue.</li>
+                                        <li><strong>Dimensionality Reduction</strong>: A 4–5 dimensional PCA subspace captures most of the structure, enabling potential clustering or visualization in reduced space.</li>
+                                        <li><strong>Feature Importance</strong>: Page count and volume/number of outputs emerge as secondary axes of variation, which could guide further feature engineering (e.g., normalizing citation by length or volume).</li>
+                                        <li><strong>Citation Separability</strong>: Since "HighCitations" does not form distinct clusters in PC1–PC2, more specialized features (text embeddings, author metrics, venue prestige) may be needed to separate high‐impact papers.</li>
+                                    </ol>
+                                </div>
+                            </div>
                         </div>
                     </div>
-                </div>
-
-                <h3 class="section-title">Clustering Analysis</h3>
-                <div class="grid-container">
                     <div class="plot-container">
                         <h3>KMeans Clustering (3D PCA)</h3>
-                        <div id="P2_Q3_Cluster_KMeans_PCA_3D_Scatter">
-                            <iframe 
-                                src="output_plots/P2_Q3_Cluster_KMeans_PCA_3D_Scatter.html" 
-                                style="width:100%; height:500px; border:none;"
-                                onerror="this.parentElement.innerHTML='<div class=\'plot-error\'>Error loading plot. Please check console for details.</div>'"
-                            ></iframe>
+                        <div class="plot-wrapper">
+                            <div id="P2_Q3_Cluster_KMeans_PCA_3D_Scatter">
+                                <iframe 
+                                    src="output_plots/P2_Q3_Cluster_KMeans_PCA_3D_Scatter.html" 
+                                    style="width:100%; height:500px; border:none;"
+                                    onerror="this.parentElement.innerHTML='<div class=\'plot-error\'>Error loading plot. Please check console for details.</div>'"
+                                ></iframe>
+                            </div>
+                        </div>
+                        <div class="analysis-wrapper">
+                            <h4>Analysis</h4>
+                            <div class="analysis-content">
+                                <h5>P2.Q3 Analysis: KMeans Clustering (3D PCA)</h5>
+                                <div class="analysis-text">
+                                    <h6>K-Means on PCA-Reduced Data</h6>
+                                    
+                                    <h6>Approach</h6>
+                                    <ol>
+                                        <li>Engineered numeric features (project duration, time since publication, year/month/volume/number/pages, citation count) and one-hot encoded the top 5 output types.</li>
+                                        <li>Standardized all features and applied PCA to reduce to 5 dimensions.</li>
+                                        <li>Ran K-Means (k=4) on the 5-dimensional PCA space.</li>
+                                        <li>Visualized the resulting clusters in a 3D scatter of PC1 vs. PC2 vs. PC3.</li>
+                                    </ol>
+
+                                    <h6>Results</h6>
+                                    <ul>
+                                        <li>Four relatively compact clusters emerge in the leading principal-component subspace.</li>
+                                        <li>One cluster (Cluster 2) contains the handful of extreme outliers (very high citations and long durations).</li>
+                                        <li>The remaining three clusters separate moderately by "temporal impact" (PC1) and "size/recency" (PC2).</li>
+                                    </ul>
+
+                                    <h6>Insight</h6>
+                                    <p>The primary axes of variation (duration vs. recency) drive distinct groupings:</p>
+                                    <ul>
+                                        <li><strong>High-impact, long-duration papers</strong> form their own cluster.</li>
+                                        <li><strong>Recent, moderate-impact outputs</strong> cluster together.</li>
+                                        <li><strong>Older, lower-impact outputs</strong> separate into another group.</li>
+                                    </ul>
+                                    <p>This suggests that citation trajectory and project timescale jointly define natural cohorts in the data.</p>
+                                </div>
+                            </div>
                         </div>
                     </div>
                     <div class="plot-container">
                         <h3>Agglomerative Clustering (UMAP)</h3>
-                        <div id="P2_Q3_Cluster_Agglomerative_UMAP_Scatter">
-                            <iframe 
-                                src="output_plots/P2_Q3_Cluster_Agglomerative_UMAP_Scatter.html" 
-                                style="width:100%; height:500px; border:none;"
-                                onerror="this.parentElement.innerHTML='<div class=\'plot-error\'>Error loading plot. Please check console for details.</div>'"
-                            ></iframe>
+                        <div class="plot-wrapper">
+                            <div id="P2_Q3_Cluster_Agglomerative_UMAP_Scatter">
+                                <iframe 
+                                    src="output_plots/P2_Q3_Cluster_Agglomerative_UMAP_Scatter.html" 
+                                    style="width:100%; height:500px; border:none;"
+                                    onerror="this.parentElement.innerHTML='<div class=\'plot-error\'>Error loading plot. Please check console for details.</div>'"
+                                ></iframe>
+                            </div>
+                        </div>
+                        <div class="analysis-wrapper">
+                            <h4>Analysis</h4>
+                            <div class="analysis-content">
+                                <h5>P2.Q3 Analysis: Agglomerative Clustering (UMAP)</h5>
+                                <div class="analysis-text">
+                                    <h6>Agglomerative Clustering on Full Features + UMAP Visualization</h6>
+                                    
+                                    <h6>Approach</h6>
+                                    <ol>
+                                        <li>Used the full standardized feature matrix (same engineered features as above).</li>
+                                        <li>Performed hierarchical (agglomerative) clustering with 4 clusters.</li>
+                                        <li>Projected the high-dimensional data into 2D using UMAP for visualization.</li>
+                                    </ol>
+
+                                    <h6>Results</h6>
+                                    <ul>
+                                        <li>Two large clusters (Cluster 1 and Cluster 3) are clearly separated in UMAP space, with a smaller third cluster and a few isolated points.</li>
+                                        <li>One cluster groups the very high‐citation, high‐volume outputs.</li>
+                                        <li>Another cluster groups recent but lower‐volume outputs.</li>
+                                        <li>A third medium‐sized cluster captures mid‐range citations and durations.</li>
+                                    </ul>
+
+                                    <h6>Insight</h6>
+                                    <p>Hierarchical clustering reveals a natural hierarchy:</p>
+                                    <ul>
+                                        <li><strong>Elite group</strong> of highly cited, long papers</li>
+                                        <li><strong>Mainstream group</strong> of moderate citations</li>
+                                        <li><strong>Emerging group</strong> of recent, low‐volume outputs</li>
+                                    </ul>
+                                    <p>This hierarchy aligns with research lifecycle: once-high outputs separate from routine outputs.</p>
+                                </div>
+                            </div>
                         </div>
                     </div>
                     <div class="plot-container">
                         <h3>DBSCAN Clustering (UMAP)</h3>
-                        <div id="P2_Q3_Cluster_DBSCAN_UMAP_Scatter">
-                            <iframe 
-                                src="output_plots/P2_Q3_Cluster_DBSCAN_UMAP_Scatter.html" 
-                                style="width:100%; height:500px; border:none;"
-                                onerror="this.parentElement.innerHTML='<div class=\'plot-error\'>Error loading plot. Please check console for details.</div>'"
-                            ></iframe>
+                        <div class="plot-wrapper">
+                            <div id="P2_Q3_Cluster_DBSCAN_UMAP_Scatter">
+                                <iframe 
+                                    src="output_plots/P2_Q3_Cluster_DBSCAN_UMAP_Scatter.html" 
+                                    style="width:100%; height:500px; border:none;"
+                                    onerror="this.parentElement.innerHTML='<div class=\'plot-error\'>Error loading plot. Please check console for details.</div>'"
+                                ></iframe>
+                            </div>
+                        </div>
+                        <div class="analysis-wrapper">
+                            <h4>Analysis</h4>
+                            <div class="analysis-content">
+                                <h5>P2.Q3 Analysis: DBSCAN Clustering (UMAP)</h5>
+                                <div class="analysis-text">
+                                    <h6>DBSCAN on Full Features + UMAP Visualization</h6>
+                                    
+                                    <h6>Approach</h6>
+                                    <ol>
+                                        <li>Applied DBSCAN (ε=1.5, min_samples=15) directly on the standardized feature space.</li>
+                                        <li>Used UMAP to reduce the same space to 2D for plotting.</li>
+                                        <li>Labeled points with DBSCAN clusters (–1 = noise).</li>
+                                    </ol>
+
+                                    <h6>Results</h6>
+                                    <ul>
+                                        <li>DBSCAN identifies a single large core cluster (Cluster 0) that contains the majority of papers.</li>
+                                        <li>A small number of points are labeled as "noise" (Cluster –1), corresponding to extreme outliers in both UMAP dimensions.</li>
+                                    </ul>
+
+                                    <h6>Insight</h6>
+                                    <p>Density-based clustering shows that most FSRDC outputs form one dense "core" of fairly homogeneous behavior, while only a handful of papers are sufficiently unusual (in citation count, duration, or size features) to be flagged as noise. This underscores how the bulk of research outputs share similar impact patterns, with only a few distinct "breakouts" deserving further qualitative study.</p>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -1291,122 +1862,462 @@
                 <div class="grid-container">
                     <div class="plot-container">
                         <h3>Co-Authorship Network</h3>
-                        <div id="P2_Q4_DeepMine_CoAuthorship_Network">
-                            <iframe 
-                                src="output_plots/P2_Q4_DeepMine_CoAuthorship_Network.html" 
-                                style="width:100%; height:500px; border:none;"
-                                onerror="this.parentElement.innerHTML='<div class=\'plot-error\'>Error loading plot. Please check console for details.</div>'"
-                            ></iframe>
+                        <div class="plot-wrapper">
+                            <div id="P2_Q4_DeepMine_CoAuthorship_Network">
+                                <iframe 
+                                    src="output_plots/P2_Q4_DeepMine_CoAuthorship_Network.html" 
+                                    style="width:100%; height:500px; border:none;"
+                                    onerror="this.parentElement.innerHTML='<div class=\'plot-error\'>Error loading plot. Please check console for details.</div>'"
+                                ></iframe>
+                            </div>
+                        </div>
+                        <div class="analysis-wrapper">
+                            <h4>Analysis</h4>
+                            <div class="analysis-content">
+                                <h5>P2.Q4 Analysis: Co-Authorship Network</h5>
+                                <div class="analysis-text">
+                                    <h6>Co-Authorship Network & Louvain Community Analysis</h6>
+                                    
+                                    <h6>How we built it</h6>
+                                    <ul>
+                                        <li>Constructed an undirected graph where each author is a node and an edge connects two authors whenever they co-author a paper, weighted by the number of co-publications.</li>
+                                        <li>Applied the Louvain algorithm to detect densely connected "communities" of collaborators.</li>
+                                        <li>In the Plotly network, node <strong>size</strong> ∝ total co-author degree, and node <strong>color</strong> indicates its Louvain community.</li>
+                                    </ul>
+
+                                    <h6>What the plot shows</h6>
+                                    <ul>
+                                        <li><strong>Distinct collaboration clusters</strong> emerge: each color represents a group of authors who frequently publish together.</li>
+                                        <li>A handful of <strong>high-degree "hub" authors</strong> (large circles) anchor each community—they co-author with many peers and serve as key connectors.</li>
+                                        <li><strong>Bridging nodes</strong> with edges to multiple colors highlight authors who collaborate across communities, potentially transferring ideas between subfields or RDCs.</li>
+                                    </ul>
+
+                                    <h6>Key insights</h6>
+                                    <ol>
+                                        <li>There are ~4–6 major co-authorship communities, each likely centered on a different RDC or thematic area (e.g., health policy vs. economics).</li>
+                                        <li>A small set of highly connected "hub" authors drive most collaborations; engaging these hubs could accelerate cross-RDC knowledge sharing.</li>
+                                        <li>Authors with cross-community ties may form the backbone of interdisciplinary work—flagging them for targeted support could amplify network cohesion.</li>
+                                        <li>Some communities appear sparsely connected to the rest of the network, suggesting pockets of specialization that might benefit from broader integration.</li>
+                                    </ol>
+                                </div>
+                            </div>
                         </div>
                     </div>
                     <div class="plot-container">
                         <h3>Dynamic Topic Modeling</h3>
-                        <div id="P2_Q4_DeepMine_Dynamic_Topic_Modeling">
-                            <iframe 
-                                src="output_plots/P2_Q4_DeepMine_Dynamic_Topic_Modeling.html" 
-                                style="width:100%; height:500px; border:none;"
-                                onerror="this.parentElement.innerHTML='<div class=\'plot-error\'>Error loading plot. Please check console for details.</div>'"
-                            ></iframe>
+                        <div class="plot-wrapper">
+                            <div id="P2_Q4_DeepMine_Dynamic_Topic_Modeling">
+                                <iframe 
+                                    src="output_plots/P2_Q4_DeepMine_Dynamic_Topic_Modeling.html" 
+                                    style="width:100%; height:500px; border:none;"
+                                    onerror="this.parentElement.innerHTML='<div class=\'plot-error\'>Error loading plot. Please check console for details.</div>'"
+                                ></iframe>
+                            </div>
+                        </div>
+                        <div class="analysis-wrapper">
+                            <h4>Analysis</h4>
+                            <div class="analysis-content">
+                                <h5>P2.Q4 Analysis: Dynamic Topic Modeling</h5>
+                                <div class="analysis-text">
+                                    <h6>Dynamic Topic Modeling: Topic Prevalence Over Time</h6>
+                                    
+                                    <p>The stacked area chart tracks how the mix of research topics evolves from 2000 to 2025, where each colored band corresponds to one of the model's discovered topics (labeled by the top three words). Key observations:</p>
+
+                                    <h6>Early Period (2000–2005)</h6>
+                                    <ul>
+                                        <li>The "Other / Noise" category dominates at first, indicating many low-frequency or hard-to-cluster papers.</li>
+                                        <li>A topic characterized by health-and-trade vocabulary (e.g., <strong>health, trade, evidence</strong>) begins to emerge around 2003, reflecting early growth in health-economics studies.</li>
+                                    </ul>
+
+                                    <h6>Mid Period (2006–2015)</h6>
+                                    <ul>
+                                        <li>The health-trade topic peaks in the late 2000s, then gradually gives way to a <strong>"data & social policy"</strong> theme (e.g., <strong>data, evidence, social</strong>), consistent with rising interest in administrative data research.</li>
+                                        <li>A <strong>"labor & firm dynamics"</strong> cluster (e.g., <strong>wage, census, productivity</strong>) appears circa 2010, aligning with work on productivity and labor markets using census microdata.</li>
+                                    </ul>
+
+                                    <h6>Recent Period (2016–2025)</h6>
+                                    <ul>
+                                        <li>From 2016 onward, a <strong>"COVID & market impact"</strong> topic (e.g., <strong>covid, labor market, productivity</strong>) surges, peaking around 2020–2022 as the pandemic reshapes much FSRDC-based research.</li>
+                                        <li>The health-trade and labor-dynamics topics wane, while the "data & social policy" theme remains relatively stable, showing continued interest in administrative datasets.</li>
+                                    </ul>
+
+                                    <h6>Overall Dynamics</h6>
+                                    <ul>
+                                        <li>Topics rise and fall in distinct waves, demonstrating the model's ability to capture the field's shifting focus—from traditional health and trade analyses, through labor-market and productivity studies, to recent pandemic-driven investigations.</li>
+                                        <li>The persistent "Other / Noise" area indicates a steady minority of papers that do not cleanly fit the major themes or are too diffuse to be clustered into the top topics.</li>
+                                    </ul>
+                                </div>
+                            </div>
                         </div>
                     </div>
                     <div class="plot-container">
                         <h3>Survival Analysis (50 Citations)</h3>
-                        <div id="P2_Q4_DeepMine_Survival_Analysis_50_Citations">
-                            <iframe 
-                                src="output_plots/P2_Q4_DeepMine_Survival_Analysis_50_Citations.html" 
-                                style="width:100%; height:500px; border:none;"
-                                onerror="this.parentElement.innerHTML='<div class=\'plot-error\'>Error loading plot. Please check console for details.</div>'"
-                            ></iframe>
+                        <div class="plot-wrapper">
+                            <div id="P2_Q4_DeepMine_Survival_Analysis_50_Citations">
+                                <iframe 
+                                    src="output_plots/P2_Q4_DeepMine_Survival_Analysis_50_Citations.html" 
+                                    style="width:100%; height:500px; border:none;"
+                                    onerror="this.parentElement.innerHTML='<div class=\'plot-error\'>Error loading plot. Please check console for details.</div>'"
+                                ></iframe>
+                            </div>
+                        </div>
+                        <div class="analysis-wrapper">
+                            <h4>Analysis</h4>
+                            <div class="analysis-content">
+                                <h5>P2.Q4 Analysis: Survival Analysis (50 Citations)</h5>
+                                <div class="analysis-text">
+                                    <h6>Survival Analysis: Time to Reach 50 Citations by RDC</h6>
+                                    
+                                    <h6>Methodology</h6>
+                                    <ul>
+                                        <li>We treat each paper's "time to reach 50 citations" as a survival endpoint, censoring those that never hit 50 by the current year.</li>
+                                        <li>Computed <code>TimeSincePub = 2025 − OutputYear</code> and event indicator <code>Event50 = 1</code> if the paper has ≥50 citations, else 0.</li>
+                                        <li>Applied the Kaplan–Meier estimator separately for the five RDCs with the most outputs: Michigan, Boston, Chicago, Triangle, and Baruch.</li>
+                                        <li>Plotted the survival function \(S(t)\), which shows the probability a paper has <em>not</em> yet reached 50 citations after \(t\) years.</li>
+                                    </ul>
+
+                                    <h6>Key Findings</h6>
+                                    <ul>
+                                        <li><strong>Baruch RDC</strong> (orange) declines fastest: only ~20 % of its papers remain uncited at 50 by year 15, and nearly 0 % by year 18. This means a high proportion of Baruch outputs rapidly cross the 50-citation mark.</li>
+                                        <li><strong>Triangle RDC</strong> (purple) and <strong>Michigan RDC</strong> (blue) have similar curves, with about 50 % of their publications uncited at 50 by year 15, indicating moderate "citation velocity."</li>
+                                        <li><strong>Chicago</strong> (green) and <strong>Boston</strong> (red) decline more slowly: after 15 years, ~40–45 % of their papers still haven't reached 50 citations, suggesting a longer "tail" of mid‐impact work.</li>
+                                    </ul>
+
+                                    <h6>Insight</h6>
+                                    <ul>
+                                        <li>Some RDCs (e.g. Baruch) produce fast-impact papers that accumulate citations quickly, whereas others (Boston, Chicago) have a larger share of longer-burn publications.</li>
+                                        <li>These curves help identify RDCs with the most "rapidly influential" research versus those whose work gains traction more gradually.</li>
+                                        <li>Teams could investigate what traits (topics, venues, author networks) drive the faster citation trajectories at Baruch compared to other centers.</li>
+                                    </ul>
+                                </div>
+                            </div>
                         </div>
                     </div>
                     <div class="plot-container">
                         <h3>BERT KMeans UMAP</h3>
-                        <div id="P2_Q4_Text_BERT_KMeans_UMAP">
-                            <iframe 
-                                src="output_plots/P2_Q4_Text_BERT_KMeans_UMAP.html" 
-                                style="width:100%; height:500px; border:none;"
-                                onerror="this.parentElement.innerHTML='<div class=\'plot-error\'>Error loading plot. Please check console for details.</div>'"
-                            ></iframe>
+                        <div class="plot-wrapper">
+                            <div id="P2_Q4_Text_BERT_KMeans_UMAP">
+                                <iframe 
+                                    src="output_plots/P2_Q4_Text_BERT_KMeans_UMAP.html" 
+                                    style="width:100%; height:500px; border:none;"
+                                    onerror="this.parentElement.innerHTML='<div class=\'plot-error\'>Error loading plot. Please check console for details.</div>'"
+                                ></iframe>
+                            </div>
+                        </div>
+                        <div class="analysis-wrapper">
+                            <h4>Analysis</h4>
+                            <div class="analysis-content">
+                                <h5>P2.Q4 Analysis: BERT KMeans UMAP</h5>
+                                <div class="analysis-text">
+                                    <h6>K-Means Clustering on BERT Title Embeddings + UMAP Projection</h6>
+                                    
+                                    <h6>Methodology</h6>
+                                    <ol>
+                                        <li><strong>BERT Embeddings</strong>
+                                            <ul>
+                                                <li>Used the "all-MiniLM-L6-v2" Sentence-Transformer to convert each paper's title into a 384-dimensional vector capturing semantic content.</li>
+                                            </ul>
+                                        </li>
+                                        <li><strong>K-Means Clustering</strong>
+                                            <ul>
+                                                <li>Ran K-Means (k=4) on these embeddings to partition the title space into four topical/semantic clusters.</li>
+                                            </ul>
+                                        </li>
+                                        <li><strong>UMAP Visualization</strong>
+                                            <ul>
+                                                <li>Projected the high-dimensional embeddings down to 2D with UMAP for visual inspection, then colored each point by its K-Means cluster ID in Plotly.</li>
+                                            </ul>
+                                        </li>
+                                    </ol>
+
+                                    <h6>What the Plot Shows</h6>
+                                    <ul>
+                                        <li>The scatter reveals four roughly distinct "clouds" of paper titles in UMAP space.</li>
+                                        <li>Each UMAP cluster (denoted by color) corresponds to one of the four K-Means groups.</li>
+                                        <li>Some overlap persists—titles at cluster boundaries share terminology or themes.</li>
+                                    </ul>
+
+                                    <h6>Key Insights</h6>
+                                    <ul>
+                                        <li><strong>Cluster Separation</strong>: The fact that four clusters are visually discernible suggests that FSRDC paper titles naturally group into a handful of semantic topics (e.g., health, economics, energy, methods).</li>
+                                        <li><strong>Cluster Density</strong>: The largest, densest cluster (e.g., Cluster 2 in yellow) likely corresponds to the most common research theme across RDCs.</li>
+                                        <li><strong>Outliers</strong>: Points isolated far from any cluster center (e.g., upper-right extremes) represent highly specialized or unusual titles that may warrant deeper manual review.</li>
+                                        <li><strong>Boundary Papers</strong>: Papers lying in the "overlap zones" may bridge topics—good candidates for interdisciplinary work or emerging research frontiers.</li>
+                                    </ul>
+                                </div>
+                            </div>
                         </div>
                     </div>
                     <div class="plot-container">
                         <h3>LDA Topic 0 Top Words</h3>
-                        <div id="P2_Q4_Text_LDA_Topic_0_Top_Words">
-                            <iframe 
-                                src="output_plots/P2_Q4_Text_LDA_Topic_0_Top_Words.html" 
-                                style="width:100%; height:500px; border:none;"
-                                onerror="this.parentElement.innerHTML='<div class=\'plot-error\'>Error loading plot. Please check console for details.</div>'"
-                            ></iframe>
+                        <div class="plot-wrapper">
+                            <div id="P2_Q4_Text_LDA_Topic_0_Top_Words">
+                                <iframe 
+                                    src="output_plots/P2_Q4_Text_LDA_Topic_0_Top_Words.html" 
+                                    style="width:100%; height:500px; border:none;"
+                                    onerror="this.parentElement.innerHTML='<div class=\'plot-error\'>Error loading plot. Please check console for details.</div>'"
+                                ></iframe>
+                            </div>
+                        </div>
+                        <div class="analysis-wrapper">
+                            <h4>Analysis</h4>
+                            <div class="analysis-content">
+                                <h5>P2.Q4 Analysis: LDA Topic 0 Top Words</h5>
+                                <div class="analysis-text">
+                                    <h6>LDA Topic Modeling Analysis</h6>
+                                    
+                                    <p>We applied a 5-topic Latent Dirichlet Allocation model over the FSRDC output titles (ngram range 1–2, min_df=5, max_df=0.5). Below is a summary of each topic—with a human-readable label—and the top words driving it:</p>
+
+                                    <ol>
+                                        <li><strong>Health & Insurance Policy</strong>
+                                            <ul>
+                                                <li><strong>Top Words</strong>: health, trade, evidence, insurance, effects, care, international, housing</li>
+                                                <li><strong>Interpretation</strong>: Titles in this cluster focus on health economics, insurance markets, and evidence-based policy evaluation.</li>
+                                            </ul>
+                                        </li>
+                                    </ol>
+                                </div>
+                            </div>
                         </div>
                     </div>
                     <div class="plot-container">
                         <h3>LDA Topic 1 Top Words</h3>
-                        <div id="P2_Q4_Text_LDA_Topic_1_Top_Words">
-                            <iframe 
-                                src="output_plots/P2_Q4_Text_LDA_Topic_1_Top_Words.html" 
-                                style="width:100%; height:500px; border:none;"
-                                onerror="this.parentElement.innerHTML='<div class=\'plot-error\'>Error loading plot. Please check console for details.</div>'"
-                            ></iframe>
+                        <div class="plot-wrapper">
+                            <div id="P2_Q4_Text_LDA_Topic_1_Top_Words">
+                                <iframe 
+                                    src="output_plots/P2_Q4_Text_LDA_Topic_1_Top_Words.html" 
+                                    style="width:100%; height:500px; border:none;"
+                                    onerror="this.parentElement.innerHTML='<div class=\'plot-error\'>Error loading plot. Please check console for details.</div>'"
+                                ></iframe>
+                            </div>
+                        </div>
+                        <div class="analysis-wrapper">
+                            <h4>Analysis</h4>
+                            <div class="analysis-content">
+                                <h5>P2.Q4 Analysis: LDA Topic 1 Top Words</h5>
+                                <div class="analysis-text">
+                                    <ol start="2">
+                                        <li><strong>Labor & Social Science Studies</strong>
+                                            <ul>
+                                                <li><strong>Top Words</strong>: data, evidence, social, wage, census, earnings, using, productivity</li>
+                                                <li><strong>Interpretation</strong>: Emphasis on micro-data analyses of labor markets, wage gaps, and social survey evidence.</li>
+                                            </ul>
+                                        </li>
+                                    </ol>
+                                </div>
+                            </div>
                         </div>
                     </div>
                     <div class="plot-container">
                         <h3>LDA Topic 2 Top Words</h3>
-                        <div id="P2_Q4_Text_LDA_Topic_2_Top_Words">
-                            <iframe 
-                                src="output_plots/P2_Q4_Text_LDA_Topic_2_Top_Words.html" 
-                                style="width:100%; height:500px; border:none;"
-                                onerror="this.parentElement.innerHTML='<div class=\'plot-error\'>Error loading plot. Please check console for details.</div>'"
-                            ></iframe>
+                        <div class="plot-wrapper">
+                            <div id="P2_Q4_Text_LDA_Topic_2_Top_Words">
+                                <iframe 
+                                    src="output_plots/P2_Q4_Text_LDA_Topic_2_Top_Words.html" 
+                                    style="width:100%; height:500px; border:none;"
+                                    onerror="this.parentElement.innerHTML='<div class=\'plot-error\'>Error loading plot. Please check console for details.</div>'"
+                                ></iframe>
+                            </div>
+                        </div>
+                        <div class="analysis-wrapper">
+                            <h4>Analysis</h4>
+                            <div class="analysis-content">
+                                <h5>P2.Q4 Analysis: LDA Topic 2 Top Words</h5>
+                                <div class="analysis-text">
+                                    <ol start="3">
+                                        <li><strong>U.S. Macro & Business Cycles</strong>
+                                            <ul>
+                                                <li><strong>Top Words</strong>: states, united, united states, labor, growth, business, recession</li>
+                                                <li><strong>Interpretation</strong>: Papers addressing national economic trends, state-level policy, and business-cycle dynamics in the U.S.</li>
+                                            </ul>
+                                        </li>
+                                    </ol>
+                                </div>
+                            </div>
                         </div>
                     </div>
                     <div class="plot-container">
                         <h3>LDA Topic 3 Top Words</h3>
-                        <div id="P2_Q4_Text_LDA_Topic_3_Top_Words">
-                            <iframe 
-                                src="output_plots/P2_Q4_Text_LDA_Topic_3_Top_Words.html" 
-                                style="width:100%; height:500px; border:none;"
-                                onerror="this.parentElement.innerHTML='<div class=\'plot-error\'>Error loading plot. Please check console for details.</div>'"
-                            ></iframe>
+                        <div class="plot-wrapper">
+                            <div id="P2_Q4_Text_LDA_Topic_3_Top_Words">
+                                <iframe 
+                                    src="output_plots/P2_Q4_Text_LDA_Topic_3_Top_Words.html" 
+                                    style="width:100%; height:500px; border:none;"
+                                    onerror="this.parentElement.innerHTML='<div class=\'plot-error\'>Error loading plot. Please check console for details.</div>'"
+                                ></iframe>
+                            </div>
+                        </div>
+                        <div class="analysis-wrapper">
+                            <h4>Analysis</h4>
+                            <div class="analysis-content">
+                                <h5>P2.Q4 Analysis: LDA Topic 3 Top Words</h5>
+                                <div class="analysis-text">
+                                    <ol start="4">
+                                        <li><strong>Manufacturing & Firms Research</strong>
+                                            <ul>
+                                                <li><strong>Top Words</strong>: data, income, level, firm, survey, manufacturing, production, plant</li>
+                                                <li><strong>Interpretation</strong>: Focus on firm-level productivity, manufacturing sector studies, and production data analysis.</li>
+                                            </ul>
+                                        </li>
+                                    </ol>
+                                </div>
+                            </div>
                         </div>
                     </div>
                     <div class="plot-container">
                         <h3>LDA Topic 4 Top Words</h3>
-                        <div id="P2_Q4_Text_LDA_Topic_4_Top_Words">
-                            <iframe 
-                                src="output_plots/P2_Q4_Text_LDA_Topic_4_Top_Words.html" 
-                                style="width:100%; height:500px; border:none;"
-                                onerror="this.parentElement.innerHTML='<div class=\'plot-error\'>Error loading plot. Please check console for details.</div>'"
-                            ></iframe>
+                        <div class="plot-wrapper">
+                            <div id="P2_Q4_Text_LDA_Topic_4_Top_Words">
+                                <iframe 
+                                    src="output_plots/P2_Q4_Text_LDA_Topic_4_Top_Words.html" 
+                                    style="width:100%; height:500px; border:none;"
+                                    onerror="this.parentElement.innerHTML='<div class=\'plot-error\'>Error loading plot. Please check console for details.</div>'"
+                                ></iframe>
+                            </div>
+                        </div>
+                        <div class="analysis-wrapper">
+                            <h4>Analysis</h4>
+                            <div class="analysis-content">
+                                <h5>P2.Q4 Analysis: LDA Topic 4 Top Words</h5>
+                                <div class="analysis-text">
+                                    <ol start="5">
+                                        <li><strong>COVID & Labor Market Effects</strong>
+                                            <ul>
+                                                <li><strong>Top Words</strong>: evidence, market, labor, firm, labor market, productivity, covid, covid 19</li>
+                                                <li><strong>Interpretation</strong>: Research on how the COVID-19 shock affected labor markets, firm behavior, and productivity.</li>
+                                            </ul>
+                                        </li>
+                                    </ol>
+
+                                    <h6>Insight</h6>
+                                    <ul>
+                                        <li><strong>Topical Diversity</strong>: FSRDC outputs span health policy, labor economics, U.S. macroeconomics, firm-level studies, and pandemic impacts.</li>
+                                        <li><strong>Dominant Themes</strong>: "Health & Insurance" and "Labor & Social Science" topics are the most prevalent, reflecting strong public-policy relevance.</li>
+                                        <li><strong>Emerging Focus</strong>: The "COVID & Labor Market Effects" topic highlights rapid pivot to pandemic research in 2020–2022.</li>
+                                        <li><strong>Data-Driven Decisions</strong>: The consistent presence of "data" and "evidence" across multiple topics underscores the centrality of micro-data methods in modern policy research.</li>
+                                    </ul>
+                                </div>
+                            </div>
                         </div>
                     </div>
                     <div class="plot-container">
                         <h3>LSTM Training Metrics</h3>
-                        <div id="P2_Q4_Text_LSTM_Training_Metrics">
-                            <iframe 
-                                src="output_plots/P2_Q4_Text_LSTM_Training_Metrics.html" 
-                                style="width:100%; height:500px; border:none;"
-                                onerror="this.parentElement.innerHTML='<div class=\'plot-error\'>Error loading plot. Please check console for details.</div>'"
-                            ></iframe>
+                        <div class="plot-wrapper">
+                            <div id="P2_Q4_Text_LSTM_Training_Metrics">
+                                <iframe 
+                                    src="output_plots/P2_Q4_Text_LSTM_Training_Metrics.html" 
+                                    style="width:100%; height:500px; border:none;"
+                                    onerror="this.parentElement.innerHTML='<div class=\'plot-error\'>Error loading plot. Please check console for details.</div>'"
+                                ></iframe>
+                            </div>
+                        </div>
+                        <div class="analysis-wrapper">
+                            <h4>Analysis</h4>
+                            <div class="analysis-content">
+                                <h5>P2.Q4 Analysis: LSTM Training Metrics</h5>
+                                <div class="analysis-text">
+                                    <h6>LSTM Text Classifier: Training Metrics Analysis</h6>
+                                    
+                                    <h6>Model Setup</h6>
+                                    <ul>
+                                        <li>We trained a simple Embedding→LSTM→Dense pipeline on paper titles to classify "high" vs. "low" citation count (threshold = median).</li>
+                                        <li>Vocabulary capped at 10 000 tokens, sequence length = 50, LSTM size = 64, Dense(32), binary cross-entropy loss.</li>
+                                    </ul>
+
+                                    <h6>Training vs. Validation Accuracy</h6>
+                                    <ul>
+                                        <li><strong>Train Acc</strong> started at ~0.495, peaked at ~0.515 around epoch 4, then settled back to ~0.498.</li>
+                                        <li><strong>Val Acc</strong> hovered around ~0.505–0.507.</li>
+                                        <li>Neither curve rises significantly above 0.50, indicating the model barely outperforms random guessing.</li>
+                                    </ul>
+
+                                    <h6>Training vs. Validation Loss</h6>
+                                    <ul>
+                                        <li>Both <strong>Train Loss</strong> and <strong>Val Loss</strong> begin ~0.695 and remain nearly flat (0.695–0.697).</li>
+                                        <li>No pronounced downward trend—model is not learning strong patterns from the title text alone.</li>
+                                    </ul>
+
+                                    <h6>Over-/Under-Fitting</h6>
+                                    <ul>
+                                        <li>The almost-identical train & val curves with very small gap show no overfitting, but also no real learning (under-fitting).</li>
+                                    </ul>
+
+                                    <h6>Key Insight</h6>
+                                    <ul>
+                                        <li>Title text by itself carries very weak signal for predicting high vs. low citations. A simple LSTM on raw titles is insufficient.</li>
+                                        <li>We likely need richer text inputs (e.g. abstracts), external features (venue impact factors, author reputation), or pre-trained language models (BERT, GPT) to capture more predictive semantics.</li>
+                                    </ul>
+                                </div>
+                            </div>
                         </div>
                     </div>
                     <div class="plot-container">
                         <h3>TF-IDF Logistic Regression CM</h3>
-                        <div id="P2_Q4_Text_TFIDF_LogReg_CM">
-                            <iframe 
-                                src="output_plots/P2_Q4_Text_TFIDF_LogReg_CM.html" 
-                                style="width:100%; height:500px; border:none;"
-                                onerror="this.parentElement.innerHTML='<div class=\'plot-error\'>Error loading plot. Please check console for details.</div>'"
-                            ></iframe>
+                        <div class="plot-wrapper">
+                            <div id="P2_Q4_Text_TFIDF_LogReg_CM">
+                                <iframe 
+                                    src="output_plots/P2_Q4_Text_TFIDF_LogReg_CM.html" 
+                                    style="width:100%; height:500px; border:none;"
+                                    onerror="this.parentElement.innerHTML='<div class=\'plot-error\'>Error loading plot. Please check console for details.</div>'"
+                                ></iframe>
+                            </div>
+                        </div>
+                        <div class="analysis-wrapper">
+                            <h4>Analysis</h4>
+                            <div class="analysis-content">
+                                <h5>P2.Q4 Analysis: TF-IDF Logistic Regression CM</h5>
+                                <div class="analysis-text">
+                                    <h6>TF-IDF + Logistic Regression Classification</h6>
+                                    
+                                    <h6>Insight</h6>
+                                    <ul>
+                                        <li>Title text carries some signal about eventual citation impact (e.g., topics or keywords associated with higher visibility), but performance is limited (AUC ~0.7).</li>
+                                        <li>A large number of false positives/negatives suggests that title alone is insufficient; deeper context (abstract, keywords, author reputation, venue) and richer models (BERT-based fine-tuning) are likely needed to improve predictive power.</li>
+                                        <li>Nevertheless, TF-IDF + Logistic Regression provides a fast baseline and highlights which title n-grams most strongly correlate with high citation counts.</li>
+                                    </ul>
+                                </div>
+                            </div>
                         </div>
                     </div>
                     <div class="plot-container">
                         <h3>TF-IDF Logistic Regression ROC</h3>
-                        <div id="P2_Q4_Text_TFIDF_LogReg_ROC">
-                            <iframe 
-                                src="output_plots/P2_Q4_Text_TFIDF_LogReg_ROC.html" 
-                                style="width:100%; height:500px; border:none;"
-                                onerror="this.parentElement.innerHTML='<div class=\'plot-error\'>Error loading plot. Please check console for details.</div>'"
-                            ></iframe>
+                        <div class="plot-wrapper">
+                            <div id="P2_Q4_Text_TFIDF_LogReg_ROC">
+                                <iframe 
+                                    src="output_plots/P2_Q4_Text_TFIDF_LogReg_ROC.html" 
+                                    style="width:100%; height:500px; border:none;"
+                                    onerror="this.parentElement.innerHTML='<div class=\'plot-error\'>Error loading plot. Please check console for details.</div>'"
+                                ></iframe>
+                            </div>
+                        </div>
+                        <div class="analysis-wrapper">
+                            <h4>Analysis</h4>
+                            <div class="analysis-content">
+                                <h5>P2.Q4 Analysis: TF-IDF Logistic Regression ROC</h5>
+                                <div class="analysis-text">
+                                    <h6>TF-IDF + Logistic Regression Classification</h6>
+                                    
+                                    <h6>Approach</h6>
+                                    <ul>
+                                        <li>We binarized citation counts at the median, labeling each paper "High" or "Low" impact.</li>
+                                        <li>We transformed the paper titles into a TF-IDF feature matrix (unigrams & bigrams, 5k features, English stop-words removed).</li>
+                                        <li>We trained a Logistic Regression model on 80% of the data and evaluated on the 20% hold-out.</li>
+                                    </ul>
+
+                                    <h6>Results</h6>
+                                    <ul>
+                                        <li><strong>ROC AUC</strong> ≈ 0.700, indicating modest ability to distinguish high‐ vs. low‐citation papers based on title alone.</li>
+                                    </ul>
+
+                                    <h6>Confusion Matrix</h6>
+                                    <ul>
+                                        <li>True positives (High→High): 176</li>
+                                        <li>False negatives (High→Low): 98</li>
+                                        <li>False positives (Low→High): 100</li>
+                                        <li>True negatives (Low→Low): 166</li>
+                                    </ul>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
