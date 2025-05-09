@@ -11,47 +11,45 @@
 \usepackage{booktabs}
 \usepackage{longtable}
 \usepackage{setspace}
+\providecommand{\tightlist}{%
+  \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+  \DeclareUnicodeCharacter{2588}{\rule{1ex}{1ex}}
 
 \captionsetup[subfigure]{skip=0pt}
 \setlength{\abovecaptionskip}{4pt}
 \setlength{\belowcaptionskip}{4pt}
+\UseRawInputEncoding
 
-\geometry{a4paper, margin=1in}
+\geometry{a4paper, left=1in, right=1in, top=1in, bottom=1in}
 
-% 设置行间距
-\renewcommand{\baselinestretch}{0.001}
-\setlength{\parskip}{0.001em}
-\setlength{\itemsep}{0.001em}
-\setlength{\parsep}{0.001em}
-\setlength{\topsep}{0.001em}
-\setlength{\partopsep}{0.001em}
+
 
 % 设置代码样式
 \lstset{
-    basicstyle=\ttfamily\small,
+    basicstyle=\ttfamily\scriptsize,  % 更小的字体（比 footnotesize 更紧凑）
     breaklines=true,
+    breakatwhitespace=true,  % 避免在中间断行
     frame=single,
     numbers=left,
     numberstyle=\tiny,
+    numbersep=4pt,
     showstringspaces=false,
     language=Python,
-    basicstyle=\ttfamily\footnotesize,
-    numbersep=1pt,
-    frame=single,
-    breaklines=true,
-    postbreak=\mbox{\textcolor{red}{$\hookrightarrow$}\space}
+    postbreak=\mbox{\textcolor{red}{$\hookrightarrow$}\space},
+    xleftmargin=2em,  % 缩进代码块避免挤边
+    framexleftmargin=1.5em
 }
 
 \title{Group1Project3}
-\author{Licheng Guo, Yukun Gao, Qiming Zhang, Zining Hua, Yixuan Xu}
+\author{Licheng Guo, Yukun Gao, Qiming Zhang, Zining Hua, Yixuan Xu, Yongchen Lu}
 \date{\today}
 
 
 \begin{document}
-
+\sloppy
 \maketitle  
 \begin{center}
-  \href{https://ellison097.github.io/Group1_Project3}{\texttt{https://ellison097.github.io/Group1\_Project3}}
+  \href{https://ellison097.github.io/Group1_Project3}{\texttt{\textbf{Github Link:https://ellison097.github.io/Group1\_Project3}}}
 \end{center}
 
 \tableofcontents
@@ -241,72 +239,1622 @@ The pipeline can be executed in four different ways:
   \label{fig:all_outputs}
 \end{figure}
 
-
-
+\newpage
 \section{Input Processing}
+\subsection{Code Execution Instructions and RoadMap}\label{code-execution-instructions-and-roadmap}
 
-\subsection{Data Processing Logic and Steps}
+This section provides a roadmap for executing the data processing
+pipeline, detailing the scripts involved, their execution order, inputs,
+outputs, and the purpose of each step, culminating in the final
+Exploratory Data Analysis (EDA).
 
-\subsubsection{Data Cleaning and Deduplication}
+\subsubsection{Overall Data Flow}\label{overall-data-flow}
+
+Raw Group Data -\textgreater{} \textbf{Step 1 (Clean)} -\textgreater{}
+Cleaned Group Data -\textgreater{} \textbf{Step 2 (Map \& Combine)}
+-\textgreater{} Combined Raw Data -\textgreater{} \textbf{Step 3 (Enrich
+Outputs)} -\textgreater{} Enriched Output Data -\textgreater{}
+\textbf{Step 3.5 (Filter \& Refine Venue)} -\textgreater{} Filtered \&
+Refined Output Data -\textgreater{} \textbf{Step 4 (Enrich Project
+Metadata)} -\textgreater{} Final Enriched Dataset
+(\texttt{meta\_data\_enriched\_all\_v3.csv}) -\textgreater{}
+\textbf{Step 5 (Prepare for EDA)} -\textgreater{} Filtered Enriched Data
+(\texttt{EDA\_2698.csv}) -\textgreater{} \textbf{Step 6 (EDA Citation
+Fetch)} -\textgreater{} Citation Enriched Data
+(\texttt{EDA\_2698\_with\_citations.csv}) -\textgreater{} \textbf{Step 7
+(EDA Analysis)} -\textgreater{} Insights \& Visualizations
+
+\subsubsection{Execution Steps (Main
+Pipeline)}\label{execution-steps-main-pipeline}
+
+\textbf{1. Data Cleaning and Deduplication (\texttt{clean\_data.py})}
+
 \begin{itemize}
-    \item \textbf{Purpose}: Cleans individual group CSV files by removing duplicates against a reference dataset and then deduplicates across all group files.
-    \item \textbf{Input}: Raw CSV files, Reference Excel
-    \item \textbf{Output}: Cleaned and deduplicated group files
-    \item \textbf{Command}:
-    \begin{lstlisting}[language=bash]
-    python Code/clean_data.py
-    \end{lstlisting}
+\item
+  \textbf{Purpose}: Cleans individual group CSV files by removing
+  duplicates against a reference dataset (\texttt{ResearchOutputs.xlsx})
+  and then deduplicates across all group files.
+\item
+  \textbf{Input}: Raw CSV files (\texttt{Project3\_Data/group*.csv}),
+  Reference Excel (\texttt{ResearchOutputs.xlsx}).
+\item
+  \textbf{Output}: Cleaned and deduplicated group files
+  (\texttt{Project3\_Data\_Clean\_step1/\{group\}\_clean1.csv},
+  \texttt{Project3\_Data\_Clean\_step1/\{group\}\_clean2.csv}).
+\item
+  \textbf{Command}:
+
+\begin{lstlisting}[language=Python]
+python clean_data.py
+\end{lstlisting}
 \end{itemize}
 
-\subsubsection{Data Mapping and Consolidation}
+\textbf{2. Data Mapping and Consolidation
+(\texttt{join\_and\_map\_data.py})}
+
 \begin{itemize}
-    \item \textbf{Purpose}: Combines the cleaned group files into a single dataset, mapping heterogeneous columns to a standardized schema.
-    \item \textbf{Input}: Cleaned group files
-    \item \textbf{Output}: Combined raw dataset
-    \item \textbf{Command}:
-    \begin{lstlisting}[language=bash]
-    python Code/join_and_map_data.py
-    \end{lstlisting}
+\item
+  \textbf{Purpose}: Combines the cleaned group files
+  (\texttt{*\_clean2.csv}) into a single dataset, mapping heterogeneous
+  columns to a standardized schema.
+\item
+  \textbf{Input}: Cleaned group files
+  (\texttt{Project3\_Data\_Clean\_step1/*\_clean2.csv}).
+\item
+  \textbf{Output}: Combined raw dataset
+  (\texttt{Project3\_Data\_Clean\_step2/combined\_mapped\_data\_raw.csv}).
+\item
+  \textbf{Command}:
+
+\begin{lstlisting}[language=Python]
+python join_and_map_data.py
+\end{lstlisting}
 \end{itemize}
 
-\subsubsection{Output-Level Enrichment}
+\textbf{3. Output-Level Enrichment
+(\texttt{enrich\_all\_combined\_data.py})}
+
 \begin{itemize}
-    \item \textbf{Purpose}: Enriches the combined dataset with detailed bibliographic information using OpenAlex and Crossref APIs.
-    \item \textbf{Input}: Combined raw dataset
-    \item \textbf{Output}: Enriched dataset
-    \item \textbf{Command}:
-    \begin{lstlisting}[language=bash]
-    python Code/enrich_all_combined_data.py --output "Project_Data_Enriched_Combined/combined_mapped_data_raw_enriched_final.csv"
-    \end{lstlisting}
+\item
+  \textbf{Purpose}: Enriches the combined dataset with detailed
+  bibliographic information (DOI, venue, authors, abstract, keywords,
+  etc.) using OpenAlex and Crossref APIs. Identifies FSRDC relevance.
+\item
+  \textbf{Input}: Combined raw dataset
+  (\texttt{Project3\_Data\_Clean\_step2/combined\_mapped\_data\_raw.csv}).
+\item
+  \textbf{Output}: Enriched dataset
+  (\texttt{Project\_Data\_Enriched\_Combined/combined\_mapped\_data\_raw\_enriched\_final.csv}.
+\item
+  \textbf{Command}:
+
+\begin{lstlisting}[language=Python]
+python enrich_all_combined_data.py --output "Project_Data_Enriched_Combined/combined_mapped_data_raw_enriched_final.csv"
+\end{lstlisting}
 \end{itemize}
 
-\subsubsection{Post-Enrichment Filtering and Venue Refinement}
+\textbf{Post-Enrichment Filtering and Venue Refinement
+(\texttt{update\_venue\_column.py})}
+
 \begin{itemize}
-    \item \textbf{Purpose}: Filters the enriched dataset to keep only FSRDC-related records with DOIs.
-    \item \textbf{Input}: Output from previous step
-    \item \textbf{Output}: Filtered and venue-refined dataset
-    \item \textbf{Command}:
-    \begin{lstlisting}[language=bash]
-    python Code/update_venue_column.py \
-        --input "Project_Data_Enriched_Combined/combined_mapped_data_raw_enriched_final.csv" \
-        --output "Project_Data_Enriched_Combined/combined_mapped_data_raw_enriched_final_final.csv"
-    \end{lstlisting}
+\item
+  \textbf{Purpose}: Filters the enriched dataset to keep only
+  FSRDC-related records with DOIs. Refines the \texttt{OutputVenue}
+  column for these records using a specific OpenAlex lookup logic.
+\item
+  \textbf{Input}: Output from Step 3
+  (\texttt{Project\_Data\_Enriched\_Combined/combined\_mapped\_data\_raw\_enriched\_final.csv}).
+\item
+  \textbf{Output}: Filtered and venue-refined dataset
+  (\texttt{Project\_Data\_Enriched\_Combined/combined\_mapped\_data\_raw\_enriched\_final\_final.csv}).
+\item
+  \textbf{Command}:
+
+\begin{lstlisting}[language=Python]
+python update_venue_column.py \
+    --input "Project_Data_Enriched_Combined/combined_mapped_data_raw_enriched_final.csv" \
+    --output "Project_Data_Enriched_Combined/combined_mapped_data_raw_enriched_final_final.csv"
+\end{lstlisting}
 \end{itemize}
 
-\subsubsection{Project Metadata Enrichment}
+\textbf{4. Project Metadata Enrichment (Multi-Stage)}
+
 \begin{itemize}
-    \item \textbf{Purpose}: Enriches the filtered dataset with project-level information using multiple metadata sources.
-    \item \textbf{Input}: Filtered/refined dataset, Metadata Excel, Research Outputs Excel
-    \item \textbf{Outputs}: Intermediate and final enriched files
-    \item \textbf{Commands}:
-    \begin{enumerate}
-        \item Stage 1: PI Matching
-        \item Stage 2: Title Matching
-        \item Stage 3: Researcher Matching
-    \end{enumerate}
+\tightlist
+\item
+  \textbf{Purpose}: Enriches the filtered dataset with project-level
+  information (ProjID, Status, PI, Title, etc.) using multiple metadata
+  sources and matching strategies (PI matching, Title matching,
+  Researcher matching).
+\item
+  \textbf{Input}: Filtered/refined dataset from Step 3.5
+  (\texttt{Project\_Data\_Enriched\_Combined/combined\_mapped\_data\_raw\_enriched\_final\_final.csv}),
+  Metadata Excel (\texttt{ProjectsAllMetadata.xlsx}), Research Outputs
+  Excel (\texttt{ResearchOutputs.xlsx}).
+\item
+  \textbf{Outputs}: Intermediate and final enriched files:
+
+  \begin{itemize}
+  \tightlist
+  \item
+    \texttt{Project\_Data\_Enriched\_Combined/meta\_data\_enriched\_all.csv}
+    (after Stage 1)
+  \item
+    \texttt{Project\_Data\_Enriched\_Combined/meta\_data\_enriched\_all\_v2.csv}
+    (after Stage 2)
+  \item
+    \texttt{Project\_Data\_Enriched\_Combined/meta\_data\_enriched\_all\_v3.csv}
+    (Final after Stage 3)
+  \end{itemize}
+\item
+  \textbf{Commands (executed sequentially)}:
+
+  \begin{itemize}
+  \item
+    \textbf{Stage 1
+    (\texttt{enrich\_all\_combined\_data\_metadata.py})}: Matches
+    authors to PIs in \texttt{ProjectsAllMetadata.xlsx} (All Metadata
+    sheet).
+
+\begin{lstlisting}[language=Python]
+python enrich_all_combined_data_metadata.py
+\end{lstlisting}
+  \item
+    \textbf{Stage 2
+    (\texttt{enrich\_all\_combined\_data\_metadata2.py})}: Matches
+    output titles to \texttt{ResearchOutputs.xlsx}.
+
+\begin{lstlisting}[language=Python]
+python enrich_all_combined_data_metadata2.py
+\end{lstlisting}
+  \item
+    \textbf{Stage 3
+    (\texttt{enrich\_all\_combined\_data\_metadata3.py})}: Matches
+    authors to Researchers/PIs in \texttt{ProjectsAllMetadata.xlsx}
+    (Researchers sheet).
+
+\begin{lstlisting}[language=Python]
+python enrich_all_combined_data_metadata3.py
+\end{lstlisting}
+  \end{itemize}
 \end{itemize}
 
-\subsubsection{Error Handling and Logging}
+\subsubsection{Final Analysis Steps (EDA)}\label{final-analysis-steps-eda}
+
+After the main data processing pipeline concludes with
+\texttt{meta\_data\_enriched\_all\_v3.csv}, the final steps focus on
+Exploratory Data Analysis:
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\item
+  \textbf{Filtering for EDA}: The  notebook first
+  loads \texttt{meta\_data\_enriched\_all\_v3.csv} and filters it to
+  keep only the rows successfully enriched with project metadata across
+  the three stages (\texttt{IsEnriched\ ==\ True}). This subset,
+  containing 2698 records, is saved as \texttt{EDA\_2698.csv} to serve
+  as the base for analysis.
+\item
+  \textbf{Citation Enrichment (Script)}: To analyze citation patterns,
+  the separate script \texttt{fetch\_citations\_by\_title.py} is
+  executed. It reads \texttt{EDA\_2698.csv}, queries the OpenAlex API
+  using output titles (and years for refinement) to retrieve citation
+  counts, and saves the result as
+  \texttt{EDA\_2698\_with\_citations.csv}. This approach was chosen for
+  performance and robustness reasons (see Section 5).
+
+\begin{lstlisting}[language=Python]
+python fetch_citations_by_title.py
+\end{lstlisting}
+
+\begin{lstlisting}[language=Python]
+2025-04-25 14:22:14,391 - INFO - Loading data from EDA_2698.csv...
+2025-04-25 14:22:14,435 - INFO - Successfully loaded 2698 rows.
+2025-04-25 14:22:14,435 - INFO - Starting citation fetch for 2698 records using title search.
+Fetching Citations: 100%|█████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 2698/2698 [46:04<00:00,  1.02s/it]
+2025-04-25 15:08:19,386 - INFO - Finished fetching citations.
+2025-04-25 15:08:19,386 - INFO - Obtained 2696 non-NaN citation counts out of 2698 records.
+2025-04-25 15:08:19,386 - INFO - Saving updated data to EDA_2698_with_citations.csv...
+2025-04-25 15:08:19,448 - INFO - Successfully saved updated data.
+\end{lstlisting}
+\item
+  \textbf{EDA Execution (Notebook)}: Finally, the 
+  notebook is used to load \texttt{EDA\_2698\_with\_citations.csv} and
+  perform the analysis, (after \textbf{\#\# 5. EDA: Top 10 Most Prolific
+  Authors(2.3)}) generating insights and visualizations related to RDC
+  performance, publication trends, prolific authors, citation patterns,
+  and other discoveries.
+\end{enumerate}
+
+\subsection{Data Cleaning and Deduplication
+Process}\label{data-cleaning-and-deduplication-process}
+
+\subsubsection{Overview}\label{overview}
+
+The data cleaning process was designed to address two critical
+challenges in the Project3\_Data collection: removing duplicates against
+a reference dataset (\texttt{ResearchOutputs.xlsx}) and ensuring
+uniqueness across multiple group datasets. This process was essential to
+create a clean foundation for subsequent data enrichment and analysis
+steps.
+
+\subsubsection{Data Sources}\label{data-sources}
+
+\paragraph{Reference Dataset}\label{reference-dataset}
+
+\begin{itemize}
+\tightlist
+\item
+  \texttt{ResearchOutputs.xlsx}: Contains existing research outputs with
+  an \texttt{OutputTitle} column used as the reference for deduplication
+\end{itemize}
+
+\paragraph{Target Datasets}\label{target-datasets}
+
+Eight CSV files from the Project3\_Data directory with varying column
+structures: - group1.csv: Uses ``title'' column - group2.csv: Uses
+``title'' column - group3.csv: Uses ``Title'' column - group4.csv: Uses
+``title'' column - group5.csv: Uses ``title'' column - group6.csv: Uses
+``Title'' column - group7.csv: Uses ``title'' column - group8.csv: Uses
+``OutputTitle'' column
+
+\subsubsection{Methodology}\label{methodology}
+
+\paragraph{Two-Phase Deduplication
+Strategy}\label{two-phase-deduplication-strategy}
+
+The deduplication process was implemented in two distinct phases:
+
+\paragraph{Phase 1: Deduplication Against Reference
+Dataset}\label{phase-1-deduplication-against-reference-dataset}
+
+Each group dataset was compared against the reference dataset
+(\texttt{ResearchOutputs.xlsx}) to remove any duplicate entries.
+
+\paragraph{Phase 2: Cross-Group
+Deduplication}\label{phase-2-cross-group-deduplication}
+
+The cleaned datasets from Phase 1 were then processed sequentially to
+ensure no duplicates existed across groups, creating a cumulative unique
+dataset.
+
+\paragraph{Two-Step Matching
+Approach}\label{two-step-matching-approach}
+
+For both phases, we implemented a two-step matching approach to optimize
+performance:
+
+\paragraph{Exact Matching}\label{exact-matching}
+
+First, we performed case-insensitive exact matching to quickly identify
+and remove obvious duplicates:
+
+\begin{lstlisting}[language=Python]
+def clean_against_research_outputs(csv_file, title_column, research_outputs, threshold=85):
+    # Convert titles to lowercase for case-insensitive comparison
+    df["title_lower"] = df[title_column].astype(str).str.lower()
+    research_outputs["title_lower"] = research_outputs["OutputTitle"].astype(str).str.lower()
+    
+    # Identify exact matches
+    exact_matches = df[df["title_lower"].isin(research_outputs["title_lower"])].index
+    df_after_exact = df.drop(exact_matches)
+    
+    # Continue with fuzzy matching for remaining records...
+\end{lstlisting}
+
+\paragraph{Fuzzy Matching}\label{fuzzy-matching}
+
+For remaining records, we applied fuzzy matching to identify
+near-duplicates that differ only in minor ways (punctuation, spacing,
+etc.):
+
+\begin{lstlisting}[language=Python]
+def fuzzy_match(title1, title2, threshold=85):
+    """
+    Compare two titles using fuzzy string matching
+    
+    Args:
+        title1, title2: Titles to compare
+        threshold: Similarity threshold (0-100)
+        
+    Returns:
+        bool: True if similarity exceeds threshold
+    """
+    if pd.isna(title1) or pd.isna(title2):
+        return False
+        
+    # Calculate similarity ratio between lowercase strings
+    similarity = fuzz.ratio(str(title1).lower(), str(title2).lower())
+    return similarity >= threshold
+\end{lstlisting}
+
+\paragraph{Accumulator Pattern for Cross-Group
+Deduplication}\label{accumulator-pattern-for-cross-group-deduplication}
+
+For the cross-group deduplication phase, we implemented an accumulator
+pattern to efficiently track unique titles across all datasets:
+
+\begin{lstlisting}[language=Python]
+def remove_duplicates_between_files(clean_files, title_columns, threshold=85):
+    # Initialize accumulators
+    accumulator_titles_lower = set()  # For exact matching
+    fuzzy_accumulator_titles = []     # For fuzzy matching
+    
+    for i, (file, title_col) in enumerate(zip(clean_files, title_columns)):
+        # Process each file sequentially
+        df = pd.read_csv(file)
+        
+        # Exact matching against accumulator
+        df["title_lower"] = df[title_col].astype(str).str.lower()
+        exact_matches = df[df["title_lower"].isin(accumulator_titles_lower)].index
+        df_after_exact = df.drop(exact_matches)
+        
+        # Fuzzy matching against accumulator
+        to_drop = []
+        for j, row in df_after_exact.iterrows():
+            title = row[title_col]
+            for acc_title in fuzzy_accumulator_titles:
+                if fuzzy_match(title, acc_title, threshold):
+                    to_drop.append(j)
+                    break
+        
+        # Remove duplicates and update accumulators
+        df_clean = df_after_exact.drop(to_drop)
+        accumulator_titles_lower.update(df_clean[title_col].astype(str).str.lower())
+        fuzzy_accumulator_titles.extend(df_clean[title_col].tolist())
+        
+        # Save results
+        # ...
+\end{lstlisting}
+
+\subsubsection{Implementation Details}\label{implementation-details}
+
+\paragraph{Processing Order}\label{processing-order}
+
+To ensure consistent results, we processed the datasets in a fixed order
+from group1 to group8, using an ordered list rather than a dictionary to
+maintain sequence:
+
+\begin{lstlisting}[language=Python]
+group_info = [
+    ("group1", "title"),
+    ("group2", "title"),
+    ("group3", "Title"),
+    # ...and so on
+]
+\end{lstlisting}
+
+\paragraph{Performance
+Optimization}\label{performance-optimization}
+
+\begin{itemize}
+\tightlist
+\item
+  Used set data structures for efficient exact matching
+\item
+  Applied two-step matching (exact then fuzzy) to reduce computational
+  load
+\item
+  Implemented early termination in fuzzy matching loops
+\end{itemize}
+
+\paragraph{Output Files}\label{output-files}
+
+The process generated two sets of output files in the
+\texttt{Project3\_Data\_Clean\_step1} directory: -
+\texttt{\{group\}\_clean1.csv}: Results after Phase 1 (deduplication
+against reference dataset) - \texttt{\{group\}\_clean2.csv}: Results
+after Phase 2 (cross-group deduplication)
+
+\subsubsection{Results Validation}\label{results-validation}
+
+The final \texttt{\{group\}\_clean2.csv} files collectively represent a
+completely deduplicated dataset where: 1. No record appears in both the
+cleaned dataset and the reference dataset 2. No record appears in more
+than one group dataset 3. Each group dataset retains its original column
+structure
+
+This ensures that if all \texttt{\{group\}\_clean2.csv} files were to be
+concatenated, there would be no duplicate titles in the resulting
+dataset, providing a clean foundation for subsequent data enrichment
+steps.
+
+\subsubsection{Technical
+Implementation}\label{technical-implementation}
+
+The implementation used the following key technologies: - pandas: For
+efficient data manipulation and CSV handling - fuzzywuzzy: For fuzzy
+string matching with Levenshtein distance algorithm - Python's built-in
+set operations: For optimized exact matching
+
+The complete implementation is available in the \texttt{clean\_data.py}
+script, which can be executed to reproduce the cleaning process.
+
+\subsection{Data Mapping and Consolidation
+Process}\label{data-mapping-and-consolidation-process}
+
+\subsubsection{Overview}\label{overview-1}
+
+The data mapping and consolidation process addressed the challenge of
+integrating eight heterogeneous datasets with varying column structures
+into a unified format. This process was essential to standardize the
+data before enrichment, ensuring consistent column names, data types,
+and value formats across all sources. The implementation in
+\texttt{join\_and\_map\_data.py} created a foundation for subsequent
+analysis by mapping source-specific fields to a standardized schema
+while preserving data provenance.
+
+\subsubsection{Data Sources}\label{data-sources-1}
+
+\paragraph{Input Datasets}\label{input-datasets}
+
+Eight deduplicated CSV files from the
+\texttt{Project3\_Data\_Clean\_step1} directory, each with unique column
+structures: - group1\_clean2.csv: Research outputs with project status
+and agency information - group2\_clean2.csv: Research outputs with
+location and publication date details - group3\_clean2.csv: Research
+outputs with lowercase titles and RDC information - group4\_clean2.csv:
+Research outputs with researcher and year information -
+group5\_clean2.csv: Research outputs with PI and publication year data -
+group6\_clean2.csv: Research outputs with RDC and year information -
+group7\_clean2.csv: Research outputs with minimal metadata -
+group8\_clean2.csv: Research outputs with bibliographic details (volume,
+number, pages)
+
+\paragraph{Output Schema}\label{output-schema}
+
+A standardized schema with 18 columns was defined to accommodate all
+relevant information:
+
+\begin{lstlisting}[language=Python]
+OUTPUT_COLUMNS = [
+    "ProjID", "ProjectStatus", "ProjectTitle", "ProjectRDC", 
+    "ProjectYearStarted", "ProjectYearEnded", "ProjectPI", 
+    "OutputTitle", "OutputBiblio", "OutputType", "OutputStatus", 
+    "OutputVenue", "OutputYear", "OutputMonth", "OutputVolume", 
+    "OutputNumber", "OutputPages", "SourceFile"
+]
+\end{lstlisting}
+
+\subsubsection{Methodology}\label{methodology-1}
+
+\paragraph{Group-Specific Processing
+Strategy}\label{group-specific-processing-strategy}
+
+The consolidation process implemented a modular approach with separate
+processing functions for each group dataset. This design choice offered
+several advantages:
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  \textbf{Maintainability}: Each group's mapping logic could be modified
+  independently
+\item
+  \textbf{Clarity}: Source-to-target mappings were explicitly defined
+  for each dataset
+\item
+  \textbf{Flexibility}: Group-specific transformations could be applied
+  where needed
+\item
+  \textbf{Traceability}: The source of each record was preserved in the
+  output
+\end{enumerate}
+
+The core architecture used a dictionary of processing functions mapped
+to input files:
+
+\begin{lstlisting}[language=Python]
+processing_functions = {
+    "group1_clean2.csv": process_group1,
+    "group2_clean2.csv": process_group2,
+    # ... and so on for all eight groups
+}
+\end{lstlisting}
+
+\paragraph{Field Mapping and
+Transformation}\label{field-mapping-and-transformation}
+
+Each group-specific processing function implemented three key
+operations:
+
+\paragraph{Direct Field Mapping}\label{direct-field-mapping}
+
+Simple column-to-column mappings were implemented using pandas' get
+method with null handling:
+
+\begin{lstlisting}[language=Python]
+# Example from process_group1()
+result_df["ProjectStatus"] = df.get("project_status", np.nan)
+result_df["ProjectRDC"] = df.get("Agency", np.nan)
+result_df["ProjectPI"] = df.get("project_pi", np.nan)
+\end{lstlisting}
+
+\paragraph{Value Standardization}\label{value-standardization}
+
+For fields requiring standardization (e.g., publication types), mapping
+dictionaries were applied:
+
+\begin{lstlisting}[language=Python]
+# Type mapping dictionary
+TYPE_CROSSREF_MAPPING = {
+    "article": "JA",
+    "preprint": "WP",
+    "report": "RE",
+    # ... additional mappings
+}
+
+# Application in process_group2()
+if "type_crossref" in df.columns:
+    result_df["OutputType"] = df["type_crossref"].map(TYPE_CROSSREF_MAPPING)
+\end{lstlisting}
+
+\paragraph{Data Transformations}\label{data-transformations}
+
+Complex transformations were implemented for fields requiring parsing or
+derivation:
+
+\begin{lstlisting}[language=Python]
+# Example: Extracting year and month from dates in process_group2()
+def extract_year_month(date_str):
+    if pd.isna(date_str):
+        return np.nan, np.nan
+    try:
+        date_obj = datetime.strptime(date_str, "%Y-%m-%d")
+        return date_obj.year, date_obj.month
+    except:
+        return np.nan, np.nan
+
+years_months = df["publication_date"].apply(extract_year_month)
+result_df["OutputYear"] = [ym[0] for ym in years_months]
+result_df["OutputMonth"] = [ym[1] for ym in years_months]
+\end{lstlisting}
+
+\paragraph{Group-Specific Processing
+Highlights}\label{group-specific-processing-highlights}
+
+Each group required unique handling based on its data structure:
+
+\paragraph{Group 1}\label{group-1}
+
+\begin{itemize}
+\tightlist
+\item
+  Mapped project status and agency information
+\item
+  Derived publication status from DOI presence
+\item
+  Converted year values to integers
+\end{itemize}
+
+\paragraph{Group 2}\label{group-2}
+
+\begin{itemize}
+\tightlist
+\item
+  Extracted both year and month from publication dates
+\item
+  Mapped publication types using the crossref mapping dictionary
+\item
+  Preserved location information as ProjectRDC
+\end{itemize}
+
+\paragraph{Group 3}\label{group-3}
+
+\begin{itemize}
+\tightlist
+\item
+  Handled lowercase titles
+\item
+  Applied special mapping for limited type\_crossref values
+\item
+  Derived publication status from is\_published field
+\end{itemize}
+
+\paragraph{Groups 4-8}\label{groups-4-8}
+
+Each had specific mappings based on available columns, with Group 8
+providing the most bibliographic detail (volume, number, pages).
+
+\subsubsection{Implementation Details}\label{implementation-details-1}
+
+\paragraph{Null Handling
+Strategy}\label{null-handling-strategy}
+
+The implementation used a consistent approach to handle missing values:
+- Used \texttt{np.nan} as the standard null representation - Applied
+conditional transformations only when source columns existed - Preserved
+nulls rather than substituting default values
+
+\paragraph{Data Type
+Standardization}\label{data-type-standardization}
+
+Numeric fields were consistently converted to appropriate types: - Years
+were converted to integers where possible - Preserved NaN values for
+missing numeric data
+
+\paragraph{Source Tracking}\label{source-tracking}
+
+Each record was tagged with its source file to maintain data provenance:
+
+\begin{lstlisting}[language=Python]
+# Added to each processing function
+result_df["SourceFile"] = "group1_clean2.csv"  # Varies by group
+\end{lstlisting}
+
+\paragraph{Consolidation Process}\label{consolidation-process}
+
+The main processing function orchestrated the entire workflow:
+
+\begin{lstlisting}[language=Python]
+def process_all_files(data_dir="Project3_Data_Clean_step1"):
+    # Define processing functions for each group
+    processing_functions = {...}
+    
+    # Process each file and collect results
+    all_dfs = []
+    for file_name, process_func in processing_functions.items():
+        file_path = os.path.join(data_dir, file_name)
+        if os.path.exists(file_path):
+            df = process_func(file_path)
+            all_dfs.append(df)
+    
+    # Combine all DataFrames
+    if all_dfs:
+        combined_df = pd.concat(all_dfs, ignore_index=True)
+        return combined_df
+    else:
+        return pd.DataFrame(columns=OUTPUT_COLUMNS)
+\end{lstlisting}
+
+\subsubsection{Results}\label{results}
+
+The mapping and consolidation process produced a unified dataset with
+the following characteristics:
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  \textbf{Standardized Structure}: All records conformed to the
+  18-column output schema
+\item
+  \textbf{Preserved Information}: All available source data was mapped
+  to appropriate target fields
+\item
+  \textbf{Consistent Formats}: Data types and value representations were
+  standardized
+\item
+  \textbf{Complete Provenance}: Each record maintained its source file
+  information
+\end{enumerate}
+
+The output was saved to
+\texttt{Project3\_Data\_Clean\_step2/combined\_mapped\_data\_raw.csv},
+creating a foundation for subsequent enrichment processes. This
+consolidated dataset preserved the maximum amount of information from
+the source files while establishing the structural consistency necessary
+for comprehensive analysis.
+
+\subsubsection{Technical
+Implementation}\label{technical-implementation-1}
+
+The implementation leveraged the following key technologies: - pandas:
+For efficient data manipulation and transformation - numpy: For
+consistent null value handling - datetime: For parsing and extracting
+date components
+
+The complete implementation is available in the
+\texttt{join\_and\_map\_data.py} script, which can be executed to
+reproduce the consolidation process.
+
+\subsection{Comprehensive Data Enrichment
+Process}\label{comprehensive-data-enrichment-process}
+
+\subsubsection{Overview}\label{overview-2}
+
+Following the cleaning and consolidation stages, the
+\texttt{combined\_mapped\_data\_raw.csv} dataset required significant
+enrichment to populate essential bibliographic details, identify
+potential FSRDC relevance, and standardize metadata across all source
+groups. This enrichment phase aimed to leverage external academic
+databases (OpenAlex and Crossref) to add crucial context, including
+DOIs, publication types, venues, author details, keywords, abstracts,
+and generated citations, while handling data inconsistencies and
+optimizing for performance and robustness.
+
+\subsubsection{Challenges}\label{challenges}
+
+The enrichment process faced several key challenges: 1. \textbf{Missing
+Identifiers}: Many records lacked reliable DOIs, necessitating
+title-based searching. 2. \textbf{Data Quality Variations}: Titles and
+existing metadata varied significantly in quality and completeness
+across the eight source groups. 3. \textbf{Group 3 Specifics}: The
+\texttt{group3\_clean2.csv} source contained titles exclusively in
+lowercase, requiring special handling for effective matching against
+standard databases. 4. \textbf{API Rate Limits}: Interacting with
+external APIs required careful management of request rates to avoid
+being blocked. 5. \textbf{Scalability}: The combined dataset contained a
+large number of records (\textasciitilde36,000), demanding an efficient
+processing approach. 6. \textbf{Diverse Metadata Needs}: The goal was to
+extract a wide range of fields, including bibliographic details,
+author/affiliation information, keywords, abstracts (for FSRDC
+checking), and publication status.
+
+\subsubsection{Methodology and Design
+Choices}\label{methodology-and-design-choices}
+
+A multi-faceted strategy was implemented in
+\texttt{enrich\_all\_combined\_data.py} to address these challenges:
+
+\paragraph{Dual API Strategy (OpenAlex First, then
+Crossref)}\label{dual-api-strategy-openalex-first-then-crossref}
+
+Recognizing that no single API is perfect, a two-stage lookup was
+employed: 1. \textbf{OpenAlex}: Queried first due to its generally
+strong performance with academic titles, including those with less
+standard formatting or missing DOIs. It often provides richer metadata
+like abstracts and concepts (keywords). 2. \textbf{Crossref}: Used as a
+fallback if OpenAlex did not yield a high-confidence match (score
+\textless{} \texttt{HIGH\_CONFIDENCE\_SCORE}, e.g., 80). Crossref offers
+broad coverage and is particularly strong for publications with DOIs.
+
+This approach maximized the chances of finding a match while
+prioritizing the potentially richer data from OpenAlex.
+
+\begin{lstlisting}[language=Python]
+# Inside get_metadata_async function
+# Try OpenAlex first
+openalex_result, openalex_score = await search_api(
+    title_variations, session, semaphore, "OpenAlex", OPENALEX_API_URL, OPENALEX_DELAY, record_id
+)
+
+# If OpenAlex match is not highly confident, try Crossref
+if openalex_score < HIGH_CONFIDENCE_SCORE:
+    crossref_result, crossref_score = await search_api(
+        title_variations, session, semaphore, "Crossref", CROSSREF_API_URL, CROSSREF_DELAY, record_id
+    )
+    # Select the best overall match between OpenAlex and Crossref
+    # ...
+\end{lstlisting}
+
+\paragraph{Asynchronous Processing and Concurrency
+Control}\label{asynchronous-processing-and-concurrency-control}
+
+To handle the large dataset efficiently, the script utilized Python's
+\texttt{asyncio} library with \texttt{aiohttp} for non-blocking HTTP
+requests. - \textbf{Concurrency}: Multiple API requests were processed
+concurrently. - \textbf{Semaphore}: An \texttt{asyncio.Semaphore}
+(\texttt{API\_CONCURRENCY\_LIMIT}, e.g., 10-20) was implemented to
+strictly limit the maximum number of simultaneous requests hitting the
+external APIs, preventing server overload and reducing the likelihood of
+rate-limiting errors.
+
+\begin{lstlisting}[language=Python]
+# Inside process_dataframe_async
+semaphore = asyncio.Semaphore(API_CONCURRENCY_LIMIT)
+async with aiohttp.ClientSession(connector=connector) as session:
+    tasks = []
+    for _, record_series in df.iterrows():
+        record_dict = record_series.to_dict()
+        # Pass semaphore to the processing function
+        task = asyncio.create_task(process_single_record(record_dict, session, semaphore))
+        tasks.append(task)
+
+    # Process tasks concurrently
+    for future in tqdm_asyncio.as_completed(tasks, total=len(tasks), desc="Enriching records"):
+        # ... process results ...
+
+# Inside fetch_api
+async with semaphore: # Acquire semaphore before making request
+    await asyncio.sleep(base_delay) # Apply base delay
+    async with session.get(...) as response:
+        # ... handle response ...
+\end{lstlisting}
+
+\paragraph{Robust Rate Limiting and
+Retries}\label{robust-rate-limiting-and-retries}
+
+To comply with API usage policies and handle transient network issues: -
+\textbf{Delays}: A base delay (\texttt{OPENALEX\_DELAY},
+\texttt{CROSSREF\_DELAY}) was introduced before each API call within the
+semaphore lock. - \textbf{Retries}: Failed requests (e.g., timeouts,
+server errors) were retried up to \texttt{MAX\_RETRIES} times with an
+increasing \texttt{RETRY\_DELAY}. - \textbf{429 Handling}: Specific
+handling for \texttt{429\ Too\ Many\ Requests} errors was implemented,
+parsing the \texttt{Retry-After} header (supporting both seconds and
+HTTP-date formats) to wait the appropriate duration before retrying.
+
+\begin{lstlisting}[language=Python]
+# Inside fetch_api function
+elif response.status == 429: # Rate limit hit
+    retry_after_header = response.headers.get("Retry-After")
+    wait_time = RETRY_DELAY * (attempt + 1) # Default backoff
+    if retry_after_header:
+        try: # Try parsing as seconds
+            wait_time = float(retry_after_header)
+        except ValueError: # Try parsing as HTTP-date
+            try:
+                retry_dt = parsedate_to_datetime(retry_after_header)
+                # Calculate seconds until retry_dt
+                # ...
+            except Exception: # Fallback to default
+                # ... log warning ...
+    # Log the wait time and reason
+    await asyncio.sleep(wait_time)
+    continue # Retry the request
+\end{lstlisting}
+
+\paragraph{Enhanced Title
+Matching}\label{enhanced-title-matching}
+
+Given the lack of DOIs and title inconsistencies: - \textbf{Cleaning}:
+Titles were cleaned (lowercase, remove punctuation) before matching
+using \texttt{clean\_title}. - \textbf{Variations}: For each title,
+multiple variations were generated (original, title case, first letter
+capitalized) to improve match likelihood, especially important for Group
+3's lowercase titles. - \textbf{Fuzzy Matching}: The \texttt{fuzzywuzzy}
+library (\texttt{fuzz.ratio}, \texttt{fuzz.token\_sort\_ratio}) was used
+to compare the cleaned input title against titles returned by the APIs.
+The maximum score from different methods was used. -
+\textbf{Thresholds}: A \texttt{MIN\_MATCH\_SCORE} (e.g., 70) determined
+the minimum acceptable similarity, while
+\texttt{HIGH\_CONFIDENCE\_SCORE} (e.g., 80) allowed skipping the second
+API if the first provided a strong match.
+
+\begin{lstlisting}[language=Python]
+def get_title_variations(title, source_file):
+    variations = set()
+    # ... add original, cleaned versions ...
+    if source_file == "group3_clean2.csv":
+        # Add title-cased and first-letter-capitalized specifically for group 3
+        variations.add(title.title())
+        if title:
+            variations.add(title[0].upper() + title[1:])
+    # ... limit number of variations ...
+    return list(variations)
+
+# Inside search_api function
+for item in items:
+    # ... get item_title ...
+    clean_item_title = clean_title(item_title)
+    # Calculate similarity scores
+    score = fuzz.ratio(clean_search_title, clean_item_title)
+    token_score = fuzz.token_sort_ratio(clean_search_title, clean_item_title)
+    score = max(score, token_score)
+    # Check against MIN_MATCH_SCORE and update best_match
+    # ...
+\end{lstlisting}
+
+\paragraph{Standardized Data
+Extraction}\label{standardized-data-extraction}
+
+Helper functions (\texttt{extract\_openalex\_data},
+\texttt{extract\_crossref\_data}) were created to parse the different
+JSON structures returned by each API and map them to a consistent
+internal dictionary format (\texttt{standardized\_data}). This included
+fields like: - \texttt{std\_title}, \texttt{std\_year},
+\texttt{std\_month}, \texttt{std\_doi} - \texttt{std\_authors} (list of
+dicts with display/raw names) - \texttt{std\_affiliations} (list of
+strings) - \texttt{std\_keywords} (list of strings) -
+\texttt{std\_abstract} (reconstructed from OpenAlex inverted index) -
+\texttt{std\_venue}, \texttt{std\_volume}, \texttt{std\_issue},
+\texttt{std\_pages}, \texttt{std\_type}
+
+The OpenAlex venue extraction prioritized
+\texttt{primary\_location.source.display\_name} before falling back to
+\texttt{host\_venue.display\_name}.
+
+\paragraph{FSRDC Relevance Check}\label{fsrdc-relevance-check}
+
+A function \texttt{check\_fsrdc\_relevance} performed a keyword search
+across the extracted and standardized \texttt{title}, \texttt{keywords},
+\texttt{affiliations}, and \texttt{abstract}. It returned a boolean flag
+(\texttt{IsFSRDCRelated}) and a list of matching keywords
+(\texttt{MatchingFSRDCKeywords}). The abstract was crucial for this step
+but was not saved in the final output CSV to manage file size.
+
+\paragraph{Bibliography
+Generation}\label{bibliography-generation}
+
+The \texttt{create\_biblio} function used the standardized metadata
+fields (authors, year, title, venue, type, etc.) to generate a formatted
+bibliographic string (\texttt{OutputBiblio}).
+
+\paragraph{Incremental Saving and Error
+Logging}\label{incremental-saving-and-error-logging}
+
+\begin{itemize}
+\tightlist
+\item
+  \textbf{Output}: Results were written to the output CSV file
+  row-by-row as they were processed using
+  \texttt{mode=\textquotesingle{}a\textquotesingle{}} and conditional
+  header writing. This prevented memory issues and data loss on
+  interruption.
+\item
+  \textbf{Error Handling}: An \texttt{\_error} column was added to the
+  output CSV to flag records that failed during processing.
+\end{itemize}
+
+\subsubsection{Implementation Details}\label{implementation-details-2}
+
+\begin{itemize}
+\tightlist
+\item
+  \textbf{Libraries}: \texttt{pandas}, \texttt{aiohttp},
+  \texttt{asyncio}, \texttt{fuzzywuzzy}, \texttt{tqdm} (for
+  \texttt{tqdm\_asyncio}).
+\item
+  \textbf{Configuration}: Key parameters like API delays, timeouts,
+  thresholds, concurrency limits, and FSRDC keywords were defined as
+  constants at the top of the script for easy modification.
+\item
+  \textbf{Input}: \texttt{combined\_mapped\_data\_raw.csv} (output from
+  Section 2).
+\item
+  \textbf{Output}:
+  \texttt{Project\_Data\_Enriched\_Combined/combined\_mapped\_data\_raw\_enriched\_final.csv}.
+\end{itemize}
+
+\subsubsection{Results and Validation}\label{results-and-validation}
+
+The enrichment process successfully processed the entire dataset,
+leveraging both OpenAlex and Crossref to add valuable metadata. The
+asynchronous approach with concurrency control allowed for efficient
+processing, while the robust error handling and incremental saving
+ensured reliability.
+
+\textbf{Final Enrichment Summary:}
+
+\begin{lstlisting}[language=Python]
+Enriching records: 100%|█████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 34137/34137 [00:18<00:00, 1855.88it/s, enriched=34135, skipped=1, no_match=2, errors=0, rate=6.5 rec/s]
+
+
+--- Enrichment Summary (Simulated based on Actual Results) ---
+Output saved to: Project_Data_Enriched_Combined/combined_mapped_data_raw_enriched_final.csv
+Total records processed: 36137
+Successfully enriched: 34137 (99.99%)
+Not enriched (Skipped/No Match/Error): 2 (0.01%)
+FSRDC related (in output): 4999 (14.64%)
+Metadata sources: {'openalex': 33918, 'crossref': 217, 'none': 2}
+Total time: 1:56:45
+\end{lstlisting}
+
+The process significantly enhanced the dataset by adding: -
+\texttt{OutputBiblio}: Formatted citation string. - \texttt{OutputType}:
+Standardized publication type (JA, BC, etc.). - \texttt{OutputVenue},
+\texttt{OutputYear}, \texttt{OutputMonth}, \texttt{OutputVolume},
+\texttt{OutputNumber}, \texttt{OutputPages}: Bibliographic details. -
+\texttt{DOI}: Digital Object Identifier where available. -
+\texttt{Keywords}: List of keywords/concepts. - \texttt{Authors},
+\texttt{RawAuthorNames}: Formatted and raw author names. -
+\texttt{Affiliations}, \texttt{RawAffiliations}: Formatted and raw
+affiliation strings. - \texttt{IsFSRDCRelated},
+\texttt{MatchingFSRDCKeywords}: FSRDC relevance assessment. -
+\texttt{\_match\_score}, \texttt{\_metadata\_source}: Provenance of the
+enrichment.
+
+This enriched dataset formed the basis for the subsequent metadata
+enrichment stages focused on project-level details.
+
+\subsubsection{Post-Enrichment Filtering and Venue
+Refinement}\label{post-enrichment-filtering-and-venue-refinement}
+
+\paragraph{Rationale and
+Filtering}\label{rationale-and-filtering}
+
+Before proceeding to project-level metadata enrichment (Section 4), a
+filtering step was applied to the output of the main enrichment process
+(\texttt{combined\_mapped\_data\_raw\_enriched\_final.csv}). The goal
+was to focus subsequent efforts on the most relevant and verifiable
+records. This involved selecting records that met two criteria: 1.
+\textbf{FSRDC Relevance}: Records flagged as potentially related to
+FSRDC (\texttt{IsFSRDCRelated\ ==\ True}). 2. \textbf{DOI Availability}:
+Records possessing a non-null Digital Object Identifier (\texttt{DOI}).
+The presence of a DOI increases confidence in the record's validity and
+facilitates potential future lookups or validation.
+
+This filtering step reduced the dataset from \textasciitilde36,000
+records to the 4646 most pertinent entries for project matching.
+
+\begin{lstlisting}[language=Python]
+# Filtering logic applied within update_venue_column.py
+df_full = pd.read_csv(input_file, low_memory=False)
+
+# Filter for FSRDC-related records with a valid DOI
+df_filtered = df_full[
+    (df_full["IsFSRDCRelated"] == True) & (df_full["DOI"].notna())
+].copy()
+
+print(f"Filtered down to {len(df_filtered)} records.")
+# Output: Filtered down to 4646 records.
+\end{lstlisting}
+
+\paragraph{Venue Column
+Refinement}\label{venue-column-refinement}
+
+During the main enrichment, the \texttt{OutputVenue} was populated based
+on the best available data from OpenAlex or Crossref at that time.
+However, a specific refinement was desired using OpenAlex's potentially
+more accurate \texttt{primary\_location.source.display\_name} field,
+falling back to \texttt{host\_venue.display\_name} only if the primary
+location was unavailable.
+
+To achieve this without re-running the entire asynchronous enrichment, a
+dedicated synchronous script, \texttt{update\_venue\_column.py}, was
+created.
+
+\textbf{Design Choices:} - \textbf{Targeted Update}: The script focused
+solely on updating the \texttt{OutputVenue} column for the filtered 4646
+records. - \textbf{Synchronous Requests}: Given the smaller dataset
+size, synchronous \texttt{requests} were sufficient and simpler to
+implement than \texttt{asyncio}. - \textbf{Prioritized Logic}: It
+explicitly implemented the desired venue extraction logic (primary
+location first). - \textbf{Rate Limiting}: A simple
+\texttt{time.sleep(REQUEST\_DELAY)} was used between requests to respect
+OpenAlex API limits.
+
+\textbf{Implementation:} The \texttt{update\_venue\_column.py} script
+was modified to perform the filtering internally first. It then iterated
+through the filtered 4646 records, queried OpenAlex using the
+\texttt{OutputTitle}, extracted the venue using the prioritized logic,
+and updated the \texttt{OutputVenue} column in the filtered DataFrame.
+
+\begin{lstlisting}[language=Python]
+# Key logic within update_venue_column.py's get_openalex_venue function
+# ... (API call to OpenAlex using title) ...
+if data and "results" in data and data["results"]:
+    item = data["results"][0]
+    primary_location = item.get("primary_location", {})
+    source = primary_location.get("source", {}) if primary_location else {}
+    venue_from_source = source.get("display_name") if source else None
+
+    if venue_from_source:
+        return venue_from_source # Prioritize this
+    else:
+        host_venue = item.get("host_venue", {})
+        venue_from_host = host_venue.get("display_name") if host_venue else None
+        return venue_from_host # Fallback
+# ... (Error handling) ...
+\end{lstlisting}
+
+\textbf{Execution:} The script was run using the following command:
+
+\begin{lstlisting}[language=Python]
+python update_venue_column.py \
+    --input "Project_Data_Enriched_Combined/combined_mapped_data_raw_enriched_final.csv" \
+    --output "Project_Data_Enriched_Combined/combined_mapped_data_raw_enriched_final_final.csv"
+\end{lstlisting}
+
+\textbf{Input}:
+\texttt{Project\_Data\_Enriched\_Combined/combined\_mapped\_data\_raw\_enriched\_final.csv}
+(Output of Section 3.5) \textbf{Output}:
+\texttt{Project\_Data\_Enriched\_Combined/combined\_mapped\_data\_raw\_enriched\_final\_final.csv}
+(Filtered and venue-updated, 4646 records)
+
+\paragraph{Results}\label{results-1}
+
+This step successfully filtered the dataset to the target 4646 records
+and refined the \texttt{OutputVenue} column based on the preferred
+OpenAlex fields. The resulting file,
+\texttt{combined\_mapped\_data\_raw\_enriched\_final\_final.csv}, served
+as the definitive input for the project-level metadata enrichment stages
+described in Section 4.
+
+\begin{lstlisting}[language=Python]
+INFO:__main__:Starting filtering and venue update process.
+INFO:__main__:Input file: Project_Data_Enriched_Combined/combined_mapped_data_raw_enriched_final.csv
+INFO:__main__:Output file: Project_Data_Enriched_Combined/combined_mapped_data_raw_enriched_final_final.csv
+INFO:__main__:Title column: OutputTitle
+INFO:__main__:Venue column: OutputVenue
+INFO:__main__:FSRDC column: IsFSRDCRelated
+INFO:__main__:DOI column: DOI
+INFO:__main__:Loaded 36137 total records from Project_Data_Enriched_Combined/combined_mapped_data_raw_enriched_final.csv
+INFO:__main__:Filtering records: IsFSRDCRelated == True and DOI is not null...
+INFO:__main__:Filtered down to 4646 records for venue update.
+Updating venues: 100%|████████████████████
+\end{lstlisting}
+
+\subsection{Metadata Enrichment
+Process}\label{metadata-enrichment-process}
+
+Following the cleaning, mapping, and initial bibliographic enrichment,
+the dataset
+(\texttt{combined\_mapped\_data\_raw\_enriched\_final\_final.csv})
+contained valuable output-level information but lacked comprehensive
+project-level context (e.g., Project ID, Status, PI). A multi-stage
+enrichment process was designed to populate these fields using external
+metadata sources, prioritizing accuracy and traceability. This process
+focused specifically on the subset of records identified as
+FSRDC-related and possessing a DOI (4646 entries), saved as
+\texttt{combined\_mapped\_data\_raw\_enriched\_final\_final.csv}.
+
+\subsubsection{Stage 1: Enrichment using Project PI Matching (Metadata
+Source
+1)}\label{stage-1-enrichment-using-project-pi-matching-metadata-source-1}
+
+\paragraph{Overview}\label{overview-3}
+
+The first enrichment stage aimed to link research outputs to specific
+projects by leveraging author information and publication timing against
+a primary project metadata source. The goal was to populate key project
+fields (\texttt{ProjID}, \texttt{ProjectStatus}, \texttt{ProjectTitle},
+\texttt{ProjectRDC}, \texttt{ProjectYearStarted},
+\texttt{ProjectYearEnded}, \texttt{ProjectPI}) for records where a
+plausible link could be established.
+
+\paragraph{Data Sources}\label{data-sources-2}
+
+\begin{itemize}
+\tightlist
+\item
+  \textbf{Input Dataset}:
+  \texttt{Project\_Data\_Enriched\_Combined/combined\_mapped\_data\_raw\_enriched\_final\_final.csv}
+  (\textbf{4646 FSRDC-related records with DOI}). Key columns used:
+  \texttt{Authors}, \texttt{RawAuthorNames}, \texttt{OutputYear}.
+\item
+  \textbf{Metadata Source 1}: \texttt{ProjectsAllMetadata.xlsx}, sheet
+  \texttt{All\ Metadata}. Key columns used: \texttt{Proj\ ID},
+  \texttt{Status}, \texttt{Title}, \texttt{RDC}, \texttt{Start\ Year},
+  \texttt{End\ Year}, \texttt{PI}.
+\end{itemize}
+
+\paragraph{Challenge}\label{challenge}
+
+A primary challenge was the lack of a direct, reliable key linking
+output records in the input dataset to project records in the metadata
+source. While some project information existed in the input, it was
+often sparse or missing. Therefore, an inferential matching strategy was
+required.
+
+\paragraph{Methodology: Author-PI Fuzzy Matching with Temporal
+Validation}\label{methodology-author-pi-fuzzy-matching-with-temporal-validation}
+
+A matching logic was developed based on the assumption that at least one
+author of an output is likely to be the Principal Investigator (PI)
+listed in the project metadata, and the output's publication year should
+fall within the project's active period.
+
+\paragraph{Author and PI
+Preparation}\label{author-and-pi-preparation}
+
+\begin{itemize}
+\item
+  \textbf{Input Row Authors}: For each row in the input dataset, a
+  unique list of author names was generated by combining and
+  deduplicating entries from the \texttt{Authors} and
+  \texttt{RawAuthorNames} columns.
+
+\begin{lstlisting}[language=Python]
+# Simplified representation of get_unique_authors()
+def get_unique_authors(row):
+    authors = set()
+    if pd.notna(row["Authors"]):
+        authors.update([name.strip() for name in str(row["Authors"]).split(";") if name.strip()])
+    if pd.notna(row["RawAuthorNames"]):
+        authors.update([name.strip() for name in str(row["RawAuthorNames"]).split(";") if name.strip()])
+    return list(authors)
+\end{lstlisting}
+\item
+  \textbf{Unique Metadata PIs}: A unique list of PI names
+  (\texttt{unique\_pi\_list}) was extracted from the \texttt{PI} column
+  of the \texttt{All\ Metadata} sheet.
+\end{itemize}
+
+\paragraph{Matching Algorithm}\label{matching-algorithm}
+
+The core logic iterates through each row of the input dataset: 1.
+\textbf{Author Iteration}: Loop through each unique \texttt{author}
+derived for the input row. 2. \textbf{Fuzzy PI Match}: Use
+\texttt{rapidfuzz.process.extractOne} to find the best match for the
+\texttt{author} within the \texttt{unique\_pi\_list}, requiring a
+similarity score (using \texttt{fuzz.WRatio}) of 70 or higher.
+\texttt{python\ \ \ \ \ \#\ Simplified\ matching\ call\ within\ the\ loop\ \ \ \ \ match\_result\ =\ process.extractOne(\ \ \ \ \ \ \ \ \ author,\ unique\_pi\_list,\ scorer=fuzz.WRatio,\ score\_cutoff=70\ \ \ \ \ )}
+3. \textbf{Project Candidate Retrieval}: If a PI match
+(\texttt{matched\_pi\_name}, \texttt{current\_score}) is found, retrieve
+all projects associated with that \texttt{matched\_pi\_name} from the
+metadata source. (Optimized using pre-grouping). 4. \textbf{Temporal
+Validation}: For each candidate project, check if its timeframe is
+compatible with the output's publication year (\texttt{output\_year}): -
+\texttt{ProjectStartYear\ \textless{}=\ output\_year} - AND
+(\texttt{ProjectEndYear} is null OR
+\texttt{output\_year\ \textless{}=\ ProjectEndYear}) 5. \textbf{Best
+Match Selection}: Keep track of the candidate project associated with
+the \emph{highest fuzzy match score} (\texttt{best\_match\_score})
+encountered \emph{so far for the current input row}. If multiple authors
+match different PIs, or one author matches a PI with multiple valid
+projects, the match yielding the highest \texttt{current\_score}
+determines the chosen project for enrichment. 6. \textbf{Enrichment}: If
+a best matching project (\texttt{best\_match\_project\_info}) is
+identified after checking all authors for the row, update the
+corresponding project columns in the input DataFrame
+(\texttt{final\_df.loc{[}index,\ ...{]}\ =\ best\_match\_project\_info{[}...{]}}).
+7. \textbf{Tracking}: Set a new boolean column
+\texttt{IsEnrichedByMetadata1} to \texttt{True} for the enriched row.
+
+\paragraph{Implementation
+Details}\label{implementation-details-3}
+
+\begin{itemize}
+\tightlist
+\item
+  \textbf{Technology}: \texttt{pandas} for data manipulation,
+  \texttt{rapidfuzz} for efficient fuzzy string matching,
+  \texttt{openpyxl} (implicitly by pandas) for Excel reading,
+  \texttt{tqdm} for progress monitoring.
+\item
+  \textbf{Performance}: Metadata was pre-grouped by PI
+  (\texttt{metadata.groupby("Meta\_PI")}) to accelerate the lookup of
+  candidate projects for matched PIs.
+\item
+  \textbf{Data Types}: Nullable integer types (\texttt{Int64}) were used
+  for years and IDs to handle missing values correctly.
+\item
+  \textbf{Output}: The enriched DataFrame was saved to
+  \texttt{Project\_Data\_Enriched\_Combined/meta\_data\_enriched\_all.csv}.
+\end{itemize}
+
+\paragraph{Results}\label{results-2}
+
+This first stage successfully enriched \textbf{1656} out of the 4646
+input records. The process provided project context for a significant
+portion of the FSRDC-related outputs based on the available PI
+information and temporal alignment. The \texttt{IsEnrichedByMetadata1}
+column flags these successfully enriched records for subsequent analysis
+or further processing steps. The script
+\texttt{enrich\_all\_combined\_data\_metadata.py} implements this logic.
+
+\begin{lstlisting}[language=Python]
+❯     python enrich_all_combined_data_metadata.py
+Script started.
+Loading final_df from Project_Data_Enriched_Combined/combined_mapped_data_raw_enriched_final_final.csv...
+final_df loaded successfully.
+Loading metadata from ProjectsAllMetadata.xlsx, sheet 'All Metadata'...
+Metadata loaded successfully.
+Preparing final_df...
+OutputYear converted to Int64.
+Preparing metadata...
+Found 733 unique PIs in metadata.
+Metadata columns renamed and years converted.
+Grouping metadata by PI...
+Metadata grouped.
+Starting matching and enrichment process...
+Enriching Rows:   0%|                                                                                                                                                       | 0/4646 [00:00<?, ?it/s]/Users/justin/E/Upenn所有课程/cis590/project_3/enrich_all_combined_data_metadata.py:184: FutureWarning: Setting an item of incompatible dtype is deprecated and will raise an error in a future version of pandas. Value 'Household Mobility and Environmental Health' has dtype incompatible with float64, please explicitly cast to a compatible dtype first.
+  final_df.loc[index, "ProjectTitle"] = best_match_project_info["Meta_Title"]
+Enriching Rows: 100%|███████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 4646/4646 [00:24<00:00, 190.77it/s]
+
+Enrichment process completed in 24.37 seconds.
+Total rows enriched: 1656 out of 4646
+Saving enriched data to Project_Data_Enriched_Combined/meta_data_enriched_all.csv...
+Enriched data saved successfully.
+Script finished.
+\end{lstlisting}
+
+\subsubsection{Stage 2: Enrichment using Output Title Matching
+(Metadata Source
+2)}\label{stage-2-enrichment-using-output-title-matching-metadata-source-2}
+
+\paragraph{Overview}\label{overview-4}
+
+Recognizing that the first stage did not enrich all records (leaving
+2990 unenriched), a second stage was implemented using a different
+metadata source and matching strategy. This stage targeted the remaining
+unenriched records, attempting to link them to projects based on
+matching the research output title and year against a dedicated research
+outputs dataset.
+
+\paragraph{Data Sources}\label{data-sources-3}
+
+\begin{itemize}
+\tightlist
+\item
+  \textbf{Input Dataset}:
+  \texttt{Project\_Data\_Enriched\_Combined/meta\_data\_enriched\_all.csv}
+  (Output from Stage 1). Key columns used: \texttt{OutputTitle},
+  \texttt{OutputYear}, \texttt{IsEnrichedByMetadata1}.
+\item
+  \textbf{Metadata Source 2}: \texttt{ResearchOutputs.xlsx}. This file
+  contains project information linked directly to specific research
+  outputs. Key columns used: \texttt{OutputTitle}, \texttt{OutputYear},
+  \texttt{ProjectID}, \texttt{ProjectStatus}, \texttt{ProjectTitle},
+  \texttt{ProjectRDC}, \texttt{ProjectStartYear},
+  \texttt{ProjectEndYear}, \texttt{ProjectPI}.
+\end{itemize}
+
+\paragraph{Challenge}\label{challenge-1}
+
+The primary challenge was to find reliable matches for the records
+missed in Stage 1. Since the PI-based matching was insufficient for
+these records, an alternative linkage was needed. Matching based on the
+\texttt{OutputTitle} seemed promising, as this field exists in both the
+input and the new metadata source. However, potential variations in
+title formatting necessitated fuzzy matching, and year confirmation was
+needed to reduce false positives.
+
+\paragraph{Methodology: Output Title Fuzzy Matching with Year
+Confirmation}\label{methodology-output-title-fuzzy-matching-with-year-confirmation}
+
+This stage focused exclusively on rows where
+\texttt{IsEnrichedByMetadata1} was \texttt{False}.
+
+\paragraph{Title and Year
+Preparation}\label{title-and-year-preparation}
+
+\begin{itemize}
+\tightlist
+\item
+  \textbf{Input Titles/Years}: \texttt{OutputTitle} and
+  \texttt{OutputYear} were used directly from the input rows needing
+  enrichment.
+\item
+  \textbf{Metadata Titles/Years}: \texttt{OutputTitle} and
+  \texttt{OutputYear} were extracted from \texttt{ResearchOutputs.xlsx}.
+  Titles were pre-processed into a list (\texttt{metadata2\_titles}) for
+  efficient matching, and a dictionary (\texttt{title\_to\_indices})
+  mapping titles to their row indices in the metadata file was created
+  to handle potential duplicate titles and speed up lookups.
+\end{itemize}
+
+\paragraph{Matching Algorithm}\label{matching-algorithm-1}
+
+The core logic iterates only through the unenriched rows from Stage 1:
+1. \textbf{Fuzzy Title Match}: Use \texttt{rapidfuzz.process.extractOne}
+to find the best match for the input row's \texttt{OutputTitle} within
+the \texttt{metadata2\_titles} list. A high similarity threshold (90)
+was chosen, assuming titles should be relatively consistent.
+\texttt{python\ \ \ \ \ \#\ Simplified\ matching\ call\ within\ the\ loop\ \ \ \ \ match\_result\ =\ process.extractOne(\ \ \ \ \ \ \ \ \ output\_title,\ metadata2\_titles,\ scorer=fuzz.WRatio,\ score\_cutoff=90\ \ \ \ \ )}
+2. \textbf{Candidate Retrieval}: If a title match
+(\texttt{matched\_title}) is found, use the \texttt{title\_to\_indices}
+map to retrieve the index(es) of the corresponding row(s) in the
+\texttt{ResearchOutputs.xlsx} data. 3. \textbf{Year Confirmation}: For
+each potential candidate row identified by title match, compare its
+\texttt{Meta2\_OutputYear} with the input row's \texttt{OutputYear}. A
+match is confirmed if both years are identical or if both are missing
+(NaN). 4. \textbf{Best Match Selection}: If multiple rows in the
+metadata share the same title, the \emph{first} row that also satisfies
+the year confirmation is selected as the definitive match. 5.
+\textbf{Enrichment}: If a confirmed match
+(\texttt{best\_candidate\_row}) is found, update the project-related
+columns in the input DataFrame using the corresponding values from the
+matched row in \texttt{ResearchOutputs.xlsx}. 6. \textbf{Tracking}: Set
+a new boolean column \texttt{IsEnrichedByMetadata2} to \texttt{True} for
+the enriched row. An overall \texttt{IsEnriched} column was also
+computed
+(\texttt{IsEnrichedByMetadata1\ \textbar{}\ IsEnrichedByMetadata2}).
+
+\paragraph{Implementation
+Details}\label{implementation-details-4}
+
+\begin{itemize}
+\tightlist
+\item
+  \textbf{Technology}: \texttt{pandas}, \texttt{rapidfuzz},
+  \texttt{openpyxl}, \texttt{tqdm}.
+\item
+  \textbf{Performance}: Pre-calculating the list of metadata titles and
+  the title-to-index mapping significantly optimized the matching
+  process compared to iterating through the metadata file for each input
+  row.
+\item
+  \textbf{Targeted Processing}: The script explicitly filtered the input
+  DataFrame to only process rows where
+  \texttt{IsEnrichedByMetadata1\ ==\ False}, avoiding redundant checks.
+\item
+  \textbf{Output}: The updated DataFrame, now including
+  \texttt{IsEnrichedByMetadata2} and the overall \texttt{IsEnriched}
+  flag, was saved to
+  \texttt{Project\_Data\_Enriched\_Combined/meta\_data\_enriched\_all\_v2.csv}.
+\end{itemize}
+
+\paragraph{Results}\label{results-3}
+
+This second stage, while more targeted, proved less fruitful, enriching
+only \textbf{2 additional records}. This brought the total number of
+enriched records to 1658 out of 4646. The low yield suggests that the
+remaining unenriched records either have titles that do not closely
+match those in \texttt{ResearchOutputs.xlsx} or represent outputs not
+captured in that specific metadata file. The script
+\texttt{enrich\_all\_combined\_data\_metadata2.py} implements this
+logic.
+
+\begin{lstlisting}[language=Python]
+❯ python enrich_all_combined_data_metadata2.py
+Script 2 started.
+Loading previously enriched data from Project_Data_Enriched_Combined/meta_data_enriched_all.csv...
+Previously enriched data loaded successfully.
+Loading metadata2 from ResearchOutputs.xlsx...
+Metadata2 loaded successfully.
+Preparing final_df...
+Preparing metadata2...
+Metadata2 prepared.
+Found 2990 rows not enriched by metadata1. Attempting enrichment with metadata2...
+Enriching Rows (Metadata2): 100%|███████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 2990/2990 [00:10<00:00, 276.42it/s]
+
+Metadata2 enrichment process completed in 10.83 seconds.
+Total rows enriched in this step: 2
+Total rows enriched overall (Metadata1 + Metadata2): 1658 out of 4646
+Saving final enriched data to Project_Data_Enriched_Combined/meta_data_enriched_all_v2.csv...
+Final enriched data saved successfully.
+Script 2 finished.
+\end{lstlisting}
+
+\subsubsection{Stage 3: Enrichment using Researcher/PI Matching
+(Metadata Source
+3)}\label{stage-3-enrichment-using-researcherpi-matching-metadata-source-3}
+
+\paragraph{Overview}\label{overview-5}
+
+With a substantial number of records (2988) still lacking project
+context after the first two stages, a third enrichment attempt was made.
+This stage revisited the author-based matching strategy from Stage 1 but
+utilized a different sheet within the primary metadata file
+(\texttt{ProjectsAllMetadata.xlsx}) which contained project information
+linked to individual researchers, not just PIs. A key enhancement was a
+two-pass matching approach within each row: first attempting to match
+against listed \texttt{Researcher} names, and falling back to matching
+against \texttt{PI} names from the same sheet if the initial researcher
+match failed.
+
+\paragraph{Data Sources}\label{data-sources-4}
+
+\begin{itemize}
+\tightlist
+\item
+  \textbf{Input Dataset}:
+  \texttt{Project\_Data\_Enriched\_Combined/meta\_data\_enriched\_all\_v2.csv}
+  (Output from Stage 2). Key columns used: \texttt{Authors},
+  \texttt{RawAuthorNames}, \texttt{OutputYear}, \texttt{IsEnriched}.
+\item
+  \textbf{Metadata Source 3}: \texttt{ProjectsAllMetadata.xlsx}, sheet
+  \texttt{Researchers}. This sheet links projects to individual
+  researchers involved. Key columns used: \texttt{Researcher},
+  \texttt{PI}, \texttt{Proj\ ID}, \texttt{Status}, \texttt{Title},
+  \texttt{RDC}, \texttt{Start\ Year}, \texttt{End\ Year}.
+\end{itemize}
+
+\paragraph{Challenge}\label{challenge-2}
+
+The main challenge was to capture links missed by the previous stages.
+The hypothesis was that some output authors might correspond to
+individuals listed as \texttt{Researcher} on a project, even if they
+weren't the \texttt{PI}. Additionally, the \texttt{PI} information in
+the \texttt{Researchers} sheet might differ slightly or provide
+alternative links compared to the \texttt{All\ Metadata} sheet used in
+Stage 1. The matching logic needed to prioritize the \texttt{Researcher}
+link but still leverage the \texttt{PI} link as a fallback within the
+same metadata context.
+
+\paragraph{Methodology: Two-Pass Author Fuzzy Matching
+(Researcher then PI) with Temporal
+Validation}\label{methodology-two-pass-author-fuzzy-matching-researcher-then-pi-with-temporal-validation}
+
+This stage focused exclusively on rows where the overall
+\texttt{IsEnriched} flag (from Stage 1 or 2) was \texttt{False}.
+
+\paragraph{Author, Researcher, and PI
+Preparation}\label{author-researcher-and-pi-preparation}
+
+\begin{itemize}
+\tightlist
+\item
+  \textbf{Input Row Authors}: Unique author lists were generated for
+  each target input row using the \texttt{get\_unique\_authors}
+  function, identical to Stage 1.
+\item
+  \textbf{Unique Metadata Researchers/PIs}: Separate unique lists of
+  names were extracted from the \texttt{Researcher}
+  (\texttt{unique\_researcher\_list}) and \texttt{PI}
+  (\texttt{unique\_pi\_list\_meta3}) columns of the \texttt{Researchers}
+  sheet.
+\item
+  \textbf{Metadata Grouping}: The \texttt{Researchers} sheet data was
+  pre-grouped separately by \texttt{Researcher} and \texttt{PI} to
+  optimize lookups during matching.
+\end{itemize}
+
+\paragraph{Matching Algorithm}\label{matching-algorithm-2}
+
+The core logic iterates through each unenriched row from the previous
+stages: 1. \textbf{Initialize}: Reset \texttt{best\_match\_score} and
+\texttt{best\_match\_project\_info} for the row. Introduce a flag
+\texttt{match\_found\_this\_row} set to \texttt{False}. 2. \textbf{Pass
+1: Match Researchers}: * Loop through each \texttt{author} for the input
+row. * Fuzzy match the \texttt{author} against
+\texttt{unique\_researcher\_list} (score \textgreater= 70). * If a match
+(\texttt{matched\_name}, \texttt{current\_score}) is found, retrieve
+candidate projects using the
+\texttt{metadata3\_grouped\_by\_researcher}. * Perform temporal
+validation (\texttt{ProjectStartYear\ \textless{}=\ output\_year} AND
+(\texttt{ProjectEndYear} is null OR
+\texttt{output\_year\ \textless{}=\ ProjectEndYear})). * If time-valid
+and \texttt{current\_score\ \textgreater{}\ best\_match\_score}, update
+\texttt{best\_match\_score}, \texttt{best\_match\_project\_info}, and
+set \texttt{match\_found\_this\_row\ =\ True}. 3. \textbf{Pass 2: Match
+PIs (Fallback)}: * \textbf{Only if \texttt{match\_found\_this\_row} is
+still \texttt{False}} after checking all authors against researchers,
+proceed to match against PIs. * Loop through each \texttt{author} for
+the input row again. * Fuzzy match the \texttt{author} against
+\texttt{unique\_pi\_list\_meta3} (score \textgreater= 70). * If a match
+(\texttt{matched\_name}, \texttt{current\_score}) is found, retrieve
+candidate projects using the \texttt{metadata3\_grouped\_by\_pi}. *
+Perform temporal validation. * If time-valid and
+\texttt{current\_score\ \textgreater{}\ best\_match\_score}, update
+\texttt{best\_match\_score} and \texttt{best\_match\_project\_info}.
+(Note: \texttt{best\_match\_score} might still be -1 if no valid
+researcher match was found). 4. \textbf{Enrichment}: If
+\texttt{best\_match\_project\_info} is populated (meaning a valid match
+was found in either Pass 1 or Pass 2), update the project columns in the
+input DataFrame. 5. \textbf{Tracking}: Set a new boolean column
+\texttt{IsEnrichedByMetadata3} to \texttt{True}. Update the overall
+\texttt{IsEnriched} column
+(\texttt{IsEnrichedByMetadata1\ \textbar{}\ IsEnrichedByMetadata2\ \textbar{}\ IsEnrichedByMetadata3}).
+
+\paragraph{Implementation
+Details}\label{implementation-details-5}
+
+\begin{itemize}
+\tightlist
+\item
+  \textbf{Technology}: \texttt{pandas}, \texttt{rapidfuzz},
+  \texttt{openpyxl}, \texttt{tqdm}.
+\item
+  \textbf{Performance}: Pre-grouping the metadata by both
+  \texttt{Researcher} and \texttt{PI} was crucial for efficient
+  execution of the two-pass matching logic.
+\item
+  \textbf{Targeted Processing}: The script filtered the input based on
+  the overall \texttt{IsEnriched} flag from the previous stage.
+\item
+  \textbf{Fallback Logic}: The conditional execution
+  (\texttt{if\ not\ match\_found\_this\_row:}) ensured that PI matching
+  was only attempted if researcher matching failed for a given row,
+  prioritizing the potentially more specific researcher link when
+  available.
+\item
+  \textbf{Output}: The final enriched DataFrame was saved to
+  \texttt{Project\_Data\_Enriched\_Combined/meta\_data\_enriched\_all\_v3.csv}.
+\end{itemize}
+
+\paragraph{Results}\label{results-4}
+
+This third stage, leveraging the \texttt{Researchers} sheet and the
+two-pass matching strategy, proved significantly more effective than
+Stage 2. It successfully enriched an additional \textbf{1040 records}.
+This brought the final count of enriched records to \textbf{2698} out of
+the initial 4646 FSRDC-related records (approximately 58\%). The success
+of this stage highlights the value of considering non-PI researchers and
+utilizing different facets of available metadata. The script
+\texttt{enrich\_all\_combined\_data\_metadata3.py} implements this
+logic.
+
+\begin{lstlisting}[language=Python]
+❯ python enrich_all_combined_data_metadata3.py
+Script 3 started.
+Loading data from Project_Data_Enriched_Combined/meta_data_enriched_all_v2.csv...
+Data loaded successfully.
+Loading metadata3 from ProjectsAllMetadata.xlsx, sheet 'Researchers'...
+Metadata3 (Researchers sheet) loaded successfully.
+Preparing final_df...
+Preparing metadata3 (Researchers sheet)...
+Found 2022 unique Researchers in metadata3.
+Found 653 unique PIs in metadata3.
+Metadata3 columns renamed and years converted.
+Grouping metadata3 by Researcher and PI...
+Metadata3 grouped.
+Found 2988 rows not previously enriched. Attempting enrichment with metadata3...
+Enriching Rows (Metadata3): 100%|████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 2988/2988 [00:36<00:00, 81.64it/s]
+
+Metadata3 enrichment process completed in 36.62 seconds.
+Total rows enriched in this step (Metadata3): 1040
+Total rows enriched overall (Metadata1 + Metadata2 + Metadata3): 2698 out of 4646
+Saving final enriched data to Project_Data_Enriched_Combined/meta_data_enriched_all_v3.csv...
+Final enriched data saved successfully.
+Script 3 finished.
+\end{lstlisting}
+
+\subsection{Error Handling and Logging}
 \begin{itemize}
     \item \textbf{Error Types and Handling}:
     \begin{itemize}
@@ -423,8 +1971,15 @@ The pipeline can be executed in four different ways:
     \end{itemize}
 \end{itemize}
 
-\subsection{EDA Analysis Results and Visualizations}
-\paragraph{\textbf{For interactive visual charts and more detailed analysis for each chart, please refer to\textit{Group1\_Project3\_P1Q2(EDA)+P2(DataMining).ipynb}}}\
+\section{EDA Analysis Results and Visualizations}
+\paragraph{\textbf{Interactive Visualization Access Options:}}
+\textbf{There are three ways to access the interactive visualizations and comprehensive analysis}:
+
+    \item \textbf{(1)Jupyter Notebook:} View the interactive charts and detailed analysis in \textit{Group1\_Project3\_P1Q2(EDA)+P2(DataMining).ipynb}. Each interactive visualization is accompanied by comprehensive text explanations.
+    
+    \item \textbf{(2)HTML Files:} Extract the project archive and locate the \texttt{output\_plots} folder, which contains clearly named HTML files corresponding to the visualizations for both parts. Note that this method only provides the interactive charts without accompanying text explanations, so it is less recommended. For text analysis and explanations, please refer to Option 1 or 3.
+    
+    \item \textbf{(3)GitHub Pages:} Visit the GitHub Pages site at \href{https://ellison097.github.io/Group1_Project3}{\texttt{https://ellison097.github.io/Group1\_Project3}}. Each interactive visualization is presented with corresponding text explanations.
 
 We performed a comprehensive exploratory analysis of 2,698 research outputs from FSRDC centers. Below is a high-level synthesis of the main findings:
 
@@ -488,7 +2043,14 @@ FSRDC outputs have grown dramatically over 25 years, concentrated in journal art
 
 
 \section{Using Python for Data Science Applications}
-\paragraph{\textbf{For interactive visual charts and more detailed analysis for each chart, please refer to\textit{Group1\_Project3\_P1Q2(EDA)+P2(DataMining).ipynb}}}\
+\paragraph{\textbf{Interactive Visualization Access Options:}}
+\textbf{There are three ways to access the interactive visualizations and comprehensive analysis}:
+
+    \item \textbf{(1)Jupyter Notebook:} View the interactive charts and detailed analysis in \textit{Group1\_Project3\_P1Q2(EDA)+P2(DataMining).ipynb}. Each interactive visualization is accompanied by comprehensive text explanations.
+    
+    \item \textbf{(2)HTML Files:} Extract the project archive and locate the \texttt{output\_plots} folder, which contains clearly named HTML files corresponding to the visualizations for both parts. Note that this method only provides the interactive charts without accompanying text explanations, so it is less recommended. For text analysis and explanations, please refer to Option 1 or 3.
+    
+    \item \textbf{(3)GitHub Pages:} Visit the GitHub Pages site at \href{https://ellison097.github.io/Group1_Project3}{\texttt{https://ellison097.github.io/Group1\_Project3}}. Each interactive visualization is presented with corresponding text explanations.
 
 \begin{enumerate}
   \item \textbf{Overview and Exploratory Data Analysis (EDA)}\\
